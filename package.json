@@ -1,0 +1,24 @@
+{
+  "name": "scalextric",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node build/src/index.js",
+    "test": "tsc && mocha --timeout 20000 ./build/test/**/*.spec.js"
+  },
+  "author": "Karim Ratib",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.11.7",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "tsviz": "^1.0.11",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.1.3"
+  }
+}

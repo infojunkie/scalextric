@@ -45,8 +45,8 @@ export class Tuning {
    */
   constructor(
     public description: string,
-    intervals: any[],
-    public reference
+    intervals: (number|string)[],
+    public reference: TuningTone = TuningTone.IDENTITY
   ) {
     // `intervals` holds the interval multipliers in ratio form
     // with the unison added to simplify the code.
@@ -75,7 +75,7 @@ export class Tuning {
    * @param tone: tone to be tuned
    * @return: frequency ratio of the tone with respect to reference
    */
-  tune(tone): number {
+  tune(tone: TuningTone): number {
     // Get the ratio difference between the target note and the reference note, raised to the difference in octave.
     // The octave is always the last tone as per the definition of the `intervals` array.
     return Math.pow(this.intervals[this.steps], tone.octave - this.reference.octave) * this.intervals[ tone.index ] / this.intervals[ this.reference.index ];
@@ -108,43 +108,58 @@ export class Tuning {
 }
 
 /**
+ * Map of note names to tone indexes.
+ * ```
+ * {
+ *   'C': 0,
+ *   'D': 2,
+ *   'E': 4,
+ *   'F': 5,
+ *   'G': 7,
+ *   'A': 9,
+ *   'B': 11,
+ * }
+ * ```
+ */
+export interface TuningNoteMap {
+  [note: string]: number;
+}
+
+/**
+ * Map of accidentals to tone increments.
+ * ```
+ * {
+ *   '#': +1,
+ *   'b': -1,
+ *   'n':  0,
+ * }
+ * ```
+ */
+export interface TuningAccidentalMap {
+  [accidental: string]: number;
+}
+
+/**
  * Tuning extension to support note naming and parsing.
  */
 export class TuningNomenclature extends Tuning {
   regex: RegExp;
   regexNoAccidentals: RegExp;
   /**
-   * @param
+   * @param description: as per Tuning
+   * @param intervals: as per Tuning
+   * @param reference: as per Tuning
    * @param notes: map of note names to tone indexes
-   * ```
-   * {
-   *   'C': 0,
-   *   'D': 2,
-   *   'E': 4,
-   *   'F': 5,
-   *   'G': 7,
-   *   'A': 9,
-   *   'B': 11,
-   * }
-   * ```
-   *
    * @param accidentals: map of accidentals to tone increments
-   * ```
-   * {
-   *   '#': +1,
-   *   'b': -1,
-   *   'n':  0,
-   * }
-   * ```
    */
   constructor(
     description: string,
-    _intervals: any[],
-    reference,
-    public notes: any,
-    public accidentals: any)
-  {
-    super(description, _intervals, reference);
+    intervals: (number|string)[],
+    public notes: TuningNoteMap,
+    public accidentals: TuningAccidentalMap,
+    reference: TuningTone = TuningTone.IDENTITY
+  ) {
+    super(description, intervals, reference);
 
     // Precalculated values
     // `regex` is the regular expression that is dynamically built to
@@ -231,21 +246,21 @@ export class TuningNomenclature extends Tuning {
 export class TuningTone {
   constructor(public tone: number, public index: number, public octave: number) {}
 
-  static fromGenerator(tuning: Tuning, _index: number, _octave: number): TuningTone {
-    let index = _index;
-    let octave = _octave;
+  static fromGenerator(tuning: Tuning, index: number, octave: number): TuningTone {
+    let _index = index;
+    let _octave = octave;
     if (_index < 0) {
-      index += tuning.steps;
-      octave -= 1;
+      _index += tuning.steps;
+      _octave -= 1;
     }
     else if (_index >= tuning.steps) {
-      index -= tuning.steps;
-      octave += 1;
+      _index -= tuning.steps;
+      _octave += 1;
     }
     return new TuningTone(
-      (index - tuning.reference.index) + (octave - tuning.reference.octave) * tuning.steps,
-      index,
-      octave
+      (_index - tuning.reference.index) + (_octave - tuning.reference.octave) * tuning.steps,
+      _index,
+      _octave
     );
   }
 
@@ -256,4 +271,6 @@ export class TuningTone {
       Math.trunc(tone / tuning.steps) + tuning.reference.octave
     );
   }
+
+  static IDENTITY: TuningTone = new TuningTone(0,0,0);
 }

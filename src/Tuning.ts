@@ -1,4 +1,6 @@
 import {Helpers} from './Helpers';
+import {Interval} from './Interval';
+import Fraction from 'fraction.js';
 
 /**
  * TUNING SYSTEM
@@ -30,32 +32,32 @@ import {Helpers} from './Helpers';
  * extended to recognize different accidental symbols
  */
 export class Tuning {
-  intervals: number[];
+  intervals: Interval[];
 
   /**
    * CONSTRUCTOR
    *
-   * @param description: string containing information about the tuning
+   * @param label: tuning label
    *
    * @param intervals: an array of ratios expressed as strings, or cents expressed as numbers.
    *  This array should NOT include the unison (1/1) interval.
    *  The last element of this array will be considered to be the repeater (e.g. 2/1 the octave).
    *
-   * @param reference: reference note in scientific pitch notation
+   * @param reference: reference tone
    */
   constructor(
-    public description: string,
+    public label: string,
     intervals: (number|string)[],
     public reference: TuningTone = TuningTone.IDENTITY
   ) {
     // `intervals` holds the interval multipliers in ratio form
     // with the unison added to simplify the code.
-    this.intervals = [0, ...intervals].map(i => {
-      if (typeof i === "string") {
-        const fraction = i.split('/');
-        return parseInt(fraction[0], 10) / parseInt(fraction[1], 10);
-      } else {
-        return Tuning.centsToRatio(i);
+    this.intervals = [0, ...intervals].map(interval => {
+      if (typeof interval == 'string') {
+        return new Interval(new Fraction(interval));
+      }
+      else {
+        return Interval.fromCents(interval);
       }
     });
   }
@@ -63,7 +65,7 @@ export class Tuning {
   /**
    * STEPS OF A TUNING
    *
-   * @return: count of tones in the tuning
+   * @returns count of tones in the tuning
    */
   get steps(): number {
     return this.intervals.length - 1;
@@ -73,26 +75,29 @@ export class Tuning {
    * TUNE A TONE
    *
    * @param tone: tone to be tuned
-   * @return: frequency ratio of the tone with respect to reference
+   * @returns frequency ratio of the tone with respect to reference
    */
-  tune(tone: TuningTone): number {
+  tune(tone: TuningTone): Interval {
     // Get the ratio difference between the target note and the reference note, raised to the difference in octave.
     // The octave is always the last tone as per the definition of the `intervals` array.
-    return Math.pow(this.intervals[this.steps], tone.octave - this.reference.octave) * this.intervals[ tone.index ] / this.intervals[ this.reference.index ];
+    return new Interval(
+      this.intervals[tone.index].ratio
+      .div(this.intervals[this.reference.index].ratio)
+      .mul(this.intervals[this.steps].ratio.pow(tone.octave - this.reference.octave))
+    );
   }
 
   /**
-   * Convert frequency ratio to cents.
+   * TUNING DIFFERENCE
+   * Compute the difference in cents between this tuning and another
+   *
+   * @param reference: tuning to compare against - must contain same amount of steps
+   * @returns array of interval differences in cents
    */
-  static ratioToCents(ratio: number): number {
-    return 1200 * Math.log2(ratio);
-  }
-
-  /**
-   * Convert cents to frequency ratio.
-   */
-  static centsToRatio(cents: number): number {
-    return Math.pow(2, cents / 1200);
+  difference(reference: Tuning): Interval[] {
+    return this.intervals.map((interval, index) =>
+      reference.intervals[index].diff(interval)
+    );
   }
 
   /**
@@ -146,20 +151,20 @@ export class TuningNomenclature extends Tuning {
   regex: RegExp;
   regexNoAccidentals: RegExp;
   /**
-   * @param description: as per Tuning
+   * @param label: as per Tuning
    * @param intervals: as per Tuning
    * @param reference: as per Tuning
    * @param notes: map of note names to tone indexes
    * @param accidentals: map of accidentals to tone increments
    */
   constructor(
-    description: string,
+    label: string,
     intervals: (number|string)[],
     public notes: TuningNoteMap,
     public accidentals: TuningAccidentalMap,
     reference: TuningTone = TuningTone.IDENTITY
   ) {
-    super(description, intervals, reference);
+    super(label, intervals, reference);
 
     // Precalculated values
     // `regex` is the regular expression that is dynamically built to
@@ -184,7 +189,7 @@ export class TuningNomenclature extends Tuning {
    * PARSE A NOTE
    *
    * @param note: target note in scientific pitch notation
-   * @return: tone generator
+   * @returns tone generator
    */
   parse(note: string): TuningTone {
     const match = this.regex.exec(note);
@@ -212,7 +217,7 @@ export class TuningNomenclature extends Tuning {
    * NAME A TONE
    *
    * @param tone: tone to be named
-   * @return array of strings representing the enharmonic namings of the tone
+   * @returns array of strings representing the enharmonic namings of the tone
    */
   name(tone: TuningTone): string[] {
     const names = Object.keys(this.notes).reduce((names, note) => {

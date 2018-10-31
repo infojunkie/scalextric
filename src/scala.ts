@@ -1,9 +1,14 @@
 import * as ScalaScale from 'aural-scala';
-import * as fs from 'fs';
 import {Tuning, TuningTone} from './Tuning';
 
-export function tuningFromScala(name, reference: TuningTone = TuningTone.IDENTITY): Tuning {
-  const scale = ScalaScale.parse(fs.readFileSync(`data/scl/${name}.scl`, 'utf8'));
+/**
+ * Convert a Scala scale definition to a Tuning.
+ * @param scala: Scala scale definition
+ * @param reference: reference tone
+ * @returns tuning object
+ */
+export function tuningFromScala(scala: string, reference: TuningTone = TuningTone.IDENTITY): Tuning {
+  const scale = ScalaScale.parse(scala);
   return new Tuning(
     scale.description,
     scale.intervals,

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node build/src/index.js",
-    "test": "tsc && mocha --timeout 20000 ./build/test/**/*.spec.js",
+    "test": "tsc && nyc --reporter=text mocha --timeout 20000 ./build/test/**/*.spec.js",
     "doc": "typedoc --out ./doc src/*.ts && tsviz -r src/ doc/classes.png"
   },
   "author": "Karim Ratib",
@@ -18,6 +18,7 @@
     "chai-as-promised": "^7.1.1",
     "chai-deep-closeto": "^0.1.1",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "ts-node": "^7.0.1",
     "tsviz": "^1.0.11",
     "typedoc": "^0.13.0",

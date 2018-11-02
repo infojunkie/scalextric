@@ -32,31 +32,31 @@ import Fraction from 'fraction.js';
  * extended to recognize different accidental symbols
  */
 export class Tuning {
-  intervals: Interval[];
-
   /**
    * CONSTRUCTOR
    *
    * @param label: tuning label
-   *
-   * @param intervals: an array of ratios expressed as strings, or cents expressed as numbers.
-   *  This array should NOT include the unison (1/1) interval.
-   *  The last element of this array will be considered to be the repeater (e.g. 2/1 the octave).
+   * @param intervals: tuning intervals, including unison
+   * The last element of this array will be considered to be the repeater (e.g. 2/1 the octave).
    */
-  constructor(
-    public label: string,
-    intervals: (number|string)[]
-  ) {
-    // `intervals` holds the interval multipliers in ratio form
-    // with the unison added to simplify the code.
-    this.intervals = [0, ...intervals].map(interval => {
+  constructor(public label: string, public intervals: Interval[]) {}
+
+  /**
+   * Create a tuning from ratios or cents.
+   *
+   * @param label: as per constructor
+   * @param intervals: an array of ratios expressed as strings, or cents expressed as numbers
+   * @returns tuning object
+   */
+  static fromIntervals(label: string, intervals: (number|string)[]) {
+    return new Tuning(label, intervals.map(interval => {
       if (typeof interval == 'string') {
         return new Interval(new Fraction(interval));
       }
       else {
         return Interval.fromCents(interval);
       }
-    });
+    }));
   }
 
   /**
@@ -101,9 +101,9 @@ export class Tuning {
    * The intervals are calculated in cents, because they will be converted to ratios
    * inside the Tuning constructor.
    */
-  static intervalsEdo(divisions: number): number[] {
-    return Array.from(Array(divisions)).map((_, i) => {
-      return 1200 / divisions * (i+1);
+  static intervalsEdo(divisions: number): Interval[] {
+    return Array.from(Array(divisions + 1)).map((_, i) => {
+      return Interval.fromCents(1200 / divisions * i);
     });
   }
 }
@@ -143,23 +143,19 @@ export interface TuningAccidentalMap {
 /**
  * Tuning extension to support note naming and parsing.
  */
-export class TuningNomenclature extends Tuning {
+export class TuningNomenclature {
   regex: RegExp;
   regexNoAccidentals: RegExp;
   /**
-   * @param label: as per Tuning
-   * @param intervals: as per Tuning
+   * @param tuning: the tuning
    * @param notes: map of note names to tone indexes
    * @param accidentals: map of accidentals to tone increments
    */
   constructor(
-    label: string,
-    intervals: (number|string)[],
+    public tuning: Tuning,
     public notes: TuningNoteMap,
     public accidentals: TuningAccidentalMap
   ) {
-    super(label, intervals);
-
     // Precalculated values
     // `regex` is the regular expression that is dynamically built to
     // recognize notes in scientific pitch notation, given the nomenclature supplied by the caller.
@@ -189,7 +185,7 @@ export class TuningNomenclature extends Tuning {
     const match = this.regex.exec(note);
     if (match) {
       return new TuningTone(
-        this,
+        this.tuning,
         this.notes[ match[1] ] + (match[2] ? this.accidentals[ match[2] ] : 0),
         parseInt(match[3], 10)
       );
@@ -199,7 +195,7 @@ export class TuningNomenclature extends Tuning {
       const match2 = this.regexNoAccidentals.exec(note);
       if (match2) {
         return new TuningTone(
-          this,
+          this.tuning,
           this.notes[ match2[1] ],
           parseInt(match2[2], 10)
         );

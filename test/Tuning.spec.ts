@@ -7,8 +7,7 @@ import {tuningFromScala} from '../src/scala';
 
 describe('Tuning', () => {
   const edo12 = new TuningNomenclature(
-    '12-tET',
-    Tuning.intervalsEdo(12),
+    new Tuning('12-tET', Tuning.intervalsEdo(12)),
     {
       'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11
     },
@@ -17,8 +16,7 @@ describe('Tuning', () => {
     }
   );
   const edo24 = new TuningNomenclature(
-    '24-tET',
-    Tuning.intervalsEdo(24),
+    new Tuning('24-tET', Tuning.intervalsEdo(24)),
     {
       'C': 0, 'D': 4, 'E': 8, 'F': 10, 'G': 14, 'A': 18, 'B': 22
     },
@@ -34,7 +32,7 @@ describe('Tuning', () => {
   });
 
   it('computes tuning differences', () => {
-    expect(pyth12.difference(edo12).map(i => i.cents)).to.be.clsTo([
+    expect(pyth12.difference(edo12.tuning).map(i => i.cents)).to.be.clsTo([
       0,
       -13.685,
       -3.91,

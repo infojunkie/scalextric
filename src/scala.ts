@@ -9,8 +9,8 @@ import {Tuning, TuningTone} from './Tuning';
  */
 export function tuningFromScala(scala: string): Tuning {
   const scale = ScalaScale.parse(scala);
-  return new Tuning(
+  return Tuning.fromIntervals(
     scale.description,
-    scale.intervals
+    [0, ...scale.intervals]
   );
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tuning | scalextric</title>
+	<title>ToneRow | scalextric</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_tuning_.html">&quot;Tuning&quot;</a>
+					<a href="../modules/_tonerow_.html">&quot;ToneRow&quot;</a>
 				</li>
 				<li>
-					<a href="_tuning_.tuning.html">Tuning</a>
+					<a href="_tonerow_.tonerow.html">ToneRow</a>
 				</li>
 			</ul>
-			<h1>Class Tuning</h1>
+			<h1>Class ToneRow</h1>
 		</div>
 	</div>
 </header>
@@ -72,38 +72,21 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>TUNING SYSTEM</p>
+						<p>TONE ROW</p>
 					</div>
-					<p>Given a reference tone and a target tone, a tuning returns the ratio between them.</p>
-					<p>The fundamental interval is 2/1 between the base tone and its octave.
-						Other tones subdivide the octave interval. A finite number of tones N make up the tuning.
-						Tones are indexed according to their rank in the ordered sequence of ratios
-						tone 0 =&gt; ratio 1 (unison)
-						tone 1 =&gt; ratio 1.abc (first interval)
-						tone 2 =&gt; ratio 1.def (second interval)
-						...
-						tone N-2 =&gt; ratio 1.xyz (next-to-last interval)
-					tone N-1 =&gt; ratio 2 (octave)</p>
-					<p>Tones can extend beyond the octave
-						e.g. tone N+1 is equivalent to tone 1, but one octave higher.
-					In addition to representing a tone as above, we can represent it by its &quot;generator&quot;:</p>
-					<ul>
-						<li>its index ∈ [0, N-1]</li>
-						<li>its octave ∈ ℤ
-						such that t = index(t) + N * octave(t)</li>
-					</ul>
-					<p>Tones can be named: these are the &quot;note names&quot; such as C, D, E, etc.
-					Also, tone increments can be named: these are the accidentals such as ♯, ♭, ♮, etc.</p>
-					<p>We will represent note names in Scientific Pitch Notation
-						<a href="https://en.wikipedia.org/wiki/Scientific_pitch_notation">https://en.wikipedia.org/wiki/Scientific_pitch_notation</a>
-					extended to recognize different accidental symbols</p>
+					<p>We define a tone row as an ordered set of tones. It is the basic collection of tones
+					that make up many other musical objects such as scales, chords, etc.</p>
+					<p>This definition extends the usual definition of &quot;tone row&quot; used in serial composition
+					<a href="https://en.wikipedia.org/wiki/Tone_row">https://en.wikipedia.org/wiki/Tone_row</a></p>
+					<p>It allows us to reuse the standard tone row operations (invert, reverse, transpose, rotate)
+					on other musical objects.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Tuning</span>
+						<span class="target">ToneRow</span>
 					</li>
 				</ul>
 			</section>
@@ -114,29 +97,31 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_tuning_.tuning.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_tuning_.tuning.html#intervals" class="tsd-kind-icon">intervals</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_tuning_.tuning.html#label" class="tsd-kind-icon">label</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#prime" class="tsd-kind-icon">prime</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#tuning" class="tsd-kind-icon">tuning</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_tuning_.tuning.html#steps" class="tsd-kind-icon">steps</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#pitches" class="tsd-kind-icon">pitches</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tuning_.tuning.html#difference" class="tsd-kind-icon">difference</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tuning_.tuning.html#tune" class="tsd-kind-icon">tune</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_tuning_.tuning.html#fromintervals" class="tsd-kind-icon">from<wbr>Intervals</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_tuning_.tuning.html#intervalsedo" class="tsd-kind-icon">intervals<wbr>Edo</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#invert" class="tsd-kind-icon">invert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#monotonize" class="tsd-kind-icon">monotonize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#reverse" class="tsd-kind-icon">reverse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#rotate" class="tsd-kind-icon">rotate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tonerow_.tonerow.html#transpose" class="tsd-kind-icon">transpose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_tonerow_.tonerow.html#frompitches" class="tsd-kind-icon">from<wbr>Pitches</a></li>
 							</ul>
 						</section>
 					</div>
@@ -148,30 +133,25 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Tuning<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, intervals<span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tone<wbr>Row<span class="tsd-signature-symbol">(</span>tuning<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a>, prime<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L34">Tuning.ts:34</a></li>
+									<li>Defined in ToneRow.ts:16</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>CONSTRUCTOR</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>label: <span class="tsd-signature-type">string</span></h5>
+									<h5>tuning: <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h5>
 								</li>
 								<li>
-									<h5>intervals: <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>prime: <a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -179,22 +159,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="intervals" class="tsd-anchor"></a>
-					<h3>intervals</h3>
-					<div class="tsd-signature tsd-kind-icon">intervals<span class="tsd-signature-symbol">:</span> <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="prime" class="tsd-anchor"></a>
+					<h3>prime</h3>
+					<div class="tsd-signature tsd-kind-icon">prime<span class="tsd-signature-symbol">:</span> <a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L42">Tuning.ts:42</a></li>
+							<li>Defined in ToneRow.ts:17</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="label" class="tsd-anchor"></a>
-					<h3>label</h3>
-					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="tuning" class="tsd-anchor"></a>
+					<h3>tuning</h3>
+					<div class="tsd-signature tsd-kind-icon">tuning<span class="tsd-signature-symbol">:</span> <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L42">Tuning.ts:42</a></li>
+							<li>Defined in ToneRow.ts:17</li>
 						</ul>
 					</aside>
 				</section>
@@ -202,25 +182,24 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="steps" class="tsd-anchor"></a>
-					<h3>steps</h3>
+					<a name="pitches" class="tsd-anchor"></a>
+					<h3>pitches</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> steps<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> pitches<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L67">Tuning.ts:67</a></li>
+									<li>Defined in ToneRow.ts:72</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>STEPS OF A TUNING</p>
+									<p>Get the pitches of the tone row.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>count of tones in the tuning</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -228,123 +207,167 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="difference" class="tsd-anchor"></a>
-					<h3>difference</h3>
+					<a name="invert" class="tsd-anchor"></a>
+					<h3>invert</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">difference<span class="tsd-signature-symbol">(</span>reference<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">invert<span class="tsd-signature-symbol">(</span>axis<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L93">Tuning.ts:93</a></li>
+									<li>Defined in ToneRow.ts:31</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>TUNING DIFFERENCE
-									Compute the difference in cents between this tuning and another</p>
+									<p>Invert a row around an axis tone.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>reference: <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h5>
+									<h5>axis: <a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></h4>
-							<p>array of interval differences in cents</p>
+							<h4 class="tsd-returns-title">Returns <a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="tune" class="tsd-anchor"></a>
-					<h3>tune</h3>
+					<a name="monotonize" class="tsd-anchor"></a>
+					<h3>monotonize</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">tune<span class="tsd-signature-symbol">(</span>tone<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></li>
+						<li class="tsd-signature tsd-kind-icon">monotonize<span class="tsd-signature-symbol">(</span>descending<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L77">Tuning.ts:77</a></li>
+									<li>Defined in ToneRow.ts:55</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>TUNE A TONE</p>
+									<p>Monotonize a row, ensuring it is stricly ascending or descending, by raising or dropping pitch octaves.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>tone: <a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> descending: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h4>
-							<p>frequency ratio of the tone with respect to root tone</p>
+							<h4 class="tsd-returns-title">Returns <a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="reverse" class="tsd-anchor"></a>
+					<h3>reverse</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">reverse<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in ToneRow.ts:40</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reverse a row.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="rotate" class="tsd-anchor"></a>
+					<h3>rotate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">rotate<span class="tsd-signature-symbol">(</span>cycles<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in ToneRow.ts:47</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rotate a row by cycling a number of times.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>cycles: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="transpose" class="tsd-anchor"></a>
+					<h3>transpose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">transpose<span class="tsd-signature-symbol">(</span>axis<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in ToneRow.ts:22</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transpose a row to an axis tone.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>axis: <a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="fromintervals" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Intervals</h3>
+					<a name="frompitches" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Pitches</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Intervals<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, intervals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></li>
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Pitches<span class="tsd-signature-symbol">(</span>tuning<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a>, pitches<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L51">Tuning.ts:51</a></li>
+									<li>Defined in ToneRow.ts:79</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create a tuning from ratios or cents.</p>
+									<p>Create a tone row from given pitches.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>label: <span class="tsd-signature-type">string</span></h5>
+									<h5>tuning: <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h5>
 								</li>
 								<li>
-									<h5>intervals: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>pitches: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h4>
-							<p>tuning object</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="intervalsedo" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> intervals<wbr>Edo</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">intervals<wbr>Edo<span class="tsd-signature-symbol">(</span>divisions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/c1d24bc/src/Tuning.ts#L104">Tuning.ts:104</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Generate a tuning intervals array based on equal divisions of the octave.
-										The intervals are calculated in cents, because they will be converted to ratios
-									inside the Tuning constructor.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>divisions: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_tonerow_.tonerow.html" class="tsd-signature-type">ToneRow</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -365,10 +388,10 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_interval_.html">"<wbr>Interval"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_tonerow_.html">"<wbr>Tone<wbr>Row"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_tuning_.html">"<wbr>Tuning"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -381,48 +404,42 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_tuning_.tuning.html" class="tsd-kind-icon">Tuning</a>
+						<a href="_tonerow_.tonerow.html" class="tsd-kind-icon">Tone<wbr>Row</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_tonerow_.tonerow.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#intervals" class="tsd-kind-icon">intervals</a>
+								<a href="_tonerow_.tonerow.html#prime" class="tsd-kind-icon">prime</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#label" class="tsd-kind-icon">label</a>
+								<a href="_tonerow_.tonerow.html#tuning" class="tsd-kind-icon">tuning</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#steps" class="tsd-kind-icon">steps</a>
+								<a href="_tonerow_.tonerow.html#pitches" class="tsd-kind-icon">pitches</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#difference" class="tsd-kind-icon">difference</a>
+								<a href="_tonerow_.tonerow.html#invert" class="tsd-kind-icon">invert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#tune" class="tsd-kind-icon">tune</a>
+								<a href="_tonerow_.tonerow.html#monotonize" class="tsd-kind-icon">monotonize</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_tonerow_.tonerow.html#reverse" class="tsd-kind-icon">reverse</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_tonerow_.tonerow.html#rotate" class="tsd-kind-icon">rotate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_tonerow_.tonerow.html#transpose" class="tsd-kind-icon">transpose</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_tuning_.tuning.html#fromintervals" class="tsd-kind-icon">from<wbr>Intervals</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_tuning_.tuning.html#intervalsedo" class="tsd-kind-icon">intervals<wbr>Edo</a>
+								<a href="_tonerow_.tonerow.html#frompitches" class="tsd-kind-icon">from<wbr>Pitches</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_tuning_.tuningnomenclature.html" class="tsd-kind-icon">Tuning<wbr>Nomenclature</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_tuning_.tuningtone.html" class="tsd-kind-icon">Tuning<wbr>Tone</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_tuning_.tuningaccidentalmap.html" class="tsd-kind-icon">Tuning<wbr>Accidental<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_tuning_.tuningnotemap.html" class="tsd-kind-icon">Tuning<wbr>Note<wbr>Map</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

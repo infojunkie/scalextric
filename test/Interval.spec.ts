@@ -1,6 +1,7 @@
-import * as fs from 'fs';
 import {expect} from 'chai';
 import './setup';
+
+import * as fs from 'fs';
 import {Interval} from '../src/Interval';
 
 describe('Interval', () => {

@@ -1,6 +1,7 @@
-import * as fs from 'fs';
 import {expect} from 'chai';
 import './setup';
+
+import * as fs from 'fs';
 import {Tuning, TuningNomenclature} from '../src/Tuning';
 import {tuningFromScala} from '../src/scala';
 
@@ -29,7 +30,7 @@ describe('Tuning', () => {
   const pyth12 = tuningFromScala(fs.readFileSync(`test/pyth_12.scl`, 'utf8'));
 
   it('parses notes in a tuning', () => {
-    expect(['C0', 'D0', 'Ebs0', 'F0', 'G0'].map(note => edo24.parse(note).tone)).to.eql([0, 4, 7, 10, 14]);
+    expect(['C0', 'D0', 'Ebs0', 'F0', 'G0'].map(note => edo24.parse(note).pitch)).to.eql([0, 4, 7, 10, 14]);
   });
 
   it('computes tuning differences', () => {

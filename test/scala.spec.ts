@@ -1,6 +1,7 @@
-import * as fs from 'fs';
 import {expect} from 'chai';
 import './setup';
+
+import * as fs from 'fs';
 import {tuningFromScala} from '../src/scala';
 import {Tuning} from '../src/Tuning';
 

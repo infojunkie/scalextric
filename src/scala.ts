@@ -7,11 +7,10 @@ import {Tuning, TuningTone} from './Tuning';
  * @param reference: reference tone
  * @returns tuning object
  */
-export function tuningFromScala(scala: string, reference: TuningTone = TuningTone.IDENTITY): Tuning {
+export function tuningFromScala(scala: string): Tuning {
   const scale = ScalaScale.parse(scala);
   return new Tuning(
     scale.description,
-    scale.intervals,
-    reference
+    scale.intervals
   );
 }

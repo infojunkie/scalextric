@@ -2,37 +2,15 @@ import {expect} from 'chai';
 import './setup';
 
 import * as fs from 'fs';
-import {Tuning, TuningNomenclature} from '../src/Tuning';
+import {Tuning} from '../src/Tuning';
 import {tuningFromScala} from '../src/scala';
 
 describe('Tuning', () => {
-  const edo12 = new TuningNomenclature(
-    new Tuning('12-tET', Tuning.intervalsEdo(12)),
-    {
-      'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11
-    },
-    {
-      'n': 0, '#': 1, 'b': -1, '##': 2, 'bb': -3
-    }
-  );
-  const edo24 = new TuningNomenclature(
-    new Tuning('24-tET', Tuning.intervalsEdo(24)),
-    {
-      'C': 0, 'D': 4, 'E': 8, 'F': 10, 'G': 14, 'A': 18, 'B': 22
-    },
-    {
-      'n': 0, '#': 2, 'b': -2, '##': 4, 'bb': -4,
-      '+': 1, '++': 3, 'bs': -1, 'bss': -3
-    }
-  );
+  const edo12 = new Tuning('12-tET', Tuning.intervalsEdo(12));
   const pyth12 = tuningFromScala(fs.readFileSync(`test/pyth_12.scl`, 'utf8'));
 
-  it('parses notes in a tuning', () => {
-    expect(['C0', 'D0', 'Ebs0', 'F0', 'G0'].map(note => edo24.parse(note).pitch)).to.eql([0, 4, 7, 10, 14]);
-  });
-
   it('computes tuning differences', () => {
-    expect(pyth12.difference(edo12.tuning).map(i => i.cents)).to.be.clsTo([
+    expect(pyth12.difference(edo12).map(i => i.cents)).to.be.clsTo([
       0,
       -13.685,
       -3.91,
@@ -48,4 +26,9 @@ describe('Tuning', () => {
       0
     ], 0.00005);
   });
+
+  it('detect transposable tunings', () => {
+    expect(edo12.transposable).to.be.true;
+    expect(pyth12.transposable).to.be.false;
+  })
 });

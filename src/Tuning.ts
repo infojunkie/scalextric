@@ -23,13 +23,6 @@ import Fraction from 'fraction.js';
  * - its index ∈ [0, N-1]
  * - its octave ∈ ℤ
  * such that t = index(t) + N * octave(t)
- *
- * Tones can be named: these are the "note names" such as C, D, E, etc.
- * Also, tone increments can be named: these are the accidentals such as ♯, ♭, ♮, etc.
- *
- * We will represent note names in Scientific Pitch Notation
- * https://en.wikipedia.org/wiki/Scientific_pitch_notation
- * extended to recognize different accidental symbols
  */
 export class Tuning {
   /**
@@ -56,6 +49,23 @@ export class Tuning {
       else {
         return Interval.fromCents(interval);
       }
+    }));
+  }
+
+  /**
+   * IS A TUNING TRANSPOSABLE?
+   */
+  private _transposable: boolean;
+  get transposable(): boolean {
+    if (this._transposable !== undefined) return this._transposable;
+
+    // A tuning is fully transposable if all of its interval differences are equal.
+    // We will consider equality to be within the range of the "just noticeable" interval.
+    const first: Interval = this.intervals[1].difference(this.intervals[0]);
+    return (this._transposable = this.intervals.slice(1).every((v, i) => {
+      const next: Interval = v.difference(this.intervals[i]);
+      const diff: Interval = next.ratio.compare(first.ratio) > 0 ? next.difference(first) : first.difference(next);
+      return diff.ratio.compare(Interval.JND.ratio) < 0;
     }));
   }
 
@@ -92,7 +102,7 @@ export class Tuning {
    */
   difference(reference: Tuning): Interval[] {
     return this.intervals.map((interval, index) =>
-      reference.intervals[index].diff(interval)
+      reference.intervals[index].difference(interval)
     );
   }
 
@@ -105,133 +115,6 @@ export class Tuning {
     return Array.from(Array(divisions + 1)).map((_, i) => {
       return Interval.fromCents(1200 / divisions * i);
     });
-  }
-}
-
-/**
- * Map of note names to tone indexes.
- * ```
- * {
- *   'C': 0,
- *   'D': 2,
- *   'E': 4,
- *   'F': 5,
- *   'G': 7,
- *   'A': 9,
- *   'B': 11,
- * }
- * ```
- */
-export interface TuningNoteMap {
-  [note: string]: number;
-}
-
-/**
- * Map of accidentals to tone increments.
- * ```
- * {
- *   '#': +1,
- *   'b': -1,
- *   'n':  0,
- * }
- * ```
- */
-export interface TuningAccidentalMap {
-  [accidental: string]: number;
-}
-
-/**
- * Tuning extension to support note naming and parsing.
- */
-export class TuningNomenclature {
-  regex: RegExp;
-  regexNoAccidentals: RegExp;
-  /**
-   * @param tuning: the tuning
-   * @param notes: map of note names to tone indexes
-   * @param accidentals: map of accidentals to tone increments
-   */
-  constructor(
-    public tuning: Tuning,
-    public notes: TuningNoteMap,
-    public accidentals: TuningAccidentalMap
-  ) {
-    // Precalculated values
-    // `regex` is the regular expression that is dynamically built to
-    // recognize notes in scientific pitch notation, given the nomenclature supplied by the caller.
-    this.regex = new RegExp(
-      '^(' + Object.keys(this.notes).map(Helpers.escapeRegExp).join('|') + ')' +
-      '(' + Object.keys(this.accidentals).map(Helpers.escapeRegExp).sort((a,b) => b.length - a.length).join('|') + ')?' +
-      '(-?\\d)$',
-      'i'
-    );
-
-    // `regexNoAccidentals` is a regex for note names only, to be used when an accidental is not found during parsing.
-    this.regexNoAccidentals = new RegExp(
-      '^(' + Object.keys(this.notes).map(Helpers.escapeRegExp).join('|') + ')' +
-      '\\D*' +
-      '(-?\\d)$',
-      'i'
-    );
-  }
-
-  /**
-   * PARSE A NOTE
-   *
-   * @param note: target note in scientific pitch notation
-   * @returns tone generator
-   */
-  parse(note: string): TuningTone {
-    const match = this.regex.exec(note);
-    if (match) {
-      return new TuningTone(
-        this.tuning,
-        this.notes[ match[1] ] + (match[2] ? this.accidentals[ match[2] ] : 0),
-        parseInt(match[3], 10)
-      );
-    }
-    else {
-      console.error(`Could not parse note ${note}. Trying without accidentals...`);
-      const match2 = this.regexNoAccidentals.exec(note);
-      if (match2) {
-        return new TuningTone(
-          this.tuning,
-          this.notes[ match2[1] ],
-          parseInt(match2[2], 10)
-        );
-      }
-    }
-  }
-
-  /**
-   * NAME A TONE
-   *
-   * @param tone: tone to be named
-   * @returns array of strings representing the enharmonic namings of the tone
-   */
-  name(tone: TuningTone): string[] {
-    const names = Object.keys(this.notes).reduce((names, note) => {
-      const delta = tone.pitchClass - this.notes[note];
-      if (delta === 0) {
-        // Note: we ignore the 'natural' accidental (delta === 0)
-        names.push({note, accidental: null, octave: tone.octave});
-      }
-      else {
-        const acc = Object.keys(this.accidentals).find((acc) => {
-          return (delta === this.accidentals[acc]);
-        });
-        if (acc !== undefined) {
-          names.push({note, accidental: acc, octave: tone.octave});
-        }
-      }
-      return names;
-    }, []);
-
-    if (!names.length) {
-      console.error(`Could not name tone ${tone}.`);
-      return null;
-    }
-    return names;
   }
 }
 

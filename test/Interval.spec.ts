@@ -11,6 +11,6 @@ describe('Interval', () => {
   });
 
   it('computes interval difference', () => {
-    expect(Interval.fromCents(100).diff(Interval.fromCents(200)).cents).to.be.closeTo(-100, 0.00005);
+    expect(Interval.fromCents(100).difference(Interval.fromCents(200)).cents).to.be.closeTo(-100, 0.00005);
   });
 });

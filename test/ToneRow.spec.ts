@@ -2,31 +2,21 @@ import {expect} from 'chai';
 import './setup';
 
 import {ToneRow} from '../src/ToneRow';
-import {Tuning, TuningNomenclature, TuningTone} from '../src/Tuning';
+import {Tuning, TuningTone} from '../src/Tuning';
 
 describe('ToneRow', () => {
-  const edo24 = new TuningNomenclature(
-    new Tuning('24-tET', Tuning.intervalsEdo(24)),
-    {
-      'C': 0, 'D': 4, 'E': 8, 'F': 10, 'G': 14, 'A': 18, 'B': 22
-    },
-    {
-      'n': 0, '#': 2, 'b': -2, '##': 4, 'bb': -4,
-      '+': 1, '++': 3, 'bs': -1, 'bss': -3
-    }
-  );
-
-  const row = ToneRow.fromPitches(edo24.tuning, [0, 8, 14, 22]);
+  const edo24 = new Tuning('24-tET', Tuning.intervalsEdo(24));
+  const row = ToneRow.fromPitches(edo24, [0, 8, 14, 22]);
 
   it('transposes', () => {
     expect(
-      row.transpose(TuningTone.fromPitch(edo24.tuning, 4)).pitches
+      row.transpose(TuningTone.fromPitch(edo24, 4)).pitches
     ).to.eql([4, 12, 18, 26]);
   });
 
   it('inverts', () => {
     expect(
-      row.invert(TuningTone.fromPitch(edo24.tuning, 12)).pitches
+      row.invert(TuningTone.fromPitch(edo24, 12)).pitches
     ).to.eql([12, 4, -2, -10]);
   });
 

@@ -51,6 +51,8 @@ export class ToneRow {
 
   /**
    * Monotonize a row, ensuring it is stricly ascending or descending, by raising or dropping pitch octaves.
+   *
+   * rotate.monotonize => chord inversion
    */
   monotonize(descending: boolean = false): ToneRow {
     return new ToneRow(this.tuning, this.prime.reduce((current, next) => {

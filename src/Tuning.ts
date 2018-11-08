@@ -20,9 +20,9 @@ import Fraction from 'fraction.js';
  * Tones can extend beyond the octave
  * e.g. tone N+1 is equivalent to tone 1, but one octave higher.
  * In addition to representing a tone as above, we can represent it by its "generator":
- * - its index ∈ [0, N-1]
- * - its octave ∈ ℤ
- * such that t = index(t) + N * octave(t)
+ * - its pitch class pc ∈ [0, N-1]
+ * - its octave o ∈ ℤ
+ * such that t = pc(t) + N * o(t)
  */
 export class Tuning {
   /**
@@ -54,13 +54,14 @@ export class Tuning {
 
   /**
    * IS A TUNING TRANSPOSABLE?
+   *
+   * A tuning is fully transposable if all of its interval differences are equal.
+   * We will consider equality to be within the range of the "just noticeable" interval.
    */
   private _transposable: boolean;
   get transposable(): boolean {
     if (this._transposable !== undefined) return this._transposable;
 
-    // A tuning is fully transposable if all of its interval differences are equal.
-    // We will consider equality to be within the range of the "just noticeable" interval.
     const first: Interval = this.intervals[1].difference(this.intervals[0]);
     return (this._transposable = this.intervals.slice(1).every((v, i) => {
       const next: Interval = v.difference(this.intervals[i]);

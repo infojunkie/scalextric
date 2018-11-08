@@ -2,7 +2,7 @@ import {expect} from 'chai';
 import './setup';
 
 import * as fs from 'fs';
-import {tuningFromScala} from '../src/scala';
+import {tuningFromScala} from '../src/utils/scala';
 import {Tuning} from '../src/Tuning';
 
 describe('Scala', () => {

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Interval | scalextric</title>
+	<title>TuningMap | scalextric</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_interval_.html">&quot;Interval&quot;</a>
+					<a href="../modules/_musicsystem_.html">&quot;MusicSystem&quot;</a>
 				</li>
 				<li>
-					<a href="_interval_.interval.html">Interval</a>
+					<a href="_musicsystem_.tuningmap.html">TuningMap</a>
 				</li>
 			</ul>
-			<h1>Class Interval</h1>
+			<h1>Class TuningMap</h1>
 		</div>
 	</div>
 </header>
@@ -72,25 +72,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>INTERVALS</p>
+						<p>Tuning map.</p>
 					</div>
-					<p>The interval is the basic building block of music.
-					It is the difference in pitch between two sounds.</p>
-					<p>It can be represented as:</p>
-					<ul>
-						<li>a frequency ratio</li>
-						<li>a number of cents (1/100 of an equally tempered semitone)</li>
-						<li>a number of savarts (<a href="https://en.wikipedia.org/wiki/Savart">https://en.wikipedia.org/wiki/Savart</a>)</li>
-						<li>...and more</li>
-					</ul>
-					<p>It can also be named, depending on the nomenclature being used.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Interval</span>
+						<span class="target">TuningMap</span>
 					</li>
 				</ul>
 			</section>
@@ -101,29 +91,24 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_interval_.interval.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_interval_.interval.html#ratio" class="tsd-kind-icon">ratio</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_interval_.interval.html#jnd" class="tsd-kind-icon">JND</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_interval_.interval.html#cents" class="tsd-kind-icon">cents</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_interval_.interval.html#savarts" class="tsd-kind-icon">savarts</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#accidentals" class="tsd-kind-icon">accidentals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#notes" class="tsd-kind-icon">notes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#regex" class="tsd-kind-icon">regex</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#system" class="tsd-kind-icon">system</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#tuning" class="tsd-kind-icon">tuning</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_interval_.interval.html#difference" class="tsd-kind-icon">difference</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_interval_.interval.html#fromcents" class="tsd-kind-icon">from<wbr>Cents</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_interval_.interval.html#fromsavarts" class="tsd-kind-icon">from<wbr>Savarts</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_musicsystem_.tuningmap.html#parse" class="tsd-kind-icon">parse</a></li>
 							</ul>
 						</section>
 					</div>
@@ -135,22 +120,33 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Interval<span class="tsd-signature-symbol">(</span>ratio<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Fraction</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tuning<wbr>Map<span class="tsd-signature-symbol">(</span>system<span class="tsd-signature-symbol">: </span><a href="_musicsystem_.musicsystem.html" class="tsd-signature-type">MusicSystem</a>, tuning<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a>, notes<span class="tsd-signature-symbol">: </span><a href="../interfaces/_musicsystem_.tuningnotemap.html" class="tsd-signature-type">TuningNoteMap</a>, accidentals<span class="tsd-signature-symbol">: </span><a href="../interfaces/_musicsystem_.tuningaccidentalmap.html" class="tsd-signature-type">TuningAccidentalMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_musicsystem_.tuningmap.html" class="tsd-signature-type">TuningMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L18">Interval.ts:18</a></li>
+									<li>Defined in MusicSystem.ts:49</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ratio: <span class="tsd-signature-type">Fraction</span></h5>
+									<h5>system: <a href="_musicsystem_.musicsystem.html" class="tsd-signature-type">MusicSystem</a></h5>
+								</li>
+								<li>
+									<h5>tuning: <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h5>
+								</li>
+								<li>
+									<h5>notes: <a href="../interfaces/_musicsystem_.tuningnotemap.html" class="tsd-signature-type">TuningNoteMap</a></h5>
+								</li>
+								<li>
+									<h5>accidentals: <a href="../interfaces/_musicsystem_.tuningaccidentalmap.html" class="tsd-signature-type">TuningAccidentalMap</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_musicsystem_.tuningmap.html" class="tsd-signature-type">TuningMap</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -158,131 +154,113 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="ratio" class="tsd-anchor"></a>
-					<h3>ratio</h3>
-					<div class="tsd-signature tsd-kind-icon">ratio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Fraction</span></div>
+					<a name="accidentals" class="tsd-anchor"></a>
+					<h3>accidentals</h3>
+					<div class="tsd-signature tsd-kind-icon">accidentals<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_musicsystem_.tuningaccidentalmap.html" class="tsd-signature-type">TuningAccidentalMap</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L19">Interval.ts:19</a></li>
+							<li>Defined in MusicSystem.ts:61</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="jnd" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> JND</h3>
-					<div class="tsd-signature tsd-kind-icon">JND<span class="tsd-signature-symbol">:</span> <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol"> =&nbsp;Interval.fromCents(5)</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="notes" class="tsd-anchor"></a>
+					<h3>notes</h3>
+					<div class="tsd-signature tsd-kind-icon">notes<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_musicsystem_.tuningnotemap.html" class="tsd-signature-type">TuningNoteMap</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L25">Interval.ts:25</a></li>
+							<li>Defined in MusicSystem.ts:60</li>
 						</ul>
 					</aside>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="cents" class="tsd-anchor"></a>
-					<h3>cents</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cents<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L20">Interval.ts:20</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="regex" class="tsd-anchor"></a>
+					<h3>regex</h3>
+					<div class="tsd-signature tsd-kind-icon">regex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in MusicSystem.ts:49</li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="savarts" class="tsd-anchor"></a>
-					<h3>savarts</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> savarts<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L21">Interval.ts:21</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="system" class="tsd-anchor"></a>
+					<h3>system</h3>
+					<div class="tsd-signature tsd-kind-icon">system<span class="tsd-signature-symbol">:</span> <a href="_musicsystem_.musicsystem.html" class="tsd-signature-type">MusicSystem</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in MusicSystem.ts:58</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tuning" class="tsd-anchor"></a>
+					<h3>tuning</h3>
+					<div class="tsd-signature tsd-kind-icon">tuning<span class="tsd-signature-symbol">:</span> <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in MusicSystem.ts:59</li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="difference" class="tsd-anchor"></a>
-					<h3>difference</h3>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">difference<span class="tsd-signature-symbol">(</span>reference<span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></li>
+						<li class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">(</span>tone<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L22">Interval.ts:22</a></li>
+									<li>Defined in MusicSystem.ts:100</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>NAME A TONE</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>reference: <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h5>
+									<h5>tone: <a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>array of strings representing the enharmonic namings of the tone</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="fromcents" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Cents</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Cents<span class="tsd-signature-symbol">(</span>cents<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parse" class="tsd-anchor"></a>
+					<h3>parse</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>note<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L23">Interval.ts:23</a></li>
+									<li>Defined in MusicSystem.ts:80</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>PARSE A NOTE</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cents: <span class="tsd-signature-type">number</span></h5>
+									<h5>note: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="fromsavarts" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Savarts</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Savarts<span class="tsd-signature-symbol">(</span>savarts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Interval.ts#L24">Interval.ts:24</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>savarts: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a></h4>
+							<p>tone generator</p>
 						</li>
 					</ul>
 				</section>
@@ -300,10 +278,10 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_helpers_.html">"<wbr>Helpers"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_interval_.html">"<wbr>Interval"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_musicsystem_.html">"<wbr>Music<wbr>System"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -316,39 +294,51 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_musicsystem_.musicsystem.html" class="tsd-kind-icon">Music<wbr>System</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_interval_.interval.html" class="tsd-kind-icon">Interval</a>
+						<a href="_musicsystem_.tuningmap.html" class="tsd-kind-icon">Tuning<wbr>Map</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_interval_.interval.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_musicsystem_.tuningmap.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_interval_.interval.html#ratio" class="tsd-kind-icon">ratio</a>
+								<a href="_musicsystem_.tuningmap.html#accidentals" class="tsd-kind-icon">accidentals</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="_interval_.interval.html#jnd" class="tsd-kind-icon">JND</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_musicsystem_.tuningmap.html#notes" class="tsd-kind-icon">notes</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="_interval_.interval.html#cents" class="tsd-kind-icon">cents</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_musicsystem_.tuningmap.html#regex" class="tsd-kind-icon">regex</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="_interval_.interval.html#savarts" class="tsd-kind-icon">savarts</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_musicsystem_.tuningmap.html#system" class="tsd-kind-icon">system</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_musicsystem_.tuningmap.html#tuning" class="tsd-kind-icon">tuning</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_interval_.interval.html#difference" class="tsd-kind-icon">difference</a>
+								<a href="_musicsystem_.tuningmap.html#name" class="tsd-kind-icon">name</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_interval_.interval.html#fromcents" class="tsd-kind-icon">from<wbr>Cents</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_interval_.interval.html#fromsavarts" class="tsd-kind-icon">from<wbr>Savarts</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_musicsystem_.tuningmap.html#parse" class="tsd-kind-icon">parse</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_musicsystem_.nomenclaturemap.html" class="tsd-kind-icon">Nomenclature<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_musicsystem_.tuningaccidentalmap.html" class="tsd-kind-icon">Tuning<wbr>Accidental<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_musicsystem_.tuningnotemap.html" class="tsd-kind-icon">Tuning<wbr>Note<wbr>Map</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

@@ -1,5 +1,5 @@
 import * as ScalaScale from 'aural-scala';
-import {Tuning, TuningTone} from './Tuning';
+import {Tuning, TuningTone} from '../Tuning';
 
 /**
  * Convert a Scala scale definition to a Tuning.

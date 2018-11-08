@@ -29,10 +29,17 @@ export class Tuning {
    * CONSTRUCTOR
    *
    * @param label: tuning label
-   * @param intervals: tuning intervals, including unison
-   * The last element of this array will be considered to be the repeater (e.g. 2/1 the octave).
+   * @param intervals: tuning intervals
+   * The intervals will be guaranteed to be sorted.
+   * The first interval will be guaranteed to be the unison.
+   * The last interval will be considered to be the repeater (e.g. 2/1 the octave).
    */
-  constructor(public label: string, public intervals: Interval[]) {}
+  constructor(public label: string, public intervals: Interval[]) {
+    // TODO Sort efficiently (i.e. O(n) for already sorted)
+    if (this.intervals[0].ratio.valueOf() != 1) {
+      this.intervals = [new Interval(new Fraction(1)), ...this.intervals];
+    }
+  }
 
   /**
    * Create a tuning from ratios or cents.
@@ -89,8 +96,9 @@ export class Tuning {
     // Get the ratio difference between the target tone and the root tone, raised to the difference in octave.
     // The octave is always the last tone as per the definition of the `intervals` array.
     return new Interval(
-      this.intervals[tone.pitchClass].ratio
-      .mul(this.intervals[this.steps].ratio.pow(tone.octave))
+      this.intervals[tone.pitchClass].ratio.mul(
+        this.intervals[this.steps].ratio.pow(tone.octave)
+      )
     );
   }
 
@@ -98,17 +106,59 @@ export class Tuning {
    * TUNING DIFFERENCE
    * Compute the difference in cents between this tuning and another
    *
-   * @param reference: tuning to compare against - must contain same amount of steps
-   * @returns array of interval differences in cents
+   * @param reference: tuning to compare against - must contain at least as many steps
+   * @returns array of interval differences
    */
   difference(reference: Tuning): Interval[] {
+    if (reference.steps < this.steps) throw new Error('Tuning.difference: reference has less steps than this');
+
     return this.intervals.map((interval, index) =>
       reference.intervals[index].difference(interval)
     );
   }
 
   /**
-   * Generate a tuning intervals array based on equal divisions of the octave.
+   * NEAREST TONE
+   * Find the nearest tone given an interval and return difference
+   *
+   * @param interval: target interval
+   * @returns nearest tone, interval and difference from the target
+   */
+  nearest(interval: Interval): {tone: TuningTone, interval: Interval, difference: Interval} {
+    // Bring the interval to the base octave.
+    const octave = Math.floor(Math.log2(interval.ratio.valueOf()));
+    const base = new Interval(interval.ratio.div(Math.pow(2, octave)));
+
+    // Search through the intervals to locate the nearest.
+    const n = Helpers.binarySearch(this.intervals, base, (a, b) => a.ratio.compare(b.ratio));
+    if (n >= 0) {
+      // Exact match: return the pitch at the right octave.
+      return {
+        tone: new TuningTone(this, n, octave),
+        interval,
+        difference: new Interval(new Fraction(1))
+      }
+    } else {
+      // Partial match: find real nearest between insertion point and previous.
+      // We're guaranteed to find a previous value because the first value is always unison.
+      const m = -n-1;
+      const upper = this.intervals[m].difference(interval);
+      const lower = this.intervals[m-1].difference(interval);
+      const near = upper.ratio.compare(lower.ratio) < 0 ? m : m-1;
+      const nearTone = new TuningTone(this, near, octave);
+      const nearInterval = this.tune(nearTone);
+      return {
+        tone: nearTone,
+        interval: nearInterval,
+        difference: nearInterval.difference(interval)
+      }
+    }
+  }
+
+  /**
+   * EQUAL DIVISIONS OF THE OCTAVE.
+   *
+   * Generate an intervals array based on equal divisions of the octave.
    * The intervals are calculated in cents, because they will be converted to ratios
    * inside the Tuning constructor.
    */
@@ -130,6 +180,6 @@ export class TuningTone {
   }
 
   static fromPitch(tuning: Tuning, pitch: number): TuningTone {
-    return new TuningTone(tuning, pitch % tuning.steps, Math.trunc(pitch / tuning.steps));
+    return new TuningTone(tuning, Helpers.mod(pitch, tuning.steps), Math.floor(pitch / tuning.steps));
   }
 }

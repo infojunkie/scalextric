@@ -17,9 +17,9 @@ import Fraction from 'fraction.js';
  */
 export class Interval {
   constructor(public ratio: Fraction) {}
-  get cents(): number { return 1200 * Math.log2(this.ratio.valueOf()); }
-  get savarts(): number { return 1000 * Math.log10(this.ratio.valueOf()); }
-  difference(reference: Interval): Interval { return new Interval(this.ratio.div(reference.ratio)); }
+  get cents() { return 1200 * Math.log2(this.ratio.valueOf()); }
+  get savarts() { return 1000 * Math.log10(this.ratio.valueOf()); }
+  difference(reference: Interval) { return new Interval(this.ratio.div(reference.ratio)); }
   static fromCents(cents: number) { return new Interval(new Fraction(Math.pow(2, cents / 1200))); }
   static fromSavarts(savarts: number) { return new Interval(new Fraction(Math.pow(10, savarts / 1000))); }
   static JND = Interval.fromCents(5);

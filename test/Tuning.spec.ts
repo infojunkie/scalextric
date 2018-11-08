@@ -10,7 +10,6 @@ describe('Tuning', () => {
   const edo12 = new Tuning('12-tET', Tuning.intervalsEdo(12));
   const pyth12 = tuningFromScala(fs.readFileSync(`test/pyth_12.scl`, 'utf8'));
   const rast = Tuning.fromIntervals('Rast on C', [
-    '1/1',
     '55/49',
     '27/22',
     '147/110',
@@ -21,6 +20,21 @@ describe('Tuning', () => {
     '441/220',
     '2/1'
   ]);
+
+  it('validates input intervals', () => {
+    expect(rast.intervals[0].ratio.valueOf()).to.equal(1);
+  });
+
+  it('tunes', () => {
+    expect(rast.tune(new TuningTone(rast, 1, 1)).ratio.valueOf()).to.be.closeTo(2*55/49, tolerance);
+  });
+
+  it('detect transposable tunings', () => {
+    expect(edo12.transposable).to.be.true;
+    expect(pyth12.transposable).to.be.false;
+    // exercize the memoization
+    expect(pyth12.transposable).to.be.false;
+  });
 
   it('computes tuning differences', () => {
     expect(pyth12.difference(edo12).map(i => i.cents)).to.be.clsTo([
@@ -40,14 +54,25 @@ describe('Tuning', () => {
     ], tolerance);
   });
 
-  it('tunes', () => {
-    expect(rast.tune(new TuningTone(rast, 1, 1)).ratio.valueOf()).to.be.closeTo(2*55/49, tolerance);
-  });
+  it('finds the nearest tone', () => {
+    const nearestG0 = edo12.nearest(edo12.tune(TuningTone.fromPitch(edo12, 7)));
+    expect(nearestG0.tone.pitch).to.be.equal(7);
+    expect(nearestG0.interval.ratio.valueOf()).to.be.equal(edo12.intervals[7].ratio.valueOf());
+    expect(nearestG0.difference.cents).to.be.equal(0);
 
-  it('detect transposable tunings', () => {
-    expect(edo12.transposable).to.be.true;
-    expect(pyth12.transposable).to.be.false;
-    // exercize the memoization
-    expect(pyth12.transposable).to.be.false;
-  })
+    const nearestG1 = edo12.nearest(edo12.tune(TuningTone.fromPitch(edo12, 19)));
+    expect(nearestG1.tone.pitchClass).to.be.equal(7);
+    expect(nearestG1.tone.octave).to.be.equal(1);
+    expect(nearestG1.difference.cents).to.be.equal(0);
+
+    const nearestGm1 = edo12.nearest(edo12.tune(TuningTone.fromPitch(edo12, -5)));
+    expect(nearestGm1.tone.pitchClass).to.be.equal(7);
+    expect(nearestGm1.tone.octave).to.be.equal(-1);
+    expect(nearestGm1.difference.cents).to.be.equal(0);
+
+    const nearestGp0 = edo12.nearest(pyth12.tune(TuningTone.fromPitch(pyth12, 7)));
+    expect(nearestGp0.tone.pitch).to.be.equal(7);
+    expect(nearestGp0.interval.ratio.valueOf()).to.be.equal(edo12.intervals[7].ratio.valueOf());
+    expect(nearestGp0.difference.cents).to.be.closeTo(-1.955, tolerance);
+  });
 });

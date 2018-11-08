@@ -49,5 +49,4 @@ describe('ToneRow', () => {
       row.rotate(2).monotonize(true).pitches
     ).to.eql([14, -2, -24, -40]);
   });
-
 });

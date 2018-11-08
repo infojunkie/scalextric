@@ -1,3 +1,5 @@
+import Fraction from 'fraction.js';
+
 export namespace Helpers {
   /**
    * Escape a string to be used in regular expression.
@@ -30,5 +32,14 @@ export namespace Helpers {
       }
     }
     return primes;
+  }
+
+  /**
+   * Ensure a |fraction| < 1 or > 1.
+   */
+  export function flipFraction(f: Fraction, greaterThanOne: boolean = false): Fraction {
+    return greaterThanOne ?
+      (f.abs().compare(1) < 0 ? f.inverse() : f) :
+      (f.abs().compare(1) > 0 ? f.inverse() : f);
   }
 }

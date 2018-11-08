@@ -56,7 +56,7 @@ export class Tuning {
    * IS A TUNING TRANSPOSABLE?
    *
    * A tuning is fully transposable if all of its interval differences are equal.
-   * We will consider equality to be within the range of the "just noticeable" interval.
+   * We will consider equality to be within the range of the "just noticeable" interval (5 cents).
    */
   private _transposable: boolean;
   get transposable(): boolean {
@@ -65,7 +65,7 @@ export class Tuning {
     const first: Interval = this.intervals[1].difference(this.intervals[0]);
     return (this._transposable = this.intervals.slice(1).every((v, i) => {
       const next: Interval = v.difference(this.intervals[i]);
-      const diff: Interval = next.ratio.compare(first.ratio) > 0 ? next.difference(first) : first.difference(next);
+      const diff: Interval = new Interval(Helpers.flipFraction(next.difference(first).ratio, true));
       return diff.ratio.compare(Interval.JND.ratio) < 0;
     }));
   }

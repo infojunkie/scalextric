@@ -47,7 +47,7 @@ describe('Tuning', () => {
   it('detect transposable tunings', () => {
     expect(edo12.transposable).to.be.true;
     expect(pyth12.transposable).to.be.false;
-    // exerce the memoization
+    // exercize the memoization
     expect(pyth12.transposable).to.be.false;
   })
 });

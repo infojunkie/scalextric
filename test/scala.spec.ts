@@ -6,6 +6,8 @@ import {tuningFromScala} from '../src/utils/scala';
 import {Tuning} from '../src/Tuning';
 
 describe('Scala', () => {
+  const tolerance = 0.00005;
+
   it('parses Scala scales', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/pyth_12.scl`, 'utf8'));
     expect(tuning.steps).to.be.equal(12);
@@ -23,6 +25,6 @@ describe('Scala', () => {
       16/9,
       243/128,
       2/1
-    ], 0.00005);
+    ], tolerance);
   });
 });

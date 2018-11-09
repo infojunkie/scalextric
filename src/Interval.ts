@@ -22,5 +22,6 @@ export class Interval {
   difference(reference: Interval) { return new Interval(this.ratio.div(reference.ratio)); }
   static fromCents(cents: number) { return new Interval(new Fraction(Math.pow(2, cents / 1200))); }
   static fromSavarts(savarts: number) { return new Interval(new Fraction(Math.pow(10, savarts / 1000))); }
+  static compare(a: Interval, b: Interval) { return a.ratio.compare(b.ratio); }
   static JND = Interval.fromCents(5);
 }

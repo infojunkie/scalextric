@@ -35,7 +35,7 @@ export class Tuning {
    * The last interval will be considered to be the repeater (e.g. 2/1 the octave).
    */
   constructor(public label: string, public intervals: Interval[]) {
-    // TODO Sort efficiently (i.e. O(n) for already sorted)
+    this.intervals.sort(Interval.compare);
     if (this.intervals[0].ratio.valueOf() != 1) {
       this.intervals = [new Interval(new Fraction(1)), ...this.intervals];
     }
@@ -130,7 +130,7 @@ export class Tuning {
     const base = new Interval(interval.ratio.div(Math.pow(2, octave)));
 
     // Search through the intervals to locate the nearest.
-    const n = Helpers.binarySearch(this.intervals, base, (a, b) => a.ratio.compare(b.ratio));
+    const n = Helpers.binarySearch(this.intervals, base, Interval.compare);
     if (n >= 0) {
       // Exact match: return the pitch at the right octave.
       return {
@@ -141,10 +141,10 @@ export class Tuning {
     } else {
       // Partial match: find real nearest between insertion point and previous.
       // We're guaranteed to find a previous value because the first value is always unison.
-      const m = -n-1;
-      const upper = this.intervals[m].difference(interval);
-      const lower = this.intervals[m-1].difference(interval);
-      const near = upper.ratio.compare(lower.ratio) < 0 ? m : m-1;
+      const m = ~n;
+      const lower = Math.abs(this.intervals[m-1].difference(base).cents);
+      const upper = Math.abs(this.intervals[m].difference(base).cents);
+      const near = lower < upper ? m-1 : m;
       const nearTone = new TuningTone(this, near, octave);
       const nearInterval = this.tune(nearTone);
       return {

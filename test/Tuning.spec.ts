@@ -36,25 +36,6 @@ describe('Tuning', () => {
     expect(pyth12.transposable).to.be.false;
   });
 
-  it('computes tuning differences', () => {
-    expect(edo12.difference.bind(edo12, rast)).to.throw();
-    expect(pyth12.difference(edo12).map(i => i.cents)).to.be.clsTo([
-      0,
-      -13.685,
-      -3.91,
-      5.865,
-      -7.82,
-      1.955,
-      -11.73,
-      -1.955,
-      -15.64,
-      -5.865,
-      3.91,
-      -9.775,
-      0
-    ], tolerance);
-  });
-
   it('finds the nearest tone', () => {
     const nearestG0 = edo12.nearest(edo12.tune(TuningTone.fromPitch(edo12, 7)));
     expect(nearestG0.tone.pitch).to.be.equal(7);
@@ -85,5 +66,11 @@ describe('Tuning', () => {
     expect(nearestGp1.tone.pitchClass).to.be.equal(2);
     expect(nearestGp1.tone.octave).to.be.equal(1);
     expect(nearestGp1.difference.cents).to.be.closeTo(10, tolerance);
+
+    // Try a tuning whose octave is not 2.
+    const nearestGp2 = edo12.nearest(rast.tune(new TuningTone(rast, 1, 1)));
+    expect(nearestGp2.tone.pitchClass).to.be.equal(2);
+    expect(nearestGp2.tone.octave).to.be.equal(1);
+    expect(nearestGp2.difference.cents).to.be.closeTo(-3.91, tolerance);
   });
 });

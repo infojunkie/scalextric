@@ -87,6 +87,15 @@ export class Tuning {
   }
 
   /**
+   * OCTAVE OF A TUNING
+   *
+   * @returns the last interval in the tuning, which is considered to be the octave
+   */
+  get octave(): Interval {
+    return this.intervals[this.steps];
+  }
+
+  /**
    * TUNE A TONE
    *
    * @param tone: tone to be tuned
@@ -96,24 +105,7 @@ export class Tuning {
     // Get the ratio difference between the target tone and the root tone, raised to the difference in octave.
     // The octave is always the last tone as per the definition of the `intervals` array.
     return new Interval(
-      this.intervals[tone.pitchClass].ratio.mul(
-        this.intervals[this.steps].ratio.pow(tone.octave)
-      )
-    );
-  }
-
-  /**
-   * TUNING DIFFERENCE
-   * Compute the difference in cents between this tuning and another
-   *
-   * @param reference: tuning to compare against - must contain at least as many steps
-   * @returns array of interval differences
-   */
-  difference(reference: Tuning): Interval[] {
-    if (reference.steps < this.steps) throw new Error('Tuning.difference: reference has less steps than this');
-
-    return this.intervals.map((interval, index) =>
-      reference.intervals[index].difference(interval)
+      this.intervals[tone.pitchClass].ratio.mul(this.octave.ratio.pow(tone.octave))
     );
   }
 
@@ -126,8 +118,8 @@ export class Tuning {
    */
   nearest(interval: Interval): {tone: TuningTone, interval: Interval, difference: Interval} {
     // Bring the interval to the base octave.
-    const octave = Math.floor(Math.log2(interval.ratio.valueOf()));
-    const base = new Interval(interval.ratio.div(Math.pow(2, octave)));
+    const octave = Math.floor(Math.log(interval.ratio.valueOf()) / Math.log(this.octave.ratio.valueOf()));
+    const base = new Interval(interval.ratio.div(this.octave.ratio.pow(octave)));
 
     // Search through the intervals to locate the nearest.
     const n = Helpers.binarySearch(this.intervals, base, Interval.compare);
@@ -144,13 +136,13 @@ export class Tuning {
       const m = ~n;
       const lower = Math.abs(this.intervals[m-1].difference(base).cents);
       const upper = Math.abs(this.intervals[m].difference(base).cents);
-      const near = lower < upper ? m-1 : m;
-      const nearTone = new TuningTone(this, near, octave);
-      const nearInterval = this.tune(nearTone);
+      const nearest = lower < upper ? m-1 : m;
+      const nearestTone = new TuningTone(this, nearest, octave);
+      const nearestInterval = this.tune(nearestTone);
       return {
-        tone: nearTone,
-        interval: nearInterval,
-        difference: nearInterval.difference(interval)
+        tone: nearestTone,
+        interval: nearestInterval,
+        difference: nearestInterval.difference(interval)
       }
     }
   }

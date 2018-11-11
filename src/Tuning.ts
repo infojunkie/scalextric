@@ -29,12 +29,13 @@ export class Tuning {
    * CONSTRUCTOR
    *
    * @param label: tuning label
+   * @param description: description about the tuning
    * @param intervals: tuning intervals
    * The intervals will be guaranteed to be sorted.
    * The first interval will be guaranteed to be the unison.
    * The last interval will be considered to be the repeater (e.g. 2/1 the octave).
    */
-  constructor(public label: string, public intervals: Interval[]) {
+  constructor(public label: string, public description: string, public intervals: Interval[]) {
     this.intervals.sort(Interval.compare);
     if (this.intervals[0].ratio.valueOf() != 1) {
       this.intervals = [new Interval(new Fraction(1)), ...this.intervals];
@@ -48,8 +49,8 @@ export class Tuning {
    * @param intervals: an array of ratios expressed as strings, or cents expressed as numbers
    * @returns tuning object
    */
-  static fromIntervals(label: string, intervals: (number|string)[]) {
-    return new Tuning(label, intervals.map(interval => {
+  static fromIntervals(label: string, description: string, intervals: (number|string)[]) {
+    return new Tuning(label, description, intervals.map(interval => {
       if (typeof interval == 'string') {
         return new Interval(new Fraction(interval));
       }

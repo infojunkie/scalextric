@@ -6,5 +6,4 @@ import {Tuning} from '../src/Tuning';
 import {MusicSystem, TuningMap} from '../src/MusicSystem';
 
 describe('MusicSystem', () => {
-  const edo24 = new Tuning('24-tET', Tuning.intervalsEdo(24));
 });

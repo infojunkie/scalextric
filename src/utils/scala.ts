@@ -11,6 +11,7 @@ export function tuningFromScala(scala: string): Tuning {
   const scale = ScalaScale.parse(scala);
   return Tuning.fromIntervals(
     scale.description,
+    scale.comments.join('\r\n'),
     [0, ...scale.intervals]
   );
 }

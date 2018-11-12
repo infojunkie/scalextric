@@ -4,12 +4,16 @@ import './setup';
 import * as fs from 'fs';
 import {tuningFromScala} from '../src/utils/scala';
 import {Tuning} from '../src/Tuning';
+import {Annotation} from '../src/Annotation';
 
 describe('Scala', () => {
   const tolerance = 0.00005;
 
   it('parses Scala scales', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/pyth_12.scl`, 'utf8'));
+    expect(tuning.annotations).to.be.deep.equal([
+      new Annotation('label', '12-tone Pythagorean scale')
+    ]);
     expect(tuning.steps).to.be.equal(12);
     expect(tuning.intervals.map(i => i.ratio.valueOf())).to.be.clsTo([
       1,

@@ -5,7 +5,7 @@ import {ToneRow} from '../src/ToneRow';
 import {Tuning, TuningTone} from '../src/Tuning';
 
 describe('ToneRow', () => {
-  const edo24 = new Tuning('24-tET', '', Tuning.intervalsEdo(24));
+  const edo24 = new Tuning(Tuning.intervalsEdo(24));
   const row = ToneRow.fromPitches(edo24, [0, 8, 14, 22]);
 
   it('transposes', () => {

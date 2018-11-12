@@ -8,9 +8,9 @@ import {Interval} from '../src/Interval';
 
 describe('Tuning', () => {
   const tolerance = 0.00005;
-  const edo12 = new Tuning('12-tET', '', Tuning.intervalsEdo(12));
+  const edo12 = new Tuning(Tuning.intervalsEdo(12));
   const pyth12 = tuningFromScala(fs.readFileSync(`test/pyth_12.scl`, 'utf8'));
-  const rast = Tuning.fromIntervals('Arabic Rast with perde rast on C by Dr. Ozan Yarman', '', [
+  const rast = Tuning.fromIntervals([
     '55/49',
     '27/22',
     '147/110',
@@ -58,7 +58,7 @@ describe('Tuning', () => {
     expect(nearestGp0.difference.cents).to.be.closeTo(-1.955, tolerance);
 
     // Fudge a tuning to be closer to the upper interval, not the lower one.
-    const edo12_fudged = new Tuning('fudged 12-tEt', '', edo12.intervals.map((i,n) =>
+    const edo12_fudged = new Tuning(edo12.intervals.map((i,n) =>
       Interval.fromCents(i.cents + (n > 0 && n < 12 ? 90 : 0))
     ));
 

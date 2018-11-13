@@ -9,7 +9,7 @@ import {Interval} from '../src/Interval';
 describe('Tuning', () => {
   const tolerance = 0.00005;
   const edo12 = new Tuning(Tuning.intervalsEdo(12));
-  const pyth12 = tuningFromScala(fs.readFileSync(`test/pyth_12.scl`, 'utf8'));
+  const pyth12 = tuningFromScala(fs.readFileSync(`test/data/pyth_12.scl`, 'utf8'));
   const rast = Tuning.fromIntervals([
     '55/49',
     '27/22',
@@ -20,6 +20,7 @@ describe('Tuning', () => {
     '81/44',
     '441/220'
   ]);
+  const cents = Tuning.fromIntervals([0.0, 100.12, 200.34, 300.56]);
 
   it('validates input intervals', () => {
     expect(rast.intervals[0].ratio.valueOf()).to.equal(1);

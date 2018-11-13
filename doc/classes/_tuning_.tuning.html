@@ -116,13 +116,14 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_tuning_.tuning.html#_transposable" class="tsd-kind-icon">_transposable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_tuning_.tuning.html#annotations" class="tsd-kind-icon">annotations</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_tuning_.tuning.html#intervals" class="tsd-kind-icon">intervals</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_tuning_.tuning.html#label" class="tsd-kind-icon">label</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_tuning_.tuning.html#octave" class="tsd-kind-icon">octave</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_tuning_.tuning.html#steps" class="tsd-kind-icon">steps</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_tuning_.tuning.html#transposable" class="tsd-kind-icon">transposable</a></li>
 							</ul>
@@ -130,7 +131,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tuning_.tuning.html#difference" class="tsd-kind-icon">difference</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tuning_.tuning.html#nearest" class="tsd-kind-icon">nearest</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_tuning_.tuning.html#tune" class="tsd-kind-icon">tune</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_tuning_.tuning.html#fromintervals" class="tsd-kind-icon">from<wbr>Intervals</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_tuning_.tuning.html#intervalsedo" class="tsd-kind-icon">intervals<wbr>Edo</a></li>
@@ -145,13 +146,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Tuning<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, intervals<span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tuning<span class="tsd-signature-symbol">(</span>intervals<span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span>, annotations<span class="tsd-signature-symbol">?: </span><a href="_annotation_.annotation.html" class="tsd-signature-type">Annotation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L27">Tuning.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L28">Tuning.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -162,10 +163,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>label: <span class="tsd-signature-type">string</span></h5>
+									<h5>intervals: <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5>intervals: <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> annotations: <a href="_annotation_.annotation.html" class="tsd-signature-type">Annotation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h4>
@@ -181,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">_transposable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L61">Tuning.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L69">Tuning.ts:69</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,8 +190,18 @@
 							<p>IS A TUNING TRANSPOSABLE?</p>
 						</div>
 						<p>A tuning is fully transposable if all of its interval differences are equal.
-						We will consider equality to be within the range of the &quot;just noticeable&quot; interval.</p>
+						We will consider equality to be within the range of the &quot;just noticeable&quot; interval (5 cents).</p>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="annotations" class="tsd-anchor"></a>
+					<h3>annotations</h3>
+					<div class="tsd-signature tsd-kind-icon">annotations<span class="tsd-signature-symbol">:</span> <a href="_annotation_.annotation.html" class="tsd-signature-type">Annotation</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L38">Tuning.ts:38</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="intervals" class="tsd-anchor"></a>
@@ -198,23 +209,36 @@
 					<div class="tsd-signature tsd-kind-icon">intervals<span class="tsd-signature-symbol">:</span> <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L35">Tuning.ts:35</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="label" class="tsd-anchor"></a>
-					<h3>label</h3>
-					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L35">Tuning.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L38">Tuning.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="octave" class="tsd-anchor"></a>
+					<h3>octave</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> octave<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L95">Tuning.ts:95</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>OCTAVE OF A TUNING</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h4>
+							<p>the last interval in the tuning, which is considered to be the octave</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="steps" class="tsd-anchor"></a>
 					<h3>steps</h3>
@@ -225,7 +249,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L78">Tuning.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L86">Tuning.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -248,7 +272,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L62">Tuning.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L70">Tuning.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -259,32 +283,43 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="difference" class="tsd-anchor"></a>
-					<h3>difference</h3>
+					<a name="nearest" class="tsd-anchor"></a>
+					<h3>nearest</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">difference<span class="tsd-signature-symbol">(</span>reference<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">nearest<span class="tsd-signature-symbol">(</span>interval<span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L104">Tuning.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L120">Tuning.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>TUNING DIFFERENCE
-									Compute the difference in cents between this tuning and another</p>
+									<p>NEAREST TONE
+									Find the nearest tone given an interval and return difference</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>reference: <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h5>
+									<h5>interval: <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_interval_.interval.html" class="tsd-signature-type">Interval</a><span class="tsd-signature-symbol">[]</span></h4>
-							<p>array of interval differences in cents</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<p>nearest tone, interval and difference from the target</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>difference<span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>interval<span class="tsd-signature-symbol">: </span><a href="_interval_.interval.html" class="tsd-signature-type">Interval</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>tone<span class="tsd-signature-symbol">: </span><a href="_tuning_.tuningtone.html" class="tsd-signature-type">TuningTone</a></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -298,7 +333,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L88">Tuning.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L105">Tuning.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,13 +356,13 @@
 					<a name="fromintervals" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Intervals</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Intervals<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, intervals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></li>
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Intervals<span class="tsd-signature-symbol">(</span>intervals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span>, annotations<span class="tsd-signature-symbol">?: </span><a href="_annotation_.annotation.html" class="tsd-signature-type">Annotation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L44">Tuning.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L52">Tuning.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -338,10 +373,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>label: <span class="tsd-signature-type">string</span></h5>
+									<h5>intervals: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5>intervals: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> annotations: <a href="_annotation_.annotation.html" class="tsd-signature-type">Annotation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_tuning_.tuning.html" class="tsd-signature-type">Tuning</a></h4>
@@ -359,15 +394,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/b6d1908/src/Tuning.ts#L115">Tuning.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/infojunkie/scalextric/blob/453b48c/src/Tuning.ts#L158">Tuning.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Generate a tuning intervals array based on equal divisions of the octave.
-										The intervals are calculated in cents, because they will be converted to ratios
-									inside the Tuning constructor.</p>
+									<p>EQUAL DIVISIONS OF THE OCTAVE.</p>
 								</div>
+								<p>Generate an intervals array based on equal divisions of the octave.
+									The intervals are calculated in cents, because they will be converted to ratios
+								inside the Tuning constructor.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -386,6 +422,9 @@
 				<ul>
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_annotation_.html">"<wbr>Annotation"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_duration_.html">"<wbr>Duration"</a>
@@ -421,10 +460,13 @@
 								<a href="_tuning_.tuning.html#_transposable" class="tsd-kind-icon">_transposable</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#intervals" class="tsd-kind-icon">intervals</a>
+								<a href="_tuning_.tuning.html#annotations" class="tsd-kind-icon">annotations</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#label" class="tsd-kind-icon">label</a>
+								<a href="_tuning_.tuning.html#intervals" class="tsd-kind-icon">intervals</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_tuning_.tuning.html#octave" class="tsd-kind-icon">octave</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_tuning_.tuning.html#steps" class="tsd-kind-icon">steps</a>
@@ -433,7 +475,7 @@
 								<a href="_tuning_.tuning.html#transposable" class="tsd-kind-icon">transposable</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_tuning_.tuning.html#difference" class="tsd-kind-icon">difference</a>
+								<a href="_tuning_.tuning.html#nearest" class="tsd-kind-icon">nearest</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_tuning_.tuning.html#tune" class="tsd-kind-icon">tune</a>

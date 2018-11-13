@@ -20,6 +20,7 @@ export class Interval {
   get cents() { return 1200 * Math.log2(this.ratio.valueOf()); }
   get savarts() { return 1000 * Math.log10(this.ratio.valueOf()); }
   difference(reference: Interval) { return new Interval(this.ratio.div(reference.ratio)); }
+  static fromRatio(ratio: string) { return new Interval(new Fraction(ratio)); }
   static fromCents(cents: number) { return new Interval(new Fraction(Math.pow(2, cents / 1200))); }
   static fromSavarts(savarts: number) { return new Interval(new Fraction(Math.pow(10, savarts / 1000))); }
   static compare(a: Interval, b: Interval) { return a.ratio.compare(b.ratio); }

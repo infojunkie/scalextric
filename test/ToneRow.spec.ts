@@ -1,8 +1,10 @@
 import {expect} from 'chai';
 import './setup';
 
+import * as fs from 'fs';
 import {ToneRow} from '../src/ToneRow';
 import {Tuning, TuningTone} from '../src/Tuning';
+import {tuningFromScala} from '../src/utils/scala';
 
 describe('ToneRow', () => {
   const edo24 = new Tuning(Tuning.intervalsEdo(24));
@@ -48,5 +50,22 @@ describe('ToneRow', () => {
     expect(
       row.rotate(2).monotonize(true).pitches
     ).to.eql([14, -2, -24, -40]);
+  });
+});
+
+describe('Arabic/Turkish maqam experiments', () => {
+  const quarter = new Tuning(Tuning.intervalsEdo(24));
+  const kommah = new Tuning(Tuning.intervalsEdo(53));
+  const ederer = tuningFromScala(fs.readFileSync(`test/ederer.scl`, 'utf8'));
+  const rastQuarter = ToneRow.fromPitches(quarter, [0, 4, 7, 10, 14]);
+  const rastKommah = ToneRow.fromPitches(kommah, [0, 9, 17, 22, 31]);
+  const rastEderer = ToneRow.fromPitches(ederer, [0, 6, 11, 14, 20]);
+
+  it('computes ratio differences', () => {
+    [...Array(5).keys()].forEach(i => {
+      console.log(rastQuarter.tuning.tune(rastQuarter.prime[i]).cents);
+      console.log(rastKommah.tuning.tune(rastKommah.prime[i]).cents);
+      console.log(rastEderer.tuning.tune(rastEderer.prime[i]).cents);
+    });
   });
 });

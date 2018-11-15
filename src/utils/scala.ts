@@ -15,8 +15,6 @@ export function tuningFromScala(scala: string): Tuning {
   const intervals = [];
   const comments = [];
 
-  console.log(scala);
-
   (scala + '\r\n').match(/^.*[\n\r]{1,2}|$/gm).forEach(line => {
     if (line.indexOf('!') !== 0) {
       if (countLines === 0) {

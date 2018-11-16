@@ -174,10 +174,11 @@ describe('Bimap: alphabet letter => index', () => {
   });
   it('deleteValue', () => {
     for (let i = 1; i <= 26; i++) {
-      map.deleteValue(i);
+      expect(map.deleteValue(i)).to.be.true;
       expect(map.get(String.fromCharCode(i + 64))).to.equal(undefined);
     }
     expect(map.size).to.equal(0);
+    expect(map.deleteValue(0)).to.be.false;
   });
   it('forEach', () => {
     let iterations = 0;
@@ -399,10 +400,11 @@ describe('Multimap: alphabet letter => index', () => {
   });
   it('deleteValue', () => {
     for (let i = 1; i <= 26; i++) {
-      map.deleteValue(i);
+      expect(map.deleteValue(i)).to.be.true;
       expect(map.get(String.fromCharCode(i + 64))).to.equal(undefined);
     }
     expect(map.size).to.equal(0);
+    expect(map.deleteValue(0)).to.be.false;
   });
   it('forEach', () => {
     let iterations = 0;

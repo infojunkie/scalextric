@@ -50,9 +50,10 @@ describe('TuningNotation', () => {
     });
   });
   it('names notes', () => {
-    expect(tuningNotation.name(TuningTone.fromPitch(edo12, 1))).to.deep.equal(['Db0', 'C#0']);
+    expect(tuningNotation.name(TuningTone.fromPitch(edo12, 1)).sort()).to.deep.equal(['Db0', 'C#0'].sort());
   });
   it('parses notes', () => {
     expect(tuningNotation.parse('C#0').pitch).to.equal(1);
+    expect(() => { tuningNotation.parse('Hello') }).to.throw();
   });
 });

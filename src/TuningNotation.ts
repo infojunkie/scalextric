@@ -13,6 +13,8 @@ import {Multimap} from './Bimap';
  * We define a tuning notation map that defines how notes and accidentals map to tuning tones/pitches.
  */
 export class TuningNotation {
+  regex: RegExp;
+
   /**
    * CONSTRUCTOR
    *
@@ -21,7 +23,13 @@ export class TuningNotation {
    *        - different note names that map to the same index (e.g. C# = Db => 1) should have separate entries
    *        - don't include octave numbers
    */
-  constructor(public tuning: Tuning, public map: Multimap<string, number>) {}
+  constructor(public tuning: Tuning, public map: Multimap<string, number>) {
+    this.regex = new RegExp(
+      '^(' + Array.from(this.map.keys()).map(Helpers.escapeRegExp).join('|') + ')' +
+      '(-?\\d)$',
+      'i'
+    );
+  }
 
   /**
    * BUILD A MAP BY COMBINING NOTES AND ACCIDENTALS
@@ -63,22 +71,26 @@ export class TuningNotation {
   }
 
   /**
-   * PARSE A NOTE
-   *
-   * @param note: target note in scientific pitch notation
-   * @returns tone generator
-   */
-  parse(note: string): TuningTone {
-    throw new Error('TODO');
-  }
-
-  /**
    * NAME A TONE
    *
    * @param tone: tone to be named
    * @returns array of strings representing the enharmonic namings of the tone
    */
   name(tone: TuningTone): string[] {
-    throw new Error('TODO');
+    return [...this.map.getKey(tone.pitchClass)].map(n => `${n}${tone.octave}`);
+  }
+
+  /**
+   * PARSE A NOTE
+   *
+   * @param note: target note in scientific pitch notation
+   * @returns tone generator
+   */
+  parse(note: string): TuningTone {
+    const match = this.regex.exec(note);
+    if (!match) {
+      throw new Error(`[TuningNotation.parse] Could not parse note ${note}`);
+    }
+    return new TuningTone(this.tuning, this.map.get(match[1]), parseInt(match[2], 10));
   }
 }

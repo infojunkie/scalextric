@@ -168,6 +168,7 @@ export class Multimap<K, V> implements IBimap<K, V> {
   public deleteValue = (value: V) => {
     if (this.hasValue(value)) {
       this.valueKeyMap.get(value).forEach(key => { this.delete(key); });
+      return true;
     }
     return false;
   };

@@ -255,7 +255,7 @@ describe('Multimap: single item {"A": 1}', () => {
     expect(map.get('A')).to.equal(1);
   });
   it('getKey', () => {
-    expect(map.getKey(1)).to.equal('A');
+    expect(map.getKey(1)).to.deep.equal(['A']);
   });
   it('getValue', () => {
     expect(map.getValue('A')).to.equal(1);
@@ -350,7 +350,7 @@ describe('Multimap: alphabet letter => index', () => {
   });
   it('getKey', () => {
     for (let i = 1; i <= 26; i++) {
-      expect(map.getKey(i)).to.equal(String.fromCharCode(i + 64));
+      expect(map.getKey(i)).to.deep.equal([String.fromCharCode(i + 64)]);
     }
   });
   it('getValue', () => {
@@ -411,7 +411,7 @@ describe('Multimap: alphabet letter => index', () => {
     map.forEach((value, key, mapRef) => {
       iterations++;
       expect(map.get(key)).to.equal(value);
-      expect(map.getKey(value)).to.equal(key);
+      expect(map.getKey(value)).to.deep.equal([key]);
       expect(mapRef.get(key)).to.equal(value);
     });
     expect(iterations).to.equal(map.size);

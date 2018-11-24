@@ -128,17 +128,12 @@ export class Multimap<K, V> implements IBimap<K, V> {
   public values = () => this.keyValueMap.values();
 
   public get = (a: K): V | undefined => this.keyValueMap.get(a);
-  public getKey = (b: V): K | K[] | undefined => {
-    const keys = this.valueKeyMap.get(b);
-    if (Array.isArray(keys) && keys.length == 1) {
-      return keys[0];
-    }
-    return keys;
-  }
+  public getKey = (b: V): K[] | undefined => this.valueKeyMap.get(b);
   public getValue = (a: K): V | undefined => this.get(a);
   public set = (key: K, value: V) => {
     this.delete(key);
     this.keyValueMap.set(key, value);
+
     const keys = this.valueKeyMap.get(value) || [];
     this.valueKeyMap.set(value, [...keys, key]);
 

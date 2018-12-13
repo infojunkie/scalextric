@@ -53,7 +53,18 @@ describe('ToneRow', () => {
   });
 });
 
-describe('Arabic/Turkish maqam experiments', () => {
+describe('Chords experiment', () => {
+  const chords = JSON.parse(fs.readFileSync(`data/chords.json`, 'utf8'));
+  const edo12 = new Tuning(Tuning.intervalsEdo(12));
+
+  it('makes tone rows from chords', () => {
+    const rows = chords.map(chord => ToneRow.fromPitches(edo12, chord.tones, chord.annotations));
+    const test = rows.find(row => row.annotations.find(a => a.name == 'label' && a.value == '7#5b9'));
+    expect(test.pitches).to.eql([0, 4, 8, 10, 13]);
+  })
+});
+
+describe('Arabic/Turkish maqam experiment', () => {
   const quarter = new Tuning(Tuning.intervalsEdo(24));
   const kommah = new Tuning(Tuning.intervalsEdo(53));
   const ederer = tuningFromScala(fs.readFileSync(`test/data/ederer.scl`, 'utf8'));
@@ -63,9 +74,9 @@ describe('Arabic/Turkish maqam experiments', () => {
 
   it('computes ratio differences', () => {
     [...Array(5).keys()].forEach(i => {
-      console.log(rastQuarter.tuning.tune(rastQuarter.prime[i]).cents);
-      console.log(rastKommah.tuning.tune(rastKommah.prime[i]).cents);
-      console.log(rastEderer.tuning.tune(rastEderer.prime[i]).cents);
+      console.log(rastQuarter.tuning.tune(rastQuarter.tones[i]).cents);
+      console.log(rastKommah.tuning.tune(rastKommah.tones[i]).cents);
+      console.log(rastEderer.tuning.tune(rastEderer.tones[i]).cents);
     });
   });
 });

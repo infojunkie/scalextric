@@ -1,10 +1,11 @@
 import {Tuning, TuningTone} from './Tuning';
+import {Annotation} from './Annotation';
 import {Helpers} from './Helpers';
 
 /**
  * TONE ROW
  *
- * We define a tone row as an ordered set of tones. It is the basic collection of tones
+ * We define a tone row as an ordered sequence of tones. It is the basic collection of tones
  * that make up many other musical objects such as scales, chords, etc.
  *
  * This definition extends the usual definition of "tone row" used in serial composition
@@ -14,14 +15,21 @@ import {Helpers} from './Helpers';
  * on other musical objects.
  */
 export class ToneRow {
-  constructor(public tuning: Tuning, public prime: TuningTone[]) {}
+  /**
+   * CONSTRUCTOR
+   *
+   * @param tuning: the reference tuning
+   * @param tones: the tones making up the row
+   * @param annotations: notes about the row
+   */
+  constructor(public tuning: Tuning, public tones: TuningTone[], public annotations: Annotation[] = []) {}
 
   /**
-   * Transpose a row to an axis tone.
+   * Transpose a row to a target tone.
    */
-  transpose(axis: TuningTone): ToneRow {
-    return new ToneRow(this.tuning, this.prime.map(tone =>
-      TuningTone.fromPitch(this.tuning, axis.pitch + tone.pitch)
+  transpose(target: TuningTone): ToneRow {
+    return new ToneRow(this.tuning, this.tones.map(tone =>
+      TuningTone.fromPitch(this.tuning, target.pitch + tone.pitch)
     ));
   }
 
@@ -29,7 +37,7 @@ export class ToneRow {
    * Invert a row around an axis tone.
    */
   invert(axis: TuningTone): ToneRow {
-    return new ToneRow(this.tuning, this.prime.map(tone =>
+    return new ToneRow(this.tuning, this.tones.map(tone =>
       TuningTone.fromPitch(this.tuning, axis.pitch - tone.pitch)
     ));
   }
@@ -38,15 +46,15 @@ export class ToneRow {
    * Reverse a row.
    */
   reverse(): ToneRow {
-    return new ToneRow(this.tuning, [...this.prime].reverse());
+    return new ToneRow(this.tuning, [...this.tones].reverse());
   }
 
   /**
-   * Rotate a row by cycling a number of times.
+   * Rotate a row by cycling it a number of times.
    */
   rotate(cycles: number): ToneRow {
-    const c = cycles % this.prime.length;
-    return new ToneRow(this.tuning, [...this.prime.slice(c), ...this.prime.slice(0, c)]);
+    const c = cycles % this.tones.length;
+    return new ToneRow(this.tuning, [...this.tones.slice(c), ...this.tones.slice(0, c)]);
   }
 
   /**
@@ -55,7 +63,7 @@ export class ToneRow {
    * rotate.monotonize => chord inversion
    */
   monotonize(descending: boolean = false): ToneRow {
-    return new ToneRow(this.tuning, this.prime.reduce((current, next) => {
+    return new ToneRow(this.tuning, this.tones.reduce((current, next) => {
       const last: TuningTone = current.length > 0 ? current[current.length-1] : next;
       if (!descending && next.pitch < last.pitch) {
         current.push(new TuningTone(this.tuning, next.pitchClass, last.octave + (next.pitchClass < last.pitchClass ? 1 : 0)));
@@ -72,15 +80,15 @@ export class ToneRow {
    * Get the pitches of the tone row.
    */
   get pitches(): number[] {
-    return this.prime.map(tone => tone.pitch);
+    return this.tones.map(tone => tone.pitch);
   }
 
   /**
    * Create a tone row from given pitches.
    */
-  static fromPitches(tuning: Tuning, pitches: number[]) {
+  static fromPitches(tuning: Tuning, pitches: number[], annotations: Annotation[] = []) {
     return new ToneRow(tuning, pitches.map(pitch =>
       TuningTone.fromPitch(tuning, pitch)
-    ));
+    ), annotations);
   }
 }

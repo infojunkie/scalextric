@@ -3,3 +3,5 @@ node_modules/
 **/*.js.map
 data/scl/*.scl
 .nyc_output/
+__pycache__/
+*.pyc

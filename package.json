@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsc && node build/src/index.js",
     "test": "tsc && nyc --reporter=text mocha --timeout 20000 ./build/test/**/*.spec.js",
-    "doc": "typedoc --out ./doc src/*.ts && tsviz -r src/ doc/classes.png"
+    "doc": "typedoc --out ./doc src/*.ts && tsviz -r src/ doc/classes.png",
+    "chords": "python src/utils/chordtable/generate.py > data/chords.json && cat data/chords.json"
   },
   "author": "Karim Ratib",
   "license": "ISC",

@@ -1,0 +1,3076 @@
+[
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7#5b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th and flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m(sus9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad plus 9th (no 7th)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7sus"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with suspended 4th, dominant 7th with 3rd raised half tone."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7omit3"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with unvoiced 3rd."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            20
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b13"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th (including 5th) plus flat 13th (the 9th and 11th are not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "°3"
+            }, 
+            {
+                "name": "description", 
+                "value": "A dim3 (triad) using a degree symbol"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "aug"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented triad."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            14, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13sus4"
+            }, 
+            {
+                "name": "description", 
+                "value": "7sus, plus 9th and 13th"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m9b5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad, flat 5, plus 7th and 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+7b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th and flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "aug7b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th and flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m(b5)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad with flat 5th (aka dim)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b9sus"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with suspended 4th and flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7-5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th, flat 5 (aka 1/2 diminished). "
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            13, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7b9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th plus flat 9th and sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7-9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            13, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M7(add13)"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th (including 5th) plus 13th and flat 9th (11th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m#7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            8
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m#5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad with augmented 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            9
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "dim"
+            }, 
+            {
+                "name": "description", 
+                "value": "A dim7, not a triad!"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b5"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th, flat 5."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7b5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th, flat 5 (aka 1/2 diminished). "
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "mM7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with added flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            14, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13sus"
+            }, 
+            {
+                "name": "description", 
+                "value": "7sus, plus 9th and 13th"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7(omit3)"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with unvoiced 3rd."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "min(maj7)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b5b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with flat 5th and flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            7, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "omit3(add9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Triad: root, 5th and 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "(add#9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major chord plus sharp 9th (no 7th.)"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9sus"
+            }, 
+            {
+                "name": "description", 
+                "value": "7sus plus 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b5(add13)"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with flat 5 and 13th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            8, 
+            10, 
+            14, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "11+"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented 11th (sharp 5)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+M7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th with sharp 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            9
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M6"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major tiad with added 6th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            18, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M13#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th plus sharp 11th and 13th (9th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7-5"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th, flat 5."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "addb9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major chord plus flat 9th (no 7th.)"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th plus 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "#5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented triad."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "sus(add9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Suspended 4th, major triad with the 3rd raised half tone plus 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            14, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 9th plus sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented triad."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            5, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "msus"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor suspended 4th, minor triad plus 4th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m+7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            9
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "°"
+            }, 
+            {
+                "name": "description", 
+                "value": "A dim7 using a degree symbol"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            8
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m+5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad with augmented 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "sus"
+            }, 
+            {
+                "name": "description", 
+                "value": "Suspended 4th, major triad with the 3rd raised half tone."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9sus4"
+            }, 
+            {
+                "name": "description", 
+                "value": "7sus plus 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7#5#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with sharp 5th and sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7+"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            13, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13susb9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7sus, plus flat 9th and 13th"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            8, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m+7b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented minor 7 plus flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7+9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7(b9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with added flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            18, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus sharp 11th and 13th (9th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "sus(add#9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Suspended 4th, major triad with the 3rd raised half tone plus sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7susb9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with suspended 4th and flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            13, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th (including 5th) plus 13th and flat 9th (11th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7#5"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M7-5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th with a flat 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "(add9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major chord plus 9th (no 7th.)"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            11, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "mM7(add9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor Triad plus Major 7th and 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "add#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major chord plus sharp 9th (no 7th.)"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "add9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major chord plus 9th (no 7th.)"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            14, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m6(add9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 6th with added 9th. This is sometimes notated as a slash chord in the form ``m6/9''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            15, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th (including 5th) plus 13th and sharp 9th (11th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7(add13)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th  plus 13th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "ø"
+            }, 
+            {
+                "name": "description", 
+                "value": "Half-diminished using slashed degree symbol"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th with sharp 5th (same as aug9)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            8, 
+            10, 
+            14, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "11#5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented 11th (sharp 5)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            5, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7sus4"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor suspended 4th, minor triad plus 4th and dominant 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            14, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m11"
+            }, 
+            {
+                "name": "description", 
+                "value": "9th with minor 3rd,  plus 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m13"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th (including 5th) plus 13th (9th and 11th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            14, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "69"
+            }, 
+            {
+                "name": "description", 
+                "value": "6th with added 9th. This is sometimes notated as a slash chord in the form ``6/9''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            11, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+9M7"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a major 7th and 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "min#7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            5, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7sus"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor suspended 4th, minor triad plus 4th and dominant 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7+5"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            9, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "dim7(addM7)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Diminished tirad with added Major 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            8
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m+"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad with augmented 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th (flat 3rd plus dominant 7th)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            9
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m6"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 6th (flat 3rd plus a 6th)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            9
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "6"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major tiad with added 6th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "(addb9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major chord plus flat 9th (no 7th.)"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad plus 7th and 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            15, 
+            20
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7#9b13"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with sharp 9th and flat 13th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+7#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th and sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9+"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th with sharp 5th (same as aug9)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M7#5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th with sharp 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            13, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+7b9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented 7th with flat 9th and sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7(omit5)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with unvoiced 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            8, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m+7#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented minor 7 plus sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            9, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "°(addM7)"
+            }, 
+            {
+                "name": "description", 
+                "value": "dim7(addM7) using degree symbol"
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            8, 
+            10, 
+            13, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m+7b9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Augmented minor 7th with flat 9th and sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "mb5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad with flat 5th (aka dim)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus sharp 11th (9th omitted)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "maj13"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th (including 5th) plus 13th (9th and  11th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7b5b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with flat 5th and flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            7, 
+            10, 
+            14, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "11"
+            }, 
+            {
+                "name": "description", 
+                "value": "9th chord plus 11th (3rd not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th (including 5th) plus 13th (the 9th and 11th are not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9-5"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th with flat 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            5, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "msus4"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor suspended 4th, minor triad plus 4th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9b5"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th with flat 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9b6"
+            }, 
+            {
+                "name": "description", 
+                "value": "9th with flat 6 (no 5th or 7th)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            14, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 9th plus 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            13, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "11b9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th chord plus flat 9th and 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M13"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th (including 5th) plus 13th (9th and  11th not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10, 
+            20
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "13b5"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with flat 5th,  plus 13th (the 9th and 11th are not voiced)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            13, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus flat 9th and sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7(add11)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th  plus 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M7#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th plus sharp 11th (9th omitted)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m(maj7)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7omit5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with unvoiced 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "dim3"
+            }, 
+            {
+                "name": "description", 
+                "value": "Diminished triad (non-standard notation)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "aug9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th with sharp 5th (same as aug9)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            9
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "dim7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Diminished seventh."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "sus(addb9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Suspended 4th, major triad with the 3rd raised half tone plus flat 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            14, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th plus 9th and sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "aug7"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M7+5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th with sharp 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            6, 
+            10, 
+            14, 
+            17
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m11b5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with flat 5th plus 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7(#9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with added sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "(b5)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major triad with flat 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            15, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7#9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus sharp 9th and sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7(add13)"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with added 13th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m(add9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad plus 9th (no 7th)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            7, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Altered Fifth or Power Chord; root and 5th only."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "maj9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th plus 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "+7"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "maj7"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "aug7#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a dominant 7th and sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7b5#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with flat 5th and sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            0, 
+            7, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "omit3add9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Triad: root, 5th and 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            11
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M7b5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major 7th with a flat 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "M"
+            }, 
+            {
+                "name": "description", 
+                "value": "Major triad. This is the default and is used in  the absence of any other chord type specification."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            10, 
+            14, 
+            18
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9#11"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th and sharp 11th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            6, 
+            10, 
+            13
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7alt"
+            }, 
+            {
+                "name": "description", 
+                "value": "Uses a 7th flat 5, flat 9. Probably not correct, but works (mostly)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            2, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "sus2"
+            }, 
+            {
+                "name": "description", 
+                "value": "Suspended 2nd, major triad with the major 2nd above the root substituted for 3rd."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "sus4"
+            }, 
+            {
+                "name": "description", 
+                "value": "Suspended 4th, major triad with the 3rd raised half tone."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "sus9"
+            }, 
+            {
+                "name": "description", 
+                "value": "7sus plus 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            11, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "aug9M7"
+            }, 
+            {
+                "name": "description", 
+                "value": "An augmented chord (raised 5th) with a major 7th and 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            9, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7(6)"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with added 6th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            10, 
+            15
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7#9"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with added sharp 9th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m7#5"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 7th with sharp 5th."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7, 
+            14, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m69"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor 6th with added 9th. This is sometimes notated as a slash chord in the form ``m6/9''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            3, 
+            7
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "m"
+            }, 
+            {
+                "name": "description", 
+                "value": "Minor triad."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9#5"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th with sharp 5th (same as aug9)."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            7, 
+            14, 
+            21
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "6(add9)"
+            }, 
+            {
+                "name": "description", 
+                "value": "6th with added 9th. This is sometimes notated as a slash chord in the form ``6/9''."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            5, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7sus4"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th with suspended 4th, dominant 7th with 3rd raised half tone."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            2, 
+            7, 
+            10
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "7sus2"
+            }, 
+            {
+                "name": "description", 
+                "value": "A sus2 with dominant 7th added."
+            }
+        ]
+    }, 
+    {
+        "tuning": 12, 
+        "tones": [
+            0, 
+            4, 
+            8, 
+            10, 
+            14
+        ], 
+        "annotations": [
+            {
+                "name": "label", 
+                "value": "9+5"
+            }, 
+            {
+                "name": "description", 
+                "value": "7th plus 9th with sharp 5th (same as aug9)."
+            }
+        ]
+    }
+]

@@ -1,6 +1,6 @@
 node_modules/
-**/*.js
-**/*.js.map
+*.js
+*.js.map
 data/scl/*.scl
 .nyc_output/
 __pycache__/

@@ -4,7 +4,8 @@ import './setup';
 import * as fs from 'fs';
 import {ToneRow} from '../src/ToneRow';
 import {Tuning, TuningTone} from '../src/Tuning';
-import {tuningFromScala} from '../src/utils/scala';
+import {tuningFromScala} from '../src/io/scala';
+import {Helpers} from '../src/Helpers';
 
 describe('ToneRow', () => {
   const edo24 = new Tuning(Tuning.intervalsEdo(24));
@@ -59,8 +60,10 @@ describe('Chords experiment', () => {
 
   it('makes tone rows from chords', () => {
     const rows = chords.map(chord => ToneRow.fromPitches(edo12, chord.tones, chord.annotations));
-    const test = rows.find(row => row.annotations.find(a => a.name == 'label' && a.value == '7#5b9'));
-    expect(test.pitches).to.eql([0, 4, 8, 10, 13]);
+    const test1 = rows.find(row => row.annotations.find(a => a.name == 'label' && a.value == '7#5b9'));
+    expect(test1.pitches).to.eql([0, 4, 8, 10, 13]);
+    const test2 = rows.find(row => Helpers.arrayEqual(row.pitches, [0, 4, 8, 10, 13], (a,b) => a-b));
+    expect(test2.annotations.find(a => a.name == 'label').value).to.equal('7#5b9');
   })
 });
 

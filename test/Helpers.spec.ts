@@ -6,11 +6,11 @@ import {Helpers} from '../src/Helpers';
 
 describe('Helpers', () => {
   it('escapes regex strings', () => {
-    expect(Helpers.escapeRegExp('This is a *bold* move.')).to.equal('This is a \\*bold\\* move\\.');
+    expect(Helpers.escapeRegExp('This is a *bold* (move).')).to.equal('This is a \\*bold\\* \\(move\\)\\.');
   });
 
   it('computes the primes up to 20', () => {
-    expect(Helpers.getPrimes(20)).to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19]);
+    expect(Helpers.primes(20)).to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19]);
   });
 
   it('flips fractions', () => {
@@ -32,11 +32,19 @@ describe('Helpers', () => {
       const n = Helpers.binarySearch(ar, i, (a,b) => a-b);
       expect(
         (n >= 0 && ar[n] !== i) ||
-        (n < 0 && ((-n-1) < ar.length && ar[-n-1] <= i)) ||
-        (n < 0 && (-n-2 >= 0 && ar[-n-2] >= i))
+        (n < 0 && (~n < ar.length && ar[~n] <= i)) ||
+        (n < 0 && (~n-1 >= 0 && ar[~n-1] >= i))
       ).to.be.false;
     }
   });
+
+  it('compares arrays', () => {
+    expect(Helpers.arrayEqual([], [], (a,b) => a-b)).to.be.true;
+    expect(Helpers.arrayEqual([0], [1], (a,b) => a-b)).to.be.false;
+    expect(Helpers.arrayEqual([1,2,3], [1,2,3], (a,b) => a-b)).to.be.true;
+    expect(Helpers.arrayEqual([1,2,3], [1,2,3,4], (a,b) => a-b)).to.be.false;
+    expect(Helpers.arrayEqual([1,2,3], [1,3,2], (a,b) => a-b)).to.be.false;
+  })
 
   it('computes mathematical modulus', () => {
     expect(Helpers.mod(-13, 64)).to.be.equal(51);

@@ -3,7 +3,7 @@ import './setup';
 
 import * as fs from 'fs';
 import {Tuning, TuningTone} from '../src/Tuning';
-import {tuningFromScala} from '../src/utils/scala';
+import {tuningFromScala} from '../src/io/scala';
 import {Interval} from '../src/Interval';
 
 describe('Tuning', () => {

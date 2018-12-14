@@ -2,7 +2,7 @@ import {expect} from 'chai';
 import './setup';
 
 import * as fs from 'fs';
-import {tuningFromScala, intervalFromScala} from '../src/utils/scala';
+import {tuningFromScala, intervalFromScala} from '../src/io/scala';
 import {Tuning} from '../src/Tuning';
 import {Annotation} from '../src/Annotation';
 

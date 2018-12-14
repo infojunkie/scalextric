@@ -5,7 +5,6 @@ import json
 print(json.dumps([
   (lambda k, v: {
     'tones': v[0],
-    'tuning': 12,   # 12-tET is the reference for the tones above
     'annotations': [{
       'name': 'label',
       'value': k

@@ -20,7 +20,7 @@ export namespace Helpers {
    * @param max: number to reach
    * @returns all primes up to max
    */
-  export function getPrimes(max: number): number[] {
+  export function primes(max: number): number[] {
     const sieve: boolean[] = [], primes: number[] = [];
     for (let i = 2; i <= max; ++i) {
       if (!sieve[i]) {
@@ -40,14 +40,14 @@ export namespace Helpers {
   export function flipFraction(f: Fraction, greaterThanOne: boolean = false): Fraction {
     return greaterThanOne ?
       (f.abs().compare(1) < 0 ? f.inverse() : f) :
-      (f.abs().compare(1) > 0 ? f.inverse() : f);
+      (f.abs().compare(1) > 0 ? f.inverse() : f) ;
   }
 
   /**
    * Binary search.
    * https://stackoverflow.com/a/29018745/209184
    *
-   * @param ar: elements array
+   * @param ar: elements array that is sorted
    * @param el: target element
    * @param comp: comparison function (a,b) => n with
    *        n > 0 if a > b
@@ -55,7 +55,7 @@ export namespace Helpers {
    *        n = 0 if a = b
    * @returns index m >= 0 if match is found, m < 0 if not found with insertion point = -m-1.
    */
-  export function binarySearch<T>(ar: Array<T>, el: T, comp:(a:T, b:T) => number) {
+  export function binarySearch<T>(ar: Array<T>, el: T, comp: (a: T, b: T) => number): number {
     let m = 0;
     let n = ar.length - 1;
     while (m <= n) {
@@ -70,6 +70,17 @@ export namespace Helpers {
       }
     }
     return ~m;
+  }
+
+  /**
+   * Check array equality.
+   * https://stackoverflow.com/q/7837456/209184
+   */
+  export function arrayEqual<T>(ar1: Array<T>, ar2: Array<T>, comp: (a: T, b: T) => number): boolean {
+    return (
+      ar1.length === ar2.length &&
+      ar1.every((value, index) => comp(value, ar2[index]) === 0)
+    );
   }
 
   /**

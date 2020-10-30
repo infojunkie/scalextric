@@ -1,7 +1,9 @@
 node_modules/
-*.js
-*.js.map
+build/
 data/scl/*.scl
 .nyc_output/
 __pycache__/
 *.pyc
+*.gz
+*.map
+bundle.js

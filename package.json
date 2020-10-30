@@ -13,17 +13,17 @@
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.2.14",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^10.17.44",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.14.6",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-deep-closeto": "^0.1.1",
-    "mocha": "^5.2.0",
-    "nyc": "^13.3.0",
-    "ts-node": "^7.0.1",
+    "mocha": "^8.2.0",
+    "nyc": "^15.1.0",
+    "ts-node": "^9.0.0",
     "tsviz": "^1.0.11",
-    "typedoc": "^0.13.0",
-    "typescript": "^3.9.7"
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.5"
   },
   "dependencies": {
     "fraction.js": "^4.0.12"

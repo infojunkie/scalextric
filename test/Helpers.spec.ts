@@ -49,4 +49,12 @@ describe('Helpers', () => {
   it('computes mathematical modulus', () => {
     expect(Helpers.mod(-13, 64)).to.be.equal(51);
   });
+
+  it('returns unique arrays', () => {
+    expect(Helpers.arrayEqual(
+      Helpers.arrayUnique([1,1,2,2,3,3,3]),
+      [1,2,3],
+      (a,b) => a-b
+    )).to.be.true;
+  });
 });

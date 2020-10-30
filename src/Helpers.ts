@@ -84,6 +84,14 @@ export namespace Helpers {
   }
 
   /**
+   * Return array with unique values.
+   * https://stackoverflow.com/a/17903018/209184
+   */
+  export function arrayUnique<T>(ar: Array<T>): Array<T> {
+    return [...new Set(ar)];
+  }
+
+  /**
    * Always-positive mod function.
    */
   export function mod(n: number, m: number): number {

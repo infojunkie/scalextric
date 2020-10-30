@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.20.0",
-    "jquery": "^3.1.1",
+    "jquery": "^3.5.0",
     "mathjs": "^3.12.1",
     "midi-writer-js": "^1.4.7",
     "note-parser": "^2.0.1",

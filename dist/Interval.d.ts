@@ -24,5 +24,5 @@ export declare class Interval {
     static fromCents(cents: number): Interval;
     static fromSavarts(savarts: number): Interval;
     static compare(a: Interval, b: Interval): number;
-    static JND: Interval;
+    static JND(): Interval;
 }

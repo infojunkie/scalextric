@@ -3,6 +3,8 @@ scalextric
 
 Musical structures from the ground up.
 
+[![Build Status](https://travis-ci.org/infojunkie/scalextric.svg?branch=master)](https://travis-ci.org/infojunkie/scalextric)
+
 # Use cases
 
 The pseudo-code below illustrates various desired uses of the library. It may not correspond

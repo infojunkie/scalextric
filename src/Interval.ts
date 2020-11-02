@@ -1,4 +1,4 @@
-import Fraction from 'fraction.js';
+import {Fraction} from 'mathjs';
 
 /**
  * INTERVALS
@@ -15,6 +15,7 @@ import Fraction from 'fraction.js';
  * It can also be named, depending on the nomenclature being used.
  *
  */
+
 export class Interval {
   constructor(public ratio: Fraction) {}
   get cents() { return 1200 * Math.log2(this.ratio.valueOf()); }
@@ -24,5 +25,5 @@ export class Interval {
   static fromCents(cents: number) { return new Interval(new Fraction(Math.pow(2, cents / 1200))); }
   static fromSavarts(savarts: number) { return new Interval(new Fraction(Math.pow(10, savarts / 1000))); }
   static compare(a: Interval, b: Interval) { return a.ratio.compare(b.ratio); }
-  static JND = Interval.fromCents(5);
+  static JND = Interval.fromCents(5); // https://en.wikipedia.org/wiki/Just-noticeable_difference
 }

@@ -1,4 +1,4 @@
-import Fraction from 'fraction.js';
+import { Fraction } from 'mathjs';
 export declare namespace Helpers {
     /**
      * Escape a string to be used in regular expression.

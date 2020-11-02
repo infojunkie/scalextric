@@ -1,4 +1,4 @@
-import Fraction from 'fraction.js';
+import {Fraction} from 'mathjs';
 import {Helpers} from './Helpers';
 import {Interval} from './Interval';
 import {Annotation} from './Annotation';

@@ -6,8 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack",
-    "test": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
-    "test:bundle": "webpack && mocha test/**/*.spec.js",
+    "test": "npm run build && npm run test:unit && npm run test:bundle",
+    "test:unit": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
+    "test:bundle": "mocha test/**/*.spec.js",
     "chords": "python src/io/chordtable/generate.py > data/chords.json && cat data/chords.json"
   },
   "author": "Karim Ratib",
@@ -30,6 +31,6 @@
     "webpack-cli": "^4.1.0"
   },
   "dependencies": {
-    "fraction.js": "^4.0.12"
+    "mathjs": "^7.6.0"
   }
 }

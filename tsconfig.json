@@ -1,16 +1,15 @@
 {
-  "version": "2.4.2",
   "compilerOptions": {
-    "lib": ["es2019", "esnext.asynciterable"],
-    "target": "es2019",
     "module": "commonjs",
+    "lib": ["dom", "esnext.asynciterable"],
+    "target": "es6",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "outDir": "./dist",
     "sourceMap": true,
-    "outDir": "./build"
+    "declaration": true,
+    "importHelpers": true
   },
-  "exclude": [
-    "node_modules"
+  "include": [
+    "src"
   ]
 }

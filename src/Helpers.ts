@@ -44,7 +44,7 @@ export namespace Helpers {
   }
 
   /**
-   * Binary search.
+   * Binary search in an array.
    * https://stackoverflow.com/a/29018745/209184
    *
    * @param ar: elements array that is sorted
@@ -92,7 +92,9 @@ export namespace Helpers {
   }
 
   /**
-   * Always-positive mod function.
+   * Always-positive Modulo function. The built-in % operator computes the Remainder.
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
+   * https://stackoverflow.com/a/17323608/209184
    */
   export function mod(n: number, m: number): number {
     return ((n % m) + m) % m;

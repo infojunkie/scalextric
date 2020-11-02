@@ -2,17 +2,19 @@
   "name": "scalextric",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/scalextric.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && node build/src/index.js",
-    "test": "tsc && nyc --reporter=text mocha --timeout 20000 ./build/test/**/*.spec.js",
-    "doc": "typedoc --out ./doc src/*.ts && tsviz -r src/ doc/classes.png",
+    "build": "webpack",
+    "test": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
+    "test:bundle": "webpack && mocha test/**/*.spec.js",
     "chords": "python src/io/chordtable/generate.py > data/chords.json && cat data/chords.json"
   },
   "author": "Karim Ratib",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.2.14",
+    "@types/expect": "^24.3.0",
     "@types/mocha": "^8.0.3",
     "@types/node": "^14.14.6",
     "chai": "^4.2.0",
@@ -20,10 +22,12 @@
     "chai-deep-closeto": "^0.1.1",
     "mocha": "^8.2.0",
     "nyc": "^15.1.0",
+    "ts-loader": "^8.0.7",
+    "ts-mocha": "^8.0.0",
     "ts-node": "^9.0.0",
-    "tsviz": "^1.0.11",
-    "typedoc": "^0.19.2",
-    "typescript": "^4.0.5"
+    "typescript": "^4.0.5",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
   },
   "dependencies": {
     "fraction.js": "^4.0.12"

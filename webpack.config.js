@@ -20,6 +20,6 @@ module.exports = {
     library: 'Scalextric',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, 'dist'),
-    umdNamedDefine: true,
+    globalObject: 'this', // https://stackoverflow.com/a/64639975/209184
   },
 };

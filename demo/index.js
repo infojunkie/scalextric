@@ -9,6 +9,10 @@ import sheets from './sheets.json';
 import soundfonts from './soundfonts.json';
 import math from 'mathjs';
 import parser from 'note-parser';
+import * as Scalextric from '../dist/scalextric';
+
+const edo12 = new Scalextric.Tuning(Scalextric.Tuning.intervalsEdo(12));
+console.log(edo12);
 
 // Reach in deep structures without fear of TypeError exceptions.
 // e.g. x = ORNULL(a.b.c.d['e'].f.g);

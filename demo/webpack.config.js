@@ -12,7 +12,7 @@ module.exports = {
       { test: /\.json$/, loader: 'json' },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|bower_components|dist)/,
         loader: 'babel-loader',
         query: {
           presets: ['latest']

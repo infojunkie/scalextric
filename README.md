@@ -1,44 +1,22 @@
 scalextric
 ----------
 
-Musical structures from the ground up.
+Musical structures from first principles.
 
-[![Build Status](https://travis-ci.org/infojunkie/scalextric.svg?branch=master)](https://travis-ci.org/infojunkie/scalextric)
+[![Build Status](https://travis-ci.org/infojunkie/scalextric.svg?branch=main)](https://travis-ci.org/infojunkie/scalextric)
 
-# Use cases
+"Ladies and gentlemen, many songs have been written, and this is one of them." - Mo' Horizons, "Yes Baby Yes (Sally Said)"
 
-The pseudo-code below illustrates various desired uses of the library. It may not correspond
-exactly to the functions and interfaces in the actual code. Nor should it be expected to be
-rigorously correct code in its own right (because it's not).
+Music is probably humanity's most important endeavour. It enfolds the sum of our collective knowledge about space, time, mathematics, physics, psychology, spirituality, love, sex, and all other essential questions. It's not surprising, then, that the Internet abounds with software that attempts to capture glimpses of this all-encompassing system.
 
-## Construct diatonic chords of a given scale
+More specifically, though, the Internet abounds with _mainstream Western_ music software, i.e. based on the contemporary Western music practice of 12-tet tuning, nomenclature, instrumentation, repertoire, etc. As a person with a multicultural background, I find this bias highly limiting, both to my own musical growth, as well as to the free spread of worldwide musical cultures - which are providing endless inpiration (I'm being very charitable here) for the Western music industry in its continuous quest for novelty.
 
-```
-// Regular 12-tone equal temperament used throughout
-tuning = Tuning.intervalsEdo(12)
+This repo is my modest attempt at providing a rational, ontological, foundation to build music systems that can express not only mainstream Western music, but also other musics that go beyond the former's boundaries and assumptions. I call this approach "music localization" (in code, `music-l10n`), and I've been thinking, [writing](https://blog.karimratib.me/2018/01/05/music-l10n.html), [coding](https://github.com/infojunkie/music-l10n/issues) about it for a few years now.
 
-// Various scale constructions
-majorC = Scale.fromIntervals(tuning, [ 2, 2, 1, 2, 2, 2, 1 ], 'C0')
-majorD = Scale.fromTones(tuning, [ 2, 4, 6, 7, 9, 11, 13, 14 ])
-majorE = Scale.fromName(tuning, 'E major')
+# General approach
 
-// All the diatonic 7th chords of a scale
-seventhChordsCmajor = majorC.eachTone.map(tone,
-  Chord.fromIntervals([ 0, 2, 4, 6 ], tone)
-)
-seventhChordsCmajor.each(chord,
-  print chord.name()
-  print chord.spelling()
-)
-// output:
-//
-// Cmaj7 (C E G B)
-// Dm7   (D F A C)
-// Em7       .
-// Fmaj7     .
-// G7        .
-// Am7
-// Bm7b5
-//
+In this ontological approach, the atomic unit is not the note, but the **interval**. An interval is a ratio of frequencies, and it is the building block for a **tuning**, which represents a sequence of intervals that can generate **tones** given a base frequency. Note that a tone is not a **note**: it has no duration; it is still a mathematical object, just like the ideal point.
 
-```
+In order to represent a tuning in the real world, we need to give human names to the tones, the intervals, etc. This is where **tuning notation** comes in. The same tuning can be represented by several notations, depending on the music culture we are expressing.
+
+Eventually, we want to reach **notes**, **scales**, **chords**, and all the familiar musical objects - while preserving the localizable structure above. It's a slow process that requires that the abstractions perfectly snap into place. I don't expect to be done soon :sweat_smile:

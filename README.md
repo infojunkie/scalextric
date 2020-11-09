@@ -5,7 +5,7 @@ Musical structures from first principles.
 
 [![Build Status](https://travis-ci.org/infojunkie/scalextric.svg?branch=main)](https://travis-ci.org/infojunkie/scalextric)
 
-"Ladies and gentlemen, many songs have been written, and this is one of them." - Mo' Horizons, "Yes Baby Yes (Sally Said)"
+"Ladies and gentlemen, many songs have been written, and this is one of them." — [Mo' Horizons, "Yes Baby Yes (Sally Said)"](https://www.youtube.com/watch?v=fhnTkj0GQUE)
 
 Music is probably humanity's most important endeavour. It enfolds the sum of our collective knowledge about space, time, mathematics, physics, psychology, spirituality, love, sex, and all other essential questions. It's not surprising, then, that the Internet abounds with software that attempts to capture glimpses of this all-encompassing system.
 

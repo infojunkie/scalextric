@@ -15,7 +15,7 @@ This repo is my modest attempt at providing a rational, ontological, foundation 
 
 # General approach
 
-In this ontological approach, the atomic unit is not the note, but the **interval**. An interval is a ratio of frequencies, and it is the building block for a **tuning**, which represents a sequence of intervals that can generate **tones** given a base frequency. Note that a tone is not a **note**: it has no duration; it is still a mathematical object, just like the ideal point.
+In this ontological approach, the atomic unit is not the note, but the **interval**. An interval is a ratio of frequencies, and it is the building block for a **tuning**, which represents a sequence of intervals that can generate **tones** given a base frequency. A tone is _still_ not a note: it has no duration; it is a mathematical object, just like the ideal point.
 
 In order to represent a tuning in the real world, we need to give human names to the tones, the intervals, etc. This is where **tuning notation** comes in. The same tuning can be represented by several notations, depending on the music culture we are expressing.
 

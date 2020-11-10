@@ -18,12 +18,12 @@ import {Fraction} from 'mathjs';
 
 export class Interval {
   constructor(public ratio: Fraction) {}
-  get cents() { return 1200 * Math.log2(this.ratio.valueOf()); }
-  get savarts() { return 1000 * Math.log10(this.ratio.valueOf()); }
-  difference(reference: Interval) { return new Interval(this.ratio.div(reference.ratio)); }
-  static fromRatio(ratio: string) { return new Interval(new Fraction(ratio)); }
-  static fromCents(cents: number) { return new Interval(new Fraction(Math.pow(2, cents / 1200))); }
-  static fromSavarts(savarts: number) { return new Interval(new Fraction(Math.pow(10, savarts / 1000))); }
-  static compare(a: Interval, b: Interval) { return a.ratio.compare(b.ratio); }
-  static JND = Interval.fromCents(5); // https://en.wikipedia.org/wiki/Just-noticeable_difference
+  get cents(): number { return 1200 * Math.log2(this.ratio.valueOf()); }
+  get savarts(): number { return 1000 * Math.log10(this.ratio.valueOf()); }
+  difference(reference: Interval): Interval { return new Interval(this.ratio.div(reference.ratio)); }
+  static fromRatio(ratio: string): Interval { return new Interval(new Fraction(ratio)); }
+  static fromCents(cents: number): Interval { return new Interval(new Fraction(Math.pow(2, cents / 1200))); }
+  static fromSavarts(savarts: number): Interval { return new Interval(new Fraction(Math.pow(10, savarts / 1000))); }
+  static compare(a: Interval, b: Interval): number { return a.ratio.compare(b.ratio); }
+  static JND: Interval = Interval.fromCents(5); // https://en.wikipedia.org/wiki/Just-noticeable_difference
 }

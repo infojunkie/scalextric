@@ -1,5 +1,5 @@
 import { Tuning, TuningTone } from './Tuning';
-import { Multimap } from './Bimap';
+import { Multimap } from './utils/Bimap';
 /**
  * NOMENCLATURE SYSTEM
  *

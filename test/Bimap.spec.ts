@@ -1,7 +1,6 @@
 import {expect} from 'chai';
 import './setup';
-
-import {Bimap, Multimap} from '../src/Bimap';
+import {Bimap, Multimap} from '../src/utils/Bimap';
 
 describe('Bimap: empty map', () => {
   const map = new Bimap();

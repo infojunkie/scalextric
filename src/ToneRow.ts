@@ -1,6 +1,5 @@
 import {Tuning, TuningTone} from './Tuning';
-import {Annotation} from './Annotation';
-import {Helpers} from './Helpers';
+import {Annotation} from './utils/Annotation';
 
 /**
  * TONE ROW
@@ -62,7 +61,7 @@ export class ToneRow {
    *
    * rotate.monotonize => chord inversion
    */
-  monotonize(descending: boolean = false): ToneRow {
+  monotonize(descending = false): ToneRow {
     return new ToneRow(this.tuning, this.tones.reduce((current, next) => {
       const last: TuningTone = current.length > 0 ? current[current.length-1] : next;
       if (!descending && next.pitch < last.pitch) {
@@ -86,7 +85,7 @@ export class ToneRow {
   /**
    * Create a tone row from given pitches.
    */
-  static fromPitches(tuning: Tuning, pitches: number[], annotations: Annotation[] = []) {
+  static fromPitches(tuning: Tuning, pitches: number[], annotations: Annotation[] = []): ToneRow {
     return new ToneRow(tuning, pitches.map(pitch =>
       TuningTone.fromPitch(tuning, pitch)
     ), annotations);

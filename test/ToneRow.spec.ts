@@ -1,11 +1,10 @@
 import {expect} from 'chai';
 import './setup';
-
 import * as fs from 'fs';
 import {ToneRow} from '../src/ToneRow';
 import {Tuning, TuningTone} from '../src/Tuning';
-import {tuningFromScala} from '../src/io/scala';
-import {Helpers} from '../src/Helpers';
+import {tuningFromScala} from '../src/utils/scala';
+import * as Helpers from '../src/utils/Helpers';
 
 describe('ToneRow', () => {
   const edo24 = new Tuning(Tuning.intervalsEdo(24));

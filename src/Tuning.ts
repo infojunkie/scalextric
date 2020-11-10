@@ -1,7 +1,7 @@
 import {Fraction} from 'mathjs';
-import {Helpers} from './Helpers';
+import * as Helpers from './utils/Helpers';
+import {Annotation} from './utils/Annotation';
 import {Interval} from './Interval';
-import {Annotation} from './Annotation';
 
 /**
  * TUNING SYSTEM
@@ -49,7 +49,7 @@ export class Tuning {
    * @param annotations: as per constructor
    * @returns tuning object
    */
-  static fromIntervals(intervals: (number|string)[], annotations: Annotation[] = []) {
+  static fromIntervals(intervals: (number|string)[], annotations: Annotation[] = []): Tuning {
     return new Tuning(intervals.map(interval => {
       if (typeof interval == 'string') {
         return new Interval(new Fraction(interval));

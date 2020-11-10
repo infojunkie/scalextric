@@ -23,6 +23,6 @@ export declare class Interval {
     static fromRatio(ratio: string): Interval;
     static fromCents(cents: number): Interval;
     static fromSavarts(savarts: number): Interval;
-    static compare(a: Interval, b: Interval): any;
+    static compare(a: Interval, b: Interval): number;
     static JND: Interval;
 }

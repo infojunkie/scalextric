@@ -1,5 +1,5 @@
+import { Annotation } from './utils/Annotation';
 import { Interval } from './Interval';
-import { Annotation } from './Annotation';
 /**
  * TUNING SYSTEM
  *
@@ -30,8 +30,8 @@ export declare class Tuning {
      *
      * @param intervals: tuning intervals
      * The intervals will be guaranteed to be sorted.
-     * The first interval will be guaranteed to be the unison.
-     * The last interval will be considered to be the repeater (e.g. 2/1 the octave).
+     * The first interval will be _guaranteed_ to be the unison.
+     * The last interval will be _assumed_ to be the repeater (e.g. 2/1 the octave).
      * @param annotations: notes about the tuning
      */
     constructor(intervals: Interval[], annotations?: Annotation[]);

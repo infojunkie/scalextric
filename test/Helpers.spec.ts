@@ -1,8 +1,7 @@
 import {expect} from 'chai';
 import './setup';
-
 import Fraction from 'fraction.js';
-import {Helpers} from '../src/Helpers';
+import * as Helpers from '../src/utils/Helpers';
 
 describe('Helpers', () => {
   it('escapes regex strings', () => {

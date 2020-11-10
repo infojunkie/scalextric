@@ -1,6 +1,6 @@
 import {Tuning, TuningTone} from './Tuning';
-import {Helpers} from './Helpers';
-import {Multimap} from './Bimap';
+import * as Helpers from './utils/Helpers';
+import {Multimap} from './utils/Bimap';
 
 /**
  * NOMENCLATURE SYSTEM
@@ -59,7 +59,7 @@ export class TuningNotation {
     tuning: Tuning,
     notes: {[note: string]: number},
     accidentals: {[accidental: string]: number}
-  ) {
+  ): TuningNotation {
     const map = new Multimap<string, number>();
     Object.keys(notes).forEach(note => {
       map.set(`${note}`, notes[note]);

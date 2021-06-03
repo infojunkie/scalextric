@@ -18,6 +18,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm test && npm test:bundle
+    - run: npm test && npm run test:bundle
       env:
         CI: true

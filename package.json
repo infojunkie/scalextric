@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack",
-    "test": "npm run test:lint && npm run test:unit && npm run test:bundle",
+    "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint src",
     "test:unit": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
     "test:bundle": "npm run build && mocha test/**/*.spec.js",

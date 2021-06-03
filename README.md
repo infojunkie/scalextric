@@ -3,7 +3,7 @@ scalextric
 
 Musical structures from first principles.
 
-[![Build Status](https://travis-ci.org/infojunkie/scalextric.svg?branch=main)](https://travis-ci.org/infojunkie/scalextric)
+![GitHub Build Status](https://github.com/infojunkie/scalextric/workflows/Test/badge.svg)
 
 "Ladies and gentlemen, many songs have been written, and this is one of them." — Cannonball Adderley, via [Mo' Horizons, "Yes Baby Yes (Sally Said)"](https://www.youtube.com/watch?v=fhnTkj0GQUE)
 

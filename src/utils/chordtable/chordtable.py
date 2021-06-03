@@ -28,11 +28,11 @@ Generating chords is easy in MIDI since we just need to
 add/subtract constants, based on yet another table.
 
 CAUTION, if you add to this table make sure there are at least
-3 notes in each chord! Don't make any chord longer than 8 notes
-(The pattern define sets volumes for only 8).
+3 notes in each chord! 
 
 There is a corresponding scale set for each chord. These are
-used by bass and scale patterns.
+used by bass and scale patterns. All scales MUST be 7 notes long ...
+duplicate notes if needed to make the scale exactly 7 notes.
 
 Each chord needs an English doc string. This is extracted by the
 -Dn option to print a table of chordnames for inclusion in the
@@ -61,7 +61,7 @@ chordlist = {
 
     '(b5)':  ((C,    E,      Gb ),
              (C, D, E, F, Gb, A, B),
-             "Major triad with flat 5th."),
+             "Major triad with flat 5th. MMA notatation requires the () around the name."),
 
     'add9': ((C,    E,    G,    D+12),
              (C, D, E, F, G, A, D+12),
@@ -118,7 +118,7 @@ chordlist = {
     'm+7#9':  ((C, Eb, Gs, Bb, Ds+12),
                (C, Ds, Eb, F, Gs, Ab, Bb),
                "Augmented minor 7 plus sharp 9th."),
-
+    
     'mM7(add9)': ((C, Eb, G, B, D+12),
                  (C, D, Eb, F, G, Ab, B),
                  "Minor Triad plus Major 7th and 9th."),
@@ -131,9 +131,13 @@ chordlist = {
              (C, Db, Eb, F, G, Ab, Bb),
              "Minor 7th with added flat 9th."),
 
-    'm7#9': ((C,     Eb,    G,     Bb, Ds+12 ),  # Eb == D#
+    'm7#9': ((C,     Eb,    G,     Bb, Ds+12 ),  # Eb == D# 
              (C, Ds, Eb, F, G, Ab, Bb),
              "Minor 7th with added sharp 9th."),
+
+    'mb9': ((C,    Eb,    G,    Db+12),
+             (C, D, Eb, F, G, A, Db+12),
+             "Minor chord plus flat 9th (no 7th.)"),
 
     '7':    ((C,    E,      G,    Bb ),
              (C, D, E, F, G, A, Bb),
@@ -142,6 +146,7 @@ chordlist = {
     '7(6)':    ((C,    E,      G, A,   Bb ),
              (C, D, E, F, G, A, Bb),
              "7th with added 6th."),
+
     '7b5':    ((C,    E,      Gb,    Bb ),
              (C, D, E, F, Gb, A, Bb),
              "7th, flat 5."),
@@ -149,10 +154,14 @@ chordlist = {
     'dim7': ((C,    Eb,       Gb,       Bbb ),
              (C, D, Eb, F, Gb, Ab, Bbb ),    # missing 8th note
              "Diminished seventh."),
-
+    
     'dim7(addM7)': ((C, Eb, Gb, A, B),
              (C, D, Eb, F, Gb, A, B),
              "Diminished tirad with added Major 7th."),
+
+    'dim(b13)':  ((C, Eb, Gb, Bbb, Ab),
+                 (C, D, Eb, F, Gb, Ab, Bbb),
+                 "Diminished seventh, added flat 13th."),
 
     'aug':    ((C,    E,      Gs ),
              (C, D, E, F, Gs, A, B ),
@@ -165,7 +174,7 @@ chordlist = {
     '6(add9)':    ((C,   E, G, D+12, A+12),
              (C, D, E, F, G, A, B),
              "6th with added 9th. This is sometimes notated as a slash chord "
-             "in the form ``6/9''."),
+             "in the form ``6/9''. MMA voices the 6th an octave higher."),
 
     'M7':    ((C,    E,    G,    B),
              (C, D, E, F, G, A, B),
@@ -185,7 +194,7 @@ chordlist = {
              (C, D, E, F, G, A, Bb),
              "7th plus 9th."),
 
-
+ 
 
     '9b5':    ((C,    E,    Gb,    Bb, D+12 ),
              (C, D, E, F, Gb, A, Bb),
@@ -247,7 +256,7 @@ chordlist = {
              (C, Ds, E, F, Gs, A, Bb),
              "7th with sharp 5th and sharp 9th."),
 
-
+ 
     'aug7': ((C,    E,    Gs,    Bb ),
              (C, D, E, F, Gs, A, Bb),
              "An augmented chord (raised 5th) with a dominant 7th."),
@@ -279,7 +288,7 @@ chordlist = {
     '11+':    ((C,   C,    Gs,    Bb, D+12, F+12 ),
              (C, D, E, F, Gs, A, Bb),
              "Augmented 11th (sharp 5)."),
-
+    
     'm11':    ((C,    Eb,    G,     Bb, D+12, F+12 ),
              (C, D, Eb, F, G, Ab, Bb),
              "9th with minor 3rd,  plus 11th."),
@@ -315,7 +324,7 @@ chordlist = {
     '9b6':   ((C,   E,  Ab, D+12 ),
               (C, D, E, F, Ab, B, D+12),
               "9th with flat 6 (no 5th or 7th)."),
-
+    
     '9#11': ((C,    E,     G,    Bb, D+12, Fs+12 ),
              (C, D, E, Fs, G, A, Bb),
              "7th plus 9th and sharp 11th."),
@@ -416,11 +425,15 @@ chordlist = {
     '13#9':    ((C,    E,    G,    Bb, Ds+12,  A+12),
              (C, Ds, E, F, G, A, Bb),
              "7th (including 5th) plus 13th and sharp 9th (11th not voiced)."),
-
+ 
     '13b9':  ((C,    E,    G,    Bb, Db+12,  A+12),
              (C, Db, E, F, G, A, Bb),
              "7th (including 5th) plus 13th and flat 9th (11th not voiced)."),
-
+    
+    'M#11':   ((C,    E,    G,    B, Fs+12),
+             (C, D, E, Fs, G, A, B),
+             "Major triad plus sharp 11th."),
+    
     'M13':   ((C,    E,    G,    B, A+12),
              (C, D, E, F, G, A, B),
              "Major 7th (including 5th) plus 13th (9th and  11th not voiced)."),
@@ -491,7 +504,7 @@ aliases = (
     ('+7#9',     'aug7#9',   ''),
     ('+7b9',     'aug7b9',   ''),
     ('7(omit3)', '7omit3',   ''),
-    ('#5',       'aug',      ''),
+    ('(#5)',     'aug',      ''),
     ('7#5b9',    'aug7b9',   ''),
     ('7-9',      '7b9',      ''),
     ('7+9',      '7#9',      ''),
@@ -537,3 +550,8 @@ for a, b, d in aliases:
 
     chordlist[a] = (n, s, d)
 
+### little snippet to print chord info for my accordion chord program.
+##print "chords = {"
+##for a in chordlist:
+##    print "   '%s': ( %s,  \"%s\")," % (a, chordlist[a][0], chordlist[a][2])
+##print "}"

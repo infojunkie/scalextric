@@ -62,7 +62,7 @@ describe('Chords experiment', () => {
     const test1 = rows.find(row => row.annotations.find(a => a.name == 'label' && a.value == '7#5b9'));
     expect(test1.pitches).to.eql([0, 4, 8, 10, 13]);
     const test2 = rows.find(row => Helpers.arrayEqual(row.pitches, [0, 4, 8, 10, 13], (a,b) => a-b));
-    expect(test2.annotations.find(a => a.name == 'label').value).to.equal('7#5b9');
+    expect(test2.annotations.find(a => a.name == 'label').value).to.equal('aug7b9');
   })
 });
 

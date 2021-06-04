@@ -54,7 +54,7 @@ export function flipFraction(f: Fraction, greaterThanOne = false): Fraction {
  *        n = 0 if a = b
  * @returns index m >= 0 if match is found, m < 0 if not found with insertion point = -m-1.
  */
-export function binarySearch<T>(ar: Array<T>, el: T, comp: (a: T, b: T) => number): number {
+export function binarySearch<T>(ar: ReadonlyArray<T>, el: T, comp: (a: T, b: T) => number): number {
   let m = 0;
   let n = ar.length - 1;
   while (m <= n) {
@@ -75,7 +75,7 @@ export function binarySearch<T>(ar: Array<T>, el: T, comp: (a: T, b: T) => numbe
  * Check array equality.
  * https://stackoverflow.com/q/7837456/209184
  */
-export function arrayEqual<T>(ar1: Array<T>, ar2: Array<T>, comp: (a: T, b: T) => number): boolean {
+export function arrayEqual<T>(ar1: ReadonlyArray<T>, ar2: ReadonlyArray<T>, comp: (a: T, b: T) => number): boolean {
   return (
     ar1.length === ar2.length &&
     ar1.every((value, index) => comp(value, ar2[index]) === 0)
@@ -86,7 +86,7 @@ export function arrayEqual<T>(ar1: Array<T>, ar2: Array<T>, comp: (a: T, b: T) =
  * Return array with unique values.
  * https://stackoverflow.com/a/17903018/209184
  */
-export function arrayUnique<T>(ar: Array<T>): Array<T> {
+export function arrayUnique<T>(ar: ReadonlyArray<T>): ReadonlyArray<T> {
   return [...new Set(ar)];
 }
 
@@ -97,4 +97,12 @@ export function arrayUnique<T>(ar: Array<T>): Array<T> {
  */
 export function mod(n: number, m: number): number {
   return ((n % m) + m) % m;
+}
+
+/**
+ * Array range.
+ * https://stackoverflow.com/a/10050831/209184
+ */
+export function arrayRange(size: number, startAt = 0): ReadonlyArray<number> {
+  return [...Array(size).keys()].map(i => i + startAt);
 }

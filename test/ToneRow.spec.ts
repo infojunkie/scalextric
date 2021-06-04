@@ -75,7 +75,7 @@ describe('Arabic/Turkish maqam experiment', () => {
   const rastEderer = ToneRow.fromPitches(ederer, [0, 6, 11, 14, 20]);
 
   it('computes ratio differences', () => {
-    [...Array(5).keys()].forEach(i => {
+    Helpers.arrayRange(5).forEach(i => {
       console.log(rastQuarter.tuning.tune(rastQuarter.tones[i]).cents);
       console.log(rastKommah.tuning.tune(rastKommah.tones[i]).cents);
       console.log(rastEderer.tuning.tune(rastEderer.tones[i]).cents);

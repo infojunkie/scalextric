@@ -56,4 +56,16 @@ describe('Helpers', () => {
       (a,b) => a-b
     )).to.be.true;
   });
+
+  it('returns array ranges', () => {
+    expect(Helpers.arrayEqual(
+      Helpers.arrayRange(5), [0,1,2,3,4], (a,b) => a-b
+    )).to.be.true;
+    expect(Helpers.arrayEqual(
+      Helpers.arrayRange(5, 2), [2,3,4,5,6], (a,b) => a-b
+    )).to.be.true;
+    expect(Helpers.arrayEqual(
+      Helpers.arrayRange(0, 2), [], (a,b) => a-b
+    )).to.be.true;
+  });
 });

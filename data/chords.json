@@ -448,7 +448,7 @@
             },
             {
                 "name": "description",
-                "value": "Diminished tirad with added Major 7th."
+                "value": "Diminished triad with added Major 7th."
             }
         ]
     },
@@ -502,7 +502,7 @@
             },
             {
                 "name": "description",
-                "value": "Major tiad with added 6th."
+                "value": "Major triad with added 6th."
             }
         ]
     },
@@ -2182,7 +2182,7 @@
             },
             {
                 "name": "description",
-                "value": "Major tiad with added 6th."
+                "value": "Major triad with added 6th."
             }
         ]
     },

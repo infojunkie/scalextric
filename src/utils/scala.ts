@@ -1,6 +1,6 @@
-import {Annotation} from '../utils/Annotation';
-import {Tuning} from '../Tuning';
-import {Interval} from '../Interval';
+import { Annotation } from '../utils/Annotation';
+import { Tuning } from '../Tuning';
+import { Interval } from '../Interval';
 
 /**
  * Convert a Scala scale definition to a Tuning.

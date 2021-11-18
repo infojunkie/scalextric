@@ -1,4 +1,4 @@
-import { Fraction } from 'mathjs';
+import Fraction from 'fraction.js';
 /**
  * Escape a string to be used in regular expression.
  * https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
@@ -32,20 +32,25 @@ export declare function flipFraction(f: Fraction, greaterThanOne?: boolean): Fra
  *        n = 0 if a = b
  * @returns index m >= 0 if match is found, m < 0 if not found with insertion point = -m-1.
  */
-export declare function binarySearch<T>(ar: Array<T>, el: T, comp: (a: T, b: T) => number): number;
+export declare function binarySearch<T>(ar: ReadonlyArray<T>, el: T, comp: (a: T, b: T) => number): number;
 /**
  * Check array equality.
  * https://stackoverflow.com/q/7837456/209184
  */
-export declare function arrayEqual<T>(ar1: Array<T>, ar2: Array<T>, comp: (a: T, b: T) => number): boolean;
+export declare function arrayEqual<T>(ar1: ReadonlyArray<T>, ar2: ReadonlyArray<T>, comp: (a: T, b: T) => number): boolean;
 /**
  * Return array with unique values.
  * https://stackoverflow.com/a/17903018/209184
  */
-export declare function arrayUnique<T>(ar: Array<T>): Array<T>;
+export declare function arrayUnique<T>(ar: ReadonlyArray<T>): ReadonlyArray<T>;
 /**
  * Always-positive Modulo function. The built-in % operator computes the Remainder.
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
  * https://stackoverflow.com/a/17323608/209184
  */
 export declare function mod(n: number, m: number): number;
+/**
+ * Array range.
+ * https://stackoverflow.com/a/10050831/209184
+ */
+export declare function arrayRange(size: number, startAt?: number): ReadonlyArray<number>;

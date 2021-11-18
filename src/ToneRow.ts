@@ -1,5 +1,5 @@
-import {Tuning, TuningTone} from './Tuning';
-import {Annotation} from './utils/Annotation';
+import { Tuning, TuningTone } from './Tuning';
+import { Annotation } from './utils/Annotation';
 
 /**
  * TONE ROW

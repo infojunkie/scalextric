@@ -1,6 +1,6 @@
-import {Tuning, TuningTone} from './Tuning';
+import { Tuning, TuningTone } from './Tuning';
 import * as Helpers from './utils/Helpers';
-import {Multimap} from './utils/Bimap';
+import { Multimap } from './utils/Bimap';
 
 /**
  * NOMENCLATURE SYSTEM

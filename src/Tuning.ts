@@ -1,7 +1,7 @@
-import {Fraction} from 'mathjs';
+import Fraction from 'fraction.js';
 import * as Helpers from './utils/Helpers';
-import {Annotation} from './utils/Annotation';
-import {Interval} from './Interval';
+import { Annotation } from './utils/Annotation';
+import { Interval } from './Interval';
 
 /**
  * TUNING SYSTEM

@@ -1,11 +1,11 @@
 {
   "name": "scalextric",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Like Scala for Web programmers",
   "main": "dist/scalextric.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=development",
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint src",
     "test:unit": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
@@ -18,27 +18,27 @@
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/expect": "^24.3.0",
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^14.17.2",
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
-    "@typescript-eslint/parser": "^4.26.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "chai-deep-closeto": "^0.1.1",
-    "eslint": "^7.27.0",
+    "eslint": "^8.2.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-webpack-plugin": "^2.5.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-webpack-plugin": "^3.1.1",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "ts-loader": "^8.3.0",
+    "ts-loader": "^9.2.6",
     "ts-mocha": "^8.0.0",
-    "ts-node": "^9.1.1",
+    "ts-node": "^10.4.0",
     "typescript": "^4.3.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },
   "dependencies": {
-    "mathjs": "^7.6.0"
+    "fraction.js": "^4.1.2"
   }
 }

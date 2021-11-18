@@ -1,7 +1,7 @@
 scalextric
 ----------
 
-Musical structures from first principles.
+Scala for Web programmers.
 
 ![GitHub Build Status](https://github.com/infojunkie/scalextric/workflows/Test/badge.svg)
 

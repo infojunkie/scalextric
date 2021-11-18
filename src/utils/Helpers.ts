@@ -1,4 +1,4 @@
-import {Fraction} from 'mathjs';
+import Fraction from 'fraction.js';
 
 /**
  * Escape a string to be used in regular expression.

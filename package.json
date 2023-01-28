@@ -1,6 +1,6 @@
 {
   "name": "scalextric",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Like Scala for Web programmers",
   "main": "dist/scalextric.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,6 @@
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.2.18",
-    "@types/expect": "^24.3.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
@@ -29,12 +28,12 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-webpack-plugin": "^3.1.1",
-    "mocha": "^8.4.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "ts-loader": "^9.2.6",
-    "ts-mocha": "^8.0.0",
+    "ts-mocha": "^10.0.0",
     "ts-node": "^10.4.0",
-    "typescript": "^4.3.2",
+    "typescript": "^4.9.4",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },

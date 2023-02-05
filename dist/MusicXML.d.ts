@@ -1,6 +1,6 @@
 import { ToneRow } from './ToneRow';
 /**
- * Export various Scalextric objects to as a MusicXML string.
+ * Export various Scalextric objects to as a MusicXML document.
  */
 export declare class MusicXML {
     private title;
@@ -12,8 +12,34 @@ export declare class MusicXML {
             beatType: number;
         };
     };
-    constructor(title: string, objects: ToneRow[]);
-    convert(): any;
+    static notes: {
+        C: number;
+        D: number;
+        E: number;
+        F: number;
+        G: number;
+        A: number;
+        B: number;
+    };
+    static accidentalValues: {
+        '#': number;
+        b: number;
+    };
+    static accidentalNames: {
+        '#': string;
+        b: string;
+    };
+    static noteTypes: {
+        8: string;
+        4: string;
+        2: string;
+        1: string;
+    };
+    private options;
+    private tuning;
+    private tuningNotation;
+    constructor(title: string, objects: ToneRow[], options?: {});
+    convert(): string;
     private convertDocument;
     /**
      * Convert tone rows to MusicXML measures.
@@ -29,5 +55,8 @@ export declare class MusicXML {
      * @returns array of measures.
      */
     private convertObjects;
+    private convertBar;
+    private convertMeasure;
+    private convertNote;
     private static convertDate;
 }

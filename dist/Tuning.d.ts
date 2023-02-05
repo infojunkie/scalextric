@@ -100,5 +100,6 @@ export declare class TuningTone {
     octave: number;
     constructor(tuning: Tuning, pitchClass: number, octave: number);
     get pitch(): number;
+    get tune(): Interval;
     static fromPitch(tuning: Tuning, pitch: number): TuningTone;
 }

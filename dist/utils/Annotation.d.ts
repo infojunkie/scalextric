@@ -6,5 +6,6 @@
 export declare class Annotation {
     label: string;
     value: any;
+    static findByLabel(label: string, annotations: Annotation[]): any[];
     constructor(label: string, value: any);
 }

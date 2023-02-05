@@ -54,4 +54,8 @@ export declare class ToneRow {
      * Create a tone row from given pitches.
      */
     static fromPitches(tuning: Tuning, pitches: number[], annotations?: Annotation[]): ToneRow;
+    /**
+     * Create a tone row from given pitches.
+     */
+    static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, annotations?: Annotation[]): ToneRow;
 }

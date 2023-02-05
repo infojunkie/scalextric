@@ -1,9 +1,9 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import './setup';
 import * as fs from 'fs';
-import {tuningFromScala} from '../src/utils/scala';
-import {Tuning, TuningTone} from '../src/Tuning';
-import {Interval} from '../src/Interval';
+import { tuningFromScala } from '../src/utils/scala';
+import { Tuning, TuningTone } from '../src/Tuning';
+import { Interval } from '../src/Interval';
 
 describe('Tuning', () => {
   const tolerance = 0.00005;

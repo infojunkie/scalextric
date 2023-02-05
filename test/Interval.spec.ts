@@ -1,6 +1,6 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import './setup';
-import {Interval} from '../src/Interval';
+import { Interval } from '../src/Interval';
 
 describe('Interval', () => {
   const tolerance = 0.00005;

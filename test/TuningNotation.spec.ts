@@ -1,13 +1,11 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import './setup';
-
-import * as fs from 'fs';
-import {Tuning, TuningTone} from '../src/Tuning';
-import {TuningNotation} from '../src/TuningNotation';
+import { Tuning, TuningTone } from '../src/Tuning';
+import { TuningNotation } from '../src/TuningNotation';
 
 describe('TuningNotation', () => {
   const edo12 = new Tuning(Tuning.intervalsEdo(12));
-  const tuningNotation = TuningNotation.fromNotesAccidentalsCombination(edo12,{
+  const tuningNotation = TuningNotation.fromNotesAccidentalsCombination(edo12, {
     'C': 0,
     'D': 2,
     'E': 4,

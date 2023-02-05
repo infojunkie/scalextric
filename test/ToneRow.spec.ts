@@ -1,10 +1,10 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import './setup';
 import * as fs from 'fs';
-import {ToneRow} from '../src/ToneRow';
-import {Tuning, TuningTone} from '../src/Tuning';
-import {tuningFromScala} from '../src/utils/scala';
-import * as Helpers from '../src/utils/Helpers';
+import { ToneRow } from '../src/ToneRow';
+import { Tuning, TuningTone } from '../src/Tuning';
+import { tuningFromScala } from '../src/utils/scala';
+import { arrayEqual, arrayRange } from '../src/utils/helpers';
 
 describe('ToneRow', () => {
   const edo24 = new Tuning(Tuning.intervalsEdo(24));
@@ -61,7 +61,7 @@ describe('Chords experiment', () => {
     const rows = chords.map(chord => ToneRow.fromPitches(edo12, chord.tones, chord.annotations));
     const test1 = rows.find(row => row.annotations.find(a => a.name == 'label' && a.value == '7#5b9'));
     expect(test1.pitches).to.eql([0, 4, 8, 10, 13]);
-    const test2 = rows.find(row => Helpers.arrayEqual(row.pitches, [0, 4, 8, 10, 13], (a,b) => a-b));
+    const test2 = rows.find(row => arrayEqual(row.pitches, [0, 4, 8, 10, 13], (a,b) => a-b));
     expect(test2.annotations.find(a => a.name == 'label').value).to.equal('aug7b9');
   })
 });
@@ -75,7 +75,7 @@ describe('Arabic/Turkish maqam experiment', () => {
   const rastEderer = ToneRow.fromPitches(ederer, [0, 6, 11, 14, 20]);
 
   it('computes ratio differences', () => {
-    Helpers.arrayRange(5).forEach(i => {
+    arrayRange(5).forEach(i => {
       console.log(rastQuarter.tuning.tune(rastQuarter.tones[i]).cents);
       console.log(rastKommah.tuning.tune(rastKommah.tones[i]).cents);
       console.log(rastEderer.tuning.tune(rastEderer.tones[i]).cents);

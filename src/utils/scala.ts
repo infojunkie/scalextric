@@ -12,17 +12,16 @@ export function tuningFromScala(scala: string): Tuning {
   let commentLines = 0;
   let numberIntervals = 0;
   let label = '';
-  const intervals = [];
-  const comments = [];
-
-  (scala + '\r\n').match(/^.*[\n\r]{1,2}|$/gm).forEach(line => {
+  const intervals: Interval[] = [];
+  const comments: string[] = [];
+  (scala + '\r\n').match(/^.*[\n\r]{1,2}|$/gm)?.forEach(line => {
     if (line.indexOf('!') !== 0) {
       if (countLines === 0) {
         // First non-commented line is description
         label = line.trim();
       } else if (countLines === 1) {
         // Second non-commented line is the number of intervals
-        numberIntervals = parseInt(line, 10);
+        numberIntervals = parseInt(line);
       } else {
         // All other non-commented lines are interval values
         const interval = line.trim();
@@ -41,7 +40,7 @@ export function tuningFromScala(scala: string): Tuning {
   });
 
   if (intervals.length !== numberIntervals) {
-    throw new Error(`[tuningFromScala] Error in Scala format: expecting ${numberIntervals} intervals but got ${intervals.length}`);
+    throw new Error(`[tuningFromScala] Error in Scala format: expecting ${numberIntervals} intervals but got ${intervals.length} instead.`);
   }
 
   return new Tuning(

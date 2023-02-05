@@ -1,5 +1,5 @@
 import Fraction from 'fraction.js';
-import * as Helpers from './utils/Helpers';
+import { binarySearch, flipFraction, mod } from './utils/helpers';
 import { Annotation } from './utils/Annotation';
 import { Interval } from './Interval';
 
@@ -73,7 +73,7 @@ export class Tuning {
     const first: Interval = this.intervals[1].difference(this.intervals[0]);
     return (this._transposable = this.intervals.slice(1).every((v, i) => {
       const next: Interval = v.difference(this.intervals[i]);
-      const diff: Interval = new Interval(Helpers.flipFraction(next.difference(first).ratio, true));
+      const diff: Interval = new Interval(flipFraction(next.difference(first).ratio, true));
       return diff.ratio.compare(Interval.JND.ratio) < 0;
     }));
   }
@@ -123,7 +123,7 @@ export class Tuning {
     const base = new Interval(interval.ratio.div(this.octave.ratio.pow(octave)));
 
     // Search through the intervals to locate the nearest.
-    const n = Helpers.binarySearch(this.intervals, base, Interval.compare);
+    const n = binarySearch(this.intervals, base, Interval.compare);
     if (n >= 0) {
       // Exact match: return the pitch at the right octave.
       return {
@@ -172,7 +172,11 @@ export class TuningTone {
     return this.pitchClass + this.octave * this.tuning.steps;
   }
 
+  get tune(): Interval {
+    return this.tuning.tune(this);
+  }
+
   static fromPitch(tuning: Tuning, pitch: number): TuningTone {
-    return new TuningTone(tuning, Helpers.mod(pitch, tuning.steps), Math.floor(pitch / tuning.steps));
+    return new TuningTone(tuning, mod(pitch, tuning.steps), Math.floor(pitch / tuning.steps));
   }
 }

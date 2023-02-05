@@ -584,6 +584,25 @@
             0,
             4,
             7,
+            9,
+            11
+        ],
+        "annotations": [
+            {
+                "name": "label",
+                "value": "M7(add6)"
+            },
+            {
+                "name": "description",
+                "value": "Major 7th with a 6th."
+            }
+        ]
+    },
+    {
+        "tones": [
+            0,
+            4,
+            7,
             10,
             14
         ],
@@ -747,6 +766,26 @@
             {
                 "name": "description",
                 "value": "7th with flat 9th."
+            }
+        ]
+    },
+    {
+        "tones": [
+            0,
+            4,
+            7,
+            10,
+            13,
+            20
+        ],
+        "annotations": [
+            {
+                "name": "label",
+                "value": "7b9b13"
+            },
+            {
+                "name": "description",
+                "value": "7th with flat 9th and flat 13th."
             }
         ]
     },
@@ -1890,7 +1929,7 @@
             },
             {
                 "name": "description",
-                "value": "7th plus 9th with sharp 5th (same as aug9)."
+                "value": "Recommended notation is \"+9\" or \"9\\#5\""
             }
         ]
     },
@@ -2382,7 +2421,7 @@
             },
             {
                 "name": "description",
-                "value": "7th with sharp 9th."
+                "value": "Confusing, not recommended."
             }
         ]
     },
@@ -2436,7 +2475,7 @@
             },
             {
                 "name": "description",
-                "value": "Major 7th with sharp 5th."
+                "value": "Recommended notation is +M7."
             }
         ]
     },
@@ -2531,7 +2570,7 @@
             },
             {
                 "name": "description",
-                "value": "An augmented chord (raised 5th) with a dominant 7th."
+                "value": "An augmented (sharp 5) 7th. Recommended notation is \"+7\""
             }
         ]
     },
@@ -2549,7 +2588,7 @@
             },
             {
                 "name": "description",
-                "value": "An augmented chord (raised 5th) with a dominant 7th."
+                "value": "Recommended notation is \"+7\""
             }
         ]
     },
@@ -2567,7 +2606,7 @@
             },
             {
                 "name": "description",
-                "value": "An augmented chord (raised 5th) with a dominant 7th."
+                "value": "Recommented notation is \"+7\""
             }
         ]
     },

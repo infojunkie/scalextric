@@ -5,13 +5,14 @@
   "main": "dist/scalextric.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack --mode=development",
+    "build": "npm run build:chords && npm run build:scales && webpack",
+    "develop": "webpack --mode=development",
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint src",
     "test:unit": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
     "test:bundle": "npm run build && mocha test/**/*.spec.js",
-    "chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
-    "scales": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && rm data/scales.zip"
+    "build:chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
+    "build:scales": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && rm data/scales.zip"
   },
   "author": "Karim Ratib",
   "license": "MIT",
@@ -21,6 +22,7 @@
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@xmldom/xmldom": "^0.8.6",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "chai-deep-closeto": "^0.1.1",
@@ -34,10 +36,12 @@
     "ts-mocha": "^10.0.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.9.4",
+    "validate-with-xmllint": "^1.2.1",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },
   "dependencies": {
-    "fraction.js": "^4.1.2"
+    "fraction.js": "^4.1.2",
+    "jstoxml": "^3.2.6"
   }
 }

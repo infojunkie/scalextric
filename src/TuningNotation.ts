@@ -1,5 +1,5 @@
 import { Tuning, TuningTone } from './Tuning';
-import * as Helpers from './utils/Helpers';
+import { escapeRegExp, mod } from './utils/helpers';
 import { Multimap } from './utils/Bimap';
 
 /**
@@ -25,7 +25,7 @@ export class TuningNotation {
    */
   constructor(public tuning: Tuning, public map: Multimap<string, number>) {
     this.regex = new RegExp(
-      '^(' + Array.from(this.map.keys()).map(Helpers.escapeRegExp).join('|') + ')' +
+      '^(' + Array.from(this.map.keys()).map(escapeRegExp).join('|') + ')' +
       '(-?\\d)$',
       'i'
     );
@@ -64,7 +64,7 @@ export class TuningNotation {
     Object.keys(notes).forEach(note => {
       map.set(`${note}`, notes[note]);
       Object.keys(accidentals).forEach(accidental => {
-        map.set(`${note}${accidental}`, Helpers.mod(notes[note] + accidentals[accidental], tuning.steps));
+        map.set(`${note}${accidental}`, mod(notes[note] + accidentals[accidental], tuning.steps));
       });
     });
     return new TuningNotation(tuning, map);
@@ -77,7 +77,8 @@ export class TuningNotation {
    * @returns array of strings representing the enharmonic namings of the tone
    */
   name(tone: TuningTone): string[] {
-    return [...this.map.getKey(tone.pitchClass)].map(n => `${n}${tone.octave}`);
+    const names = [...this.map.getKey(tone.pitchClass)];
+    return names.sort((a, b) => a.length - b.length).map(name => `${name}${tone.octave}`);
   }
 
   /**

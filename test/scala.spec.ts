@@ -1,8 +1,8 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import './setup';
 import * as fs from 'fs';
-import {tuningFromScala, intervalFromScala} from '../src/utils/scala';
-import {Annotation} from '../src/utils/Annotation';
+import { tuningFromScala } from '../src/utils/scala';
+import { Annotation } from '../src/utils/Annotation';
 
 describe('Scala', () => {
   const tolerance = 0.00005;

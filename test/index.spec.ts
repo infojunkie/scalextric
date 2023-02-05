@@ -1,6 +1,6 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import './setup';
-import {Tuning} from '../src/index';
+import { Tuning } from '../src/index';
 
 describe('Scalextric', () => {
     it('accesses Tuning module', () => {

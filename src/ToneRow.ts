@@ -90,4 +90,13 @@ export class ToneRow {
       TuningTone.fromPitch(tuning, pitch)
     ), annotations);
   }
+
+  /**
+   * Create a tone row from given pitches.
+   */
+  static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, annotations: Annotation[] = []): ToneRow {
+    return new ToneRow(tuning, pitchClasses.map(pitchClass =>
+      new TuningTone(tuning, pitchClass, octave)
+    ), annotations);
+  }
 }

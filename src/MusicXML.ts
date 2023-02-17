@@ -145,6 +145,33 @@ export class MusicXML {
         })
       }
 
+      // First measure attributes.
+      if (objectIndex === 0) {
+        measure['_content'].push({
+          'attributes': [{
+            'divisions': this.options['divisions']
+          }, {
+            'key': [{
+              'fifths': 0
+            }, {
+              'mode': 'major'
+            }]
+          }, {
+            'time': [{
+              'beats': this.options['time']['beats']
+            }, {
+              'beat-type': this.options['time']['beatType']
+            }]
+          }, {
+            'clef': [{
+              'sign': 'G'
+            }, {
+              'line': 2
+            }]
+          }]
+        });
+      }
+
       // Add object label if any.
       const labels = Annotation.findByLabel('label', object.annotations);
       if (labels) {

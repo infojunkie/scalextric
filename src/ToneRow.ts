@@ -21,7 +21,9 @@ export class ToneRow {
    * @param tones: the tones making up the row
    * @param annotations: notes about the row
    */
-  constructor(public tuning: Tuning, public tones: TuningTone[], public annotations: Annotation[] = []) {}
+  constructor(public tuning: Tuning, public tones: TuningTone[], public annotations: Annotation[] = []) {
+    // TODO verify that tones are valid.
+  }
 
   /**
    * Transpose a row to a target tone.

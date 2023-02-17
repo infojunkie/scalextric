@@ -7,6 +7,7 @@
   "scripts": {
     "build": "npm run build:chords && npm run build:scales && webpack",
     "develop": "webpack --mode=development",
+    "demo": "http-serve -c0 demo",
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint src",
     "test:unit": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
@@ -30,6 +31,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-webpack-plugin": "^3.1.1",
+    "http-serve": "^1.0.1",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "ts-loader": "^9.2.6",

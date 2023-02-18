@@ -1,7 +1,7 @@
 scalextric
 ----------
 
-Microtonality for Web Audio.
+Like Unicode CLDR, but for music.
 
 ![GitHub Build Status](https://github.com/infojunkie/scalextric/workflows/Test/badge.svg)
 

@@ -1,7 +1,7 @@
 scalextric
 ----------
 
-Like Unicode CLDR, but for music.
+Like Unicode ICU/CLDR, but for music.
 
 ![GitHub Build Status](https://github.com/infojunkie/scalextric/workflows/Test/badge.svg)
 

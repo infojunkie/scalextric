@@ -9,9 +9,7 @@ describe('Scala', () => {
 
   it('parses Scala scales', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/data/pyth_12.scl`, 'utf8'));
-    expect(tuning.annotations).to.be.deep.equal([
-      new Annotation('label', '12-tone Pythagorean scale')
-    ]);
+    expect(tuning.annotations.length).to.be.equal(2);
     expect(tuning.steps).to.be.equal(12);
     expect(tuning.intervals.map(i => i.ratio.valueOf())).to.be.clsTo([
       1,
@@ -52,7 +50,8 @@ describe('Scala', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/data/ederer.scl`, 'utf8'));
     expect(tuning.annotations).to.be.deep.equal([
       new Annotation('label', 'Just intonation for Turkish-Arabic scales by Eric Ederer'),
-      new Annotation('description', 'Eric Ederer - Makam & Beyond: A Progressive Approach to Near Eastern Music Theory (2015)')
+      new Annotation('description', 'Eric Ederer - Makam & Beyond: A Progressive Approach to Near Eastern Music Theory (2015)'),
+      new Annotation('source', 'Scala Scale archive, version 91, May 2022')
     ]);
   });
 

@@ -26,7 +26,7 @@ export function primes(max: number): number[] {
       // i has not been marked -- it is prime
       primes.push(i);
       for (let j = i << 1; j <= max; j += i) {
-          sieve[j] = true;
+        sieve[j] = true;
       }
     }
   }

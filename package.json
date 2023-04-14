@@ -5,7 +5,7 @@
   "main": "dist/scalextric.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run build:chords && npm run build:scales && webpack",
+    "build": "webpack",
     "develop": "webpack --mode=development",
     "demo": "http-server -c0 demo",
     "test": "npm run test:lint && npm run test:unit",
@@ -13,7 +13,7 @@
     "test:unit": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
     "test:bundle": "npm run build && mocha test/**/*.spec.js",
     "build:chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
-    "build:scales": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && rm data/scales.zip"
+    "build:scales": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/"
   },
   "author": "Karim Ratib <karim.ratib@gmail.com> (https://github.com/infojunkie)",
   "license": "GPL-3.0-only",

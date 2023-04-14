@@ -128,3 +128,4 @@ test/output/*
 demo/cli/*.musicxml
 !dist
 data/scl
+data/scales.zip

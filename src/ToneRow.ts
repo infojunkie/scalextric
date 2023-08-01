@@ -1,11 +1,12 @@
-import { Tuning, TuningTone } from './Tuning';
+import { Tuning, Tone } from './Tuning';
 import { Annotation } from './utils/Annotation';
+import { Solmization } from './Solmization';
 
 /**
  * TONE ROW
  *
- * We define a tone row as an ordered sequence of tones. It is the basic collection of tones
- * that make up many other musical objects such as scales, chords, etc.
+ * We define a tone row as an non-repetitive ordered sequence of tones. It is the basic collection of tones
+ * that make up many other musical objects such as triads, scales, chords, etc.
  *
  * This definition extends the usual definition of "tone row" used in serial composition
  * https://en.wikipedia.org/wiki/Tone_row
@@ -21,25 +22,28 @@ export class ToneRow {
    * @param tones: the tones making up the row
    * @param annotations: notes about the row
    */
-  constructor(public tuning: Tuning, public tones: TuningTone[], public annotations: Annotation[] = []) {
-    // TODO verify that tones are valid.
+  constructor(public tuning: Tuning, public tones: Tone[], public annotations: Annotation[] = []) {
+    // Verify that tones are valid by detecting repeating pitch classes.
+    if (tones.some((tone, index) => !!tones.slice(index + 1).find(t => t.pitchClass === tone.pitchClass))) {
+      throw Error(`Found repeating pitch class in tone row.`);
+    }
   }
 
   /**
    * Transpose a row to a target tone.
    */
-  transpose(target: TuningTone): ToneRow {
+  transpose(target: Tone): ToneRow {
     return new ToneRow(this.tuning, this.tones.map(tone =>
-      TuningTone.fromPitch(this.tuning, target.pitch + tone.pitch)
+      Tone.fromPitch(this.tuning, target.pitch + tone.pitch)
     ));
   }
 
   /**
    * Invert a row around an axis tone.
    */
-  invert(axis: TuningTone): ToneRow {
+  invert(axis: Tone): ToneRow {
     return new ToneRow(this.tuning, this.tones.map(tone =>
-      TuningTone.fromPitch(this.tuning, axis.pitch - tone.pitch)
+      Tone.fromPitch(this.tuning, axis.pitch - tone.pitch)
     ));
   }
 
@@ -65,16 +69,16 @@ export class ToneRow {
    */
   monotonize(descending = false): ToneRow {
     return new ToneRow(this.tuning, this.tones.reduce((current, next) => {
-      const last: TuningTone = current.length > 0 ? current[current.length-1] : next;
+      const last: Tone = current.length > 0 ? current[current.length-1] : next;
       if (!descending && next.pitch < last.pitch) {
-        current.push(new TuningTone(this.tuning, next.pitchClass, last.octave + (next.pitchClass < last.pitchClass ? 1 : 0)));
+        current.push(new Tone(this.tuning, next.pitchClass, last.octave + (next.pitchClass < last.pitchClass ? 1 : 0)));
       } else if (descending && next.pitch > last.pitch) {
-        current.push(new TuningTone(this.tuning, next.pitchClass, last.octave + (next.pitchClass > last.pitchClass ? -1 : 0)));
+        current.push(new Tone(this.tuning, next.pitchClass, last.octave + (next.pitchClass > last.pitchClass ? -1 : 0)));
       } else {
         current.push(next);
       }
       return current;
-    }, new Array<TuningTone>()));
+    }, []));
   }
 
   /**
@@ -89,7 +93,7 @@ export class ToneRow {
    */
   static fromPitches(tuning: Tuning, pitches: number[], annotations: Annotation[] = []): ToneRow {
     return new ToneRow(tuning, pitches.map(pitch =>
-      TuningTone.fromPitch(tuning, pitch)
+      Tone.fromPitch(tuning, pitch)
     ), annotations);
   }
 
@@ -98,7 +102,17 @@ export class ToneRow {
    */
   static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, annotations: Annotation[] = []): ToneRow {
     return new ToneRow(tuning, pitchClasses.map(pitchClass =>
-      new TuningTone(tuning, pitchClass, octave)
+      new Tone(tuning, pitchClass, octave)
     ), annotations);
+  }
+}
+
+export class ToneRowSolmized extends ToneRow {
+  constructor(public tuning: Tuning, public solmization: Solmization, public tones: Tone[], public annotations: Annotation[] = []) {
+    super(tuning, tones, annotations);
+  }
+
+  static fromToneRow(row: ToneRow, solmization: Solmization): ToneRowSolmized {
+    return new ToneRowSolmized(row.tuning, solmization, row.tones, row.annotations);
   }
 }

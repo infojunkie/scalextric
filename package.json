@@ -1,19 +1,18 @@
 {
   "name": "scalextric",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Like Scala for Web programmers",
   "main": "dist/scalextric.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack",
     "develop": "webpack --mode=development",
-    "demo": "http-server -c0 demo",
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint src",
     "test:unit": "nyc ts-mocha -p tsconfig.json test/**/*.spec.ts",
     "test:bundle": "npm run build && mocha test/**/*.spec.js",
     "build:chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
-    "build:scales": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/"
+    "build:scales": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && for f in data/scl/*; do iconv -f iso-8859-1 -t utf-8 \"$f\" -o \"$f\"; done"
   },
   "author": "Karim Ratib <karim.ratib@gmail.com> (https://github.com/infojunkie)",
   "license": "GPL-3.0-only",
@@ -33,7 +32,6 @@
     "eslint-webpack-plugin": "^3.1.1",
     "http-server": "^14.1.1",
     "mocha": "^10.2.0",
-    "musicxml-player": "github:infojunkie/musicxml-player#main",
     "nyc": "^15.1.0",
     "ts-loader": "^9.2.6",
     "ts-mocha": "^10.0.0",

@@ -60,7 +60,7 @@ export function tuningFromScala(scala: string, source: string = SCALA_VERSION): 
  * @param string Interval in any of the valid interval Scala format
  * @returns interval object
  */
-export function intervalFromScala(interval: string): Interval {
+function intervalFromScala(interval: string): Interval {
   let result: Interval;
 
   interval = interval.split(' ')[0];

@@ -30,10 +30,10 @@ export class Tuning {
    * CONSTRUCTOR
    *
    * @param intervals: tuning intervals
-   * The intervals will be guaranteed to be sorted.
+   * The intervals will be _guaranteed_ to be sorted.
    * The first interval will be _guaranteed_ to be the unison.
    * The last interval will be _assumed_ to be the repeater (e.g. 2/1 the octave).
-   * @param annotations: notes about the tuning
+   * @param annotations: annotations about the tuning
    */
   constructor(public intervals: Interval[], public annotations: Annotation[] = []) {
     this.intervals.sort(Interval.compare);
@@ -102,7 +102,7 @@ export class Tuning {
    * @param tone: tone to be tuned
    * @returns frequency ratio of the tone with respect to root tone
    */
-  tune(tone: TuningTone): Interval {
+  tune(tone: Tone): Interval {
     // Get the ratio difference between the target tone and the root tone, raised to the difference in octave.
     // The octave is always the last tone as per the definition of the `intervals` array.
     return new Interval(
@@ -117,7 +117,7 @@ export class Tuning {
    * @param interval: target interval
    * @returns nearest tone, interval and difference from the target
    */
-  nearest(interval: Interval): {tone: TuningTone, interval: Interval, difference: Interval} {
+  nearest(interval: Interval): {tone: Tone, interval: Interval, difference: Interval} {
     // Bring the interval to the base octave.
     const octave = Math.floor(Math.log(interval.ratio.valueOf()) / Math.log(this.octave.ratio.valueOf()));
     const base = new Interval(interval.ratio.div(this.octave.ratio.pow(octave)));
@@ -127,7 +127,7 @@ export class Tuning {
     if (n >= 0) {
       // Exact match: return the pitch at the right octave.
       return {
-        tone: new TuningTone(this, n, octave),
+        tone: new Tone(this, n, octave),
         interval,
         difference: new Interval(new Fraction(1))
       }
@@ -138,7 +138,7 @@ export class Tuning {
       const lower = Math.abs(this.intervals[m-1].difference(base).cents);
       const upper = Math.abs(this.intervals[m].difference(base).cents);
       const nearest = lower < upper ? m-1 : m;
-      const nearestTone = new TuningTone(this, nearest, octave);
+      const nearestTone = new Tone(this, nearest, octave);
       const nearestInterval = this.tune(nearestTone);
       return {
         tone: nearestTone,
@@ -155,18 +155,20 @@ export class Tuning {
    * The intervals are calculated in cents, because they will be converted to ratios
    * inside the Tuning constructor.
    */
-  static intervalsEdo(divisions: number): Interval[] {
-    return Array.from(Array(divisions + 1)).map((_, i) => {
+  static fromEdo(divisions: number): Tuning {
+    return new Tuning(Array.from(Array(divisions + 1)).map((_, i) => {
       return Interval.fromCents(1200 / divisions * i);
-    });
+    }));
   }
 }
 
 /**
  * Tone in a tuning.
  */
-export class TuningTone {
-  constructor(public tuning: Tuning, public pitchClass: number, public octave: number) {}
+export class Tone {
+  constructor(public tuning: Tuning, public pitchClass: number, public octave: number) {
+    // TODO Verify that pitch class is valid.
+  }
 
   get pitch(): number {
     return this.pitchClass + this.octave * this.tuning.steps;
@@ -176,7 +178,7 @@ export class TuningTone {
     return this.tuning.tune(this);
   }
 
-  static fromPitch(tuning: Tuning, pitch: number): TuningTone {
-    return new TuningTone(tuning, mod(pitch, tuning.steps), Math.floor(pitch / tuning.steps));
+  static fromPitch(tuning: Tuning, pitch: number): Tone {
+    return new Tone(tuning, mod(pitch, tuning.steps), Math.floor(pitch / tuning.steps));
   }
 }

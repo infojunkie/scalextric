@@ -5,7 +5,7 @@
  */
 export class Annotation {
   static findByLabel(label: string, annotations: Annotation[]): any[] {
-    return annotations.filter(annotation => annotation.label = label).map(annotation => annotation.value);
+    return annotations.filter(annotation => annotation.label === label).map(annotation => annotation.value);
   }
 
   constructor(public label: string, public value: any) {}

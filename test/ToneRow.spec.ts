@@ -2,23 +2,23 @@ import { expect } from 'chai';
 import './setup';
 import * as fs from 'fs';
 import { ToneRow } from '../src/ToneRow';
-import { Tuning, TuningTone } from '../src/Tuning';
+import { Tuning, Tone } from '../src/Tuning';
 import { tuningFromScala } from '../src/utils/scala';
 import { arrayEqual, arrayRange } from '../src/utils/helpers';
 
 describe('ToneRow', () => {
-  const edo24 = new Tuning(Tuning.intervalsEdo(24));
+  const edo24 = Tuning.fromEdo(24);
   const row = ToneRow.fromPitches(edo24, [0, 8, 14, 22]);
 
   it('transposes', () => {
     expect(
-      row.transpose(TuningTone.fromPitch(edo24, 4)).pitches
+      row.transpose(Tone.fromPitch(edo24, 4)).pitches
     ).to.eql([4, 12, 18, 26]);
   });
 
   it('inverts', () => {
     expect(
-      row.invert(TuningTone.fromPitch(edo24, 12)).pitches
+      row.invert(Tone.fromPitch(edo24, 12)).pitches
     ).to.eql([12, 4, -2, -10]);
   });
 
@@ -55,20 +55,21 @@ describe('ToneRow', () => {
 
 describe('Chords experiment', () => {
   const chords = JSON.parse(fs.readFileSync(`data/chords.json`, 'utf8'));
-  const edo12 = new Tuning(Tuning.intervalsEdo(12));
+  const edo12 = Tuning.fromEdo(12);
 
   it('makes tone rows from chords', () => {
-    const rows = chords.map(chord => ToneRow.fromPitches(edo12, chord.tones, chord.annotations));
-    const test1 = rows.find(row => row.annotations.find(a => a.name == 'label' && a.value == '7#5b9'));
+    const chord1 = chords.find(chord => chord.annotations.find(a => a.label === 'label' && a.value === '7#5b9'))
+    const test1 = ToneRow.fromPitches(edo12, chord1.tones, chord1.annotations);
     expect(test1.pitches).to.eql([0, 4, 8, 10, 13]);
-    const test2 = rows.find(row => arrayEqual(row.pitches, [0, 4, 8, 10, 13], (a,b) => a-b));
-    expect(test2.annotations.find(a => a.name == 'label').value).to.equal('aug7b9');
+    const chord2 = chords.find(chord => arrayEqual(chord.tones, [0, 4, 8, 10, 13], (a,b) => a-b))
+    const test2 = ToneRow.fromPitches(edo12, chord2.tones, chord2.annotations);
+    expect(test2.annotations.find(a => a.label === 'label')?.value).to.equal('aug7b9');
   })
 });
 
 describe('Arabic/Turkish maqam experiment', () => {
-  const quarter = new Tuning(Tuning.intervalsEdo(24));
-  const kommah = new Tuning(Tuning.intervalsEdo(53));
+  const quarter = Tuning.fromEdo(24);
+  const kommah = Tuning.fromEdo(53);
   const ederer = tuningFromScala(fs.readFileSync(`test/data/ederer.scl`, 'utf8'));
   const rastQuarter = ToneRow.fromPitches(quarter, [0, 4, 7, 10, 14]);
   const rastKommah = ToneRow.fromPitches(kommah, [0, 9, 17, 22, 31]);

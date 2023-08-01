@@ -69,7 +69,7 @@ export declare class Tuning {
      * @param tone: tone to be tuned
      * @returns frequency ratio of the tone with respect to root tone
      */
-    tune(tone: TuningTone): Interval;
+    tune(tone: Tone): Interval;
     /**
      * NEAREST TONE
      * Find the nearest tone given an interval and return difference
@@ -78,7 +78,7 @@ export declare class Tuning {
      * @returns nearest tone, interval and difference from the target
      */
     nearest(interval: Interval): {
-        tone: TuningTone;
+        tone: Tone;
         interval: Interval;
         difference: Interval;
     };
@@ -89,17 +89,17 @@ export declare class Tuning {
      * The intervals are calculated in cents, because they will be converted to ratios
      * inside the Tuning constructor.
      */
-    static intervalsEdo(divisions: number): Interval[];
+    static fromEdo(divisions: number): Tuning;
 }
 /**
  * Tone in a tuning.
  */
-export declare class TuningTone {
+export declare class Tone {
     tuning: Tuning;
     pitchClass: number;
     octave: number;
     constructor(tuning: Tuning, pitchClass: number, octave: number);
     get pitch(): number;
     get tune(): Interval;
-    static fromPitch(tuning: Tuning, pitch: number): TuningTone;
+    static fromPitch(tuning: Tuning, pitch: number): Tone;
 }

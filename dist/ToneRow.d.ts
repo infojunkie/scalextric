@@ -1,9 +1,9 @@
-import { Tuning, TuningTone } from './Tuning';
+import { Tuning, Tone } from './Tuning';
 import { Annotation } from './utils/Annotation';
 /**
  * TONE ROW
  *
- * We define a tone row as an ordered sequence of tones. It is the basic collection of tones
+ * We define a tone row as an non-repetitive ordered sequence of tones. It is the basic collection of tones
  * that make up many other musical objects such as scales, chords, etc.
  *
  * This definition extends the usual definition of "tone row" used in serial composition
@@ -14,7 +14,7 @@ import { Annotation } from './utils/Annotation';
  */
 export declare class ToneRow {
     tuning: Tuning;
-    tones: TuningTone[];
+    tones: Tone[];
     annotations: Annotation[];
     /**
      * CONSTRUCTOR
@@ -23,15 +23,15 @@ export declare class ToneRow {
      * @param tones: the tones making up the row
      * @param annotations: notes about the row
      */
-    constructor(tuning: Tuning, tones: TuningTone[], annotations?: Annotation[]);
+    constructor(tuning: Tuning, tones: Tone[], annotations?: Annotation[]);
     /**
      * Transpose a row to a target tone.
      */
-    transpose(target: TuningTone): ToneRow;
+    transpose(target: Tone): ToneRow;
     /**
      * Invert a row around an axis tone.
      */
-    invert(axis: TuningTone): ToneRow;
+    invert(axis: Tone): ToneRow;
     /**
      * Reverse a row.
      */

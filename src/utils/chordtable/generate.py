@@ -6,10 +6,10 @@ print(json.dumps([
   (lambda k, v: {
     'tones': v[0],
     'annotations': [{
-      'name': 'label',
+      'label': 'label',
       'value': k
     },{
-      'name': 'description',
+      'label': 'description',
       'value': v[2]
     }]
   })(k, v) for k, v in chordtable.chordlist.items()

@@ -1,4 +1,4 @@
-import { Tuning, TuningTone } from './Tuning';
+import { Tuning, Tone } from './Tuning';
 import { Multimap } from './utils/Bimap';
 /**
  * NOMENCLATURE SYSTEM
@@ -58,12 +58,12 @@ export declare class TuningNotation {
      * @param tone: tone to be named
      * @returns array of strings representing the enharmonic namings of the tone
      */
-    name(tone: TuningTone): string[];
+    name(tone: Tone): string[];
     /**
      * PARSE A NOTE
      *
      * @param note: target note in scientific pitch notation
      * @returns tone generator
      */
-    parse(note: string): TuningTone;
+    parse(note: string): Tone;
 }

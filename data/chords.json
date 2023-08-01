@@ -7,11 +7,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major triad. This is the default and is used in  the absence of any other chord type specification."
             }
         ]
@@ -24,11 +24,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "(b5)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major triad with flat 5th. MMA notatation requires the () around the name."
             }
         ]
@@ -42,11 +42,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "add9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major chord plus 9th (no 7th.)"
             }
         ]
@@ -60,11 +60,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "addb9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major chord plus flat 9th (no 7th.)"
             }
         ]
@@ -78,11 +78,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "add#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major chord plus sharp 9th (no 7th.)"
             }
         ]
@@ -95,11 +95,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad."
             }
         ]
@@ -112,11 +112,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "mb5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad with flat 5th (aka dim)."
             }
         ]
@@ -129,11 +129,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m#5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad with augmented 5th."
             }
         ]
@@ -147,11 +147,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m6"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 6th (flat 3rd plus a 6th)."
             }
         ]
@@ -166,11 +166,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m6(add9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 6th with added 9th. This is sometimes notated as a slash chord in the form ``m6/9''."
             }
         ]
@@ -184,11 +184,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th (flat 3rd plus dominant 7th)."
             }
         ]
@@ -202,11 +202,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7#5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with sharp 5th."
             }
         ]
@@ -220,11 +220,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "mM7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
             }
         ]
@@ -239,11 +239,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m+7b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented minor 7 plus flat 9th."
             }
         ]
@@ -258,11 +258,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m+7#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented minor 7 plus sharp 9th."
             }
         ]
@@ -277,11 +277,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "mM7(add9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor Triad plus Major 7th and 9th."
             }
         ]
@@ -295,11 +295,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7b5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th, flat 5 (aka 1/2 diminished). "
             }
         ]
@@ -314,11 +314,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with added flat 9th."
             }
         ]
@@ -333,11 +333,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with added sharp 9th."
             }
         ]
@@ -351,11 +351,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "mb9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor chord plus flat 9th (no 7th.)"
             }
         ]
@@ -369,11 +369,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th."
             }
         ]
@@ -388,11 +388,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7(6)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with added 6th."
             }
         ]
@@ -406,11 +406,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th, flat 5."
             }
         ]
@@ -424,11 +424,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "dim7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Diminished seventh."
             }
         ]
@@ -443,11 +443,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "dim7(addM7)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Diminished triad with added Major 7th."
             }
         ]
@@ -462,11 +462,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "dim(b13)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Diminished seventh, added flat 13th."
             }
         ]
@@ -479,11 +479,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "aug"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented triad."
             }
         ]
@@ -497,11 +497,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "6"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major triad with added 6th."
             }
         ]
@@ -516,11 +516,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "6(add9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "6th with added 9th. This is sometimes notated as a slash chord in the form ``6/9''. MMA voices the 6th an octave higher."
             }
         ]
@@ -534,11 +534,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th."
             }
         ]
@@ -552,11 +552,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7#5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th with sharp 5th."
             }
         ]
@@ -570,11 +570,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7b5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th with a flat 5th."
             }
         ]
@@ -589,11 +589,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7(add6)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th with a 6th."
             }
         ]
@@ -608,11 +608,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th."
             }
         ]
@@ -627,11 +627,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9b5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th with flat 5th."
             }
         ]
@@ -646,11 +646,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad plus 7th and 9th."
             }
         ]
@@ -665,11 +665,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7b5b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with flat 5th and flat 9th."
             }
         ]
@@ -684,11 +684,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m9b5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad, flat 5, plus 7th and 9th."
             }
         ]
@@ -702,11 +702,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m(sus9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad plus 9th (no 7th)."
             }
         ]
@@ -721,11 +721,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th plus 9th."
             }
         ]
@@ -741,11 +741,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 9th plus sharp 11th."
             }
         ]
@@ -760,11 +760,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with flat 9th."
             }
         ]
@@ -780,11 +780,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b9b13"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with flat 9th and flat 13th."
             }
         ]
@@ -799,11 +799,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with sharp 9th."
             }
         ]
@@ -819,11 +819,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7#9b13"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with sharp 9th and flat 13th."
             }
         ]
@@ -838,11 +838,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b5(add13)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with flat 5 and 13th."
             }
         ]
@@ -857,11 +857,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7(add13)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with added 13th."
             }
         ]
@@ -876,11 +876,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b5b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with flat 5th and flat 9th."
             }
         ]
@@ -895,11 +895,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b5#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with flat 5th and sharp 9th."
             }
         ]
@@ -914,11 +914,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7#5#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with sharp 5th and sharp 9th."
             }
         ]
@@ -932,11 +932,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "aug7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a dominant 7th."
             }
         ]
@@ -951,11 +951,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "aug7b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a dominant 7th and flat 9th."
             }
         ]
@@ -970,11 +970,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "aug7#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a dominant 7th and sharp 9th."
             }
         ]
@@ -989,11 +989,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "aug9M7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a major 7th and 9th."
             }
         ]
@@ -1009,11 +1009,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+7b9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented 7th with flat 9th and sharp 11th."
             }
         ]
@@ -1029,11 +1029,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m+7b9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented minor 7th with flat 9th and sharp 11th."
             }
         ]
@@ -1049,11 +1049,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "9th chord plus 11th (3rd not voiced)."
             }
         ]
@@ -1069,11 +1069,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "11+"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented 11th (sharp 5)."
             }
         ]
@@ -1089,11 +1089,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "9th with minor 3rd,  plus 11th."
             }
         ]
@@ -1109,11 +1109,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 9th plus 11th."
             }
         ]
@@ -1128,11 +1128,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7(add11)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th  plus 11th."
             }
         ]
@@ -1148,11 +1148,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th plus 9th and sharp 11th."
             }
         ]
@@ -1168,11 +1168,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7b9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th plus flat 9th and sharp 11th."
             }
         ]
@@ -1187,11 +1187,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7(add13)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th  plus 13th."
             }
         ]
@@ -1207,11 +1207,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "11b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th chord plus flat 9th and 11th."
             }
         ]
@@ -1226,11 +1226,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9#5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th with sharp 5th (same as aug9)."
             }
         ]
@@ -1244,11 +1244,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9b6"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "9th with flat 6 (no 5th or 7th)."
             }
         ]
@@ -1264,11 +1264,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th and sharp 11th."
             }
         ]
@@ -1284,11 +1284,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7#9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus sharp 9th and sharp 11th."
             }
         ]
@@ -1304,11 +1304,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b9#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus flat 9th and sharp 11th."
             }
         ]
@@ -1323,11 +1323,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus sharp 11th (9th omitted)."
             }
         ]
@@ -1342,11 +1342,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th plus sharp 11th (9th omitted)."
             }
         ]
@@ -1362,11 +1362,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m11b5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with flat 5th plus 11th."
             }
         ]
@@ -1379,11 +1379,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "sus4"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Suspended 4th, major triad with the 3rd raised half tone."
             }
         ]
@@ -1397,11 +1397,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "msus4"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor suspended 4th, minor triad plus 4th."
             }
         ]
@@ -1416,11 +1416,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7sus4"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor suspended 4th, minor triad plus 4th and dominant 7th."
             }
         ]
@@ -1434,11 +1434,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "sus(addb9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Suspended 4th, major triad with the 3rd raised half tone plus flat 9th."
             }
         ]
@@ -1452,11 +1452,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "sus(add9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Suspended 4th, major triad with the 3rd raised half tone plus 9th."
             }
         ]
@@ -1470,11 +1470,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "sus(add#9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Suspended 4th, major triad with the 3rd raised half tone plus sharp 9th."
             }
         ]
@@ -1488,11 +1488,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7sus"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with suspended 4th, dominant 7th with 3rd raised half tone."
             }
         ]
@@ -1507,11 +1507,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7susb9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with suspended 4th and flat 9th."
             }
         ]
@@ -1524,11 +1524,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "sus2"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Suspended 2nd, major triad with the major 2nd above the root substituted for 3rd."
             }
         ]
@@ -1542,11 +1542,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7sus2"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "A sus2 with dominant 7th added."
             }
         ]
@@ -1561,11 +1561,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "sus9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7sus plus 9th."
             }
         ]
@@ -1581,11 +1581,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13sus"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7sus, plus 9th and 13th"
             }
         ]
@@ -1601,11 +1601,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13susb9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7sus, plus flat 9th and 13th"
             }
         ]
@@ -1620,11 +1620,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th (including 5th) plus 13th (the 9th and 11th are not voiced)."
             }
         ]
@@ -1639,11 +1639,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b13"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th (including 5th) plus flat 13th (the 9th and 11th are not voiced)."
             }
         ]
@@ -1658,11 +1658,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13b5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with flat 5th,  plus 13th (the 9th and 11th are not voiced)."
             }
         ]
@@ -1678,11 +1678,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th (including 5th) plus 13th and sharp 9th (11th not voiced)."
             }
         ]
@@ -1698,11 +1698,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th (including 5th) plus 13th and flat 9th (11th not voiced)."
             }
         ]
@@ -1717,11 +1717,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major triad plus sharp 11th."
             }
         ]
@@ -1736,11 +1736,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M13"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th (including 5th) plus 13th (9th and  11th not voiced)."
             }
         ]
@@ -1755,11 +1755,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m13"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th (including 5th) plus 13th (9th and 11th not voiced)."
             }
         ]
@@ -1775,11 +1775,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus sharp 11th and 13th (9th not voiced)."
             }
         ]
@@ -1795,11 +1795,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M13#11"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th plus sharp 11th and 13th (9th not voiced)."
             }
         ]
@@ -1813,11 +1813,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Altered Fifth or Power Chord; root and 5th only."
             }
         ]
@@ -1831,11 +1831,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "omit3add9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Triad: root, 5th and 9th."
             }
         ]
@@ -1849,11 +1849,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7omit3"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with unvoiced 3rd."
             }
         ]
@@ -1866,11 +1866,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7omit5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with unvoiced 5th."
             }
         ]
@@ -1886,11 +1886,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "11#5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented 11th (sharp 5)."
             }
         ]
@@ -1905,11 +1905,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "aug9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th with sharp 5th (same as aug9)."
             }
         ]
@@ -1924,11 +1924,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9+"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Recommended notation is \"+9\" or \"9\\#5\""
             }
         ]
@@ -1943,11 +1943,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th with sharp 5th (same as aug9)."
             }
         ]
@@ -1962,11 +1962,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+9M7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a major 7th and 9th."
             }
         ]
@@ -1980,11 +1980,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+M7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th with sharp 5th."
             }
         ]
@@ -1998,11 +1998,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m(add9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad plus 9th (no 7th)."
             }
         ]
@@ -2016,11 +2016,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "(add9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major chord plus 9th (no 7th.)"
             }
         ]
@@ -2034,11 +2034,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "(addb9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major chord plus flat 9th (no 7th.)"
             }
         ]
@@ -2052,11 +2052,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "(add#9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major chord plus sharp 9th (no 7th.)"
             }
         ]
@@ -2071,11 +2071,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "69"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "6th with added 9th. This is sometimes notated as a slash chord in the form ``6/9''. MMA voices the 6th an octave higher."
             }
         ]
@@ -2090,11 +2090,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m69"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 6th with added 9th. This is sometimes notated as a slash chord in the form ``m6/9''."
             }
         ]
@@ -2107,11 +2107,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m(b5)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad with flat 5th (aka dim)."
             }
         ]
@@ -2126,11 +2126,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7(b9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with added flat 9th."
             }
         ]
@@ -2145,11 +2145,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7(#9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with added sharp 9th."
             }
         ]
@@ -2164,11 +2164,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9+5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th with sharp 5th (same as aug9)."
             }
         ]
@@ -2181,11 +2181,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m+5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad with augmented 5th."
             }
         ]
@@ -2198,11 +2198,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m+"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor triad with augmented 5th."
             }
         ]
@@ -2216,11 +2216,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M6"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major triad with added 6th."
             }
         ]
@@ -2234,11 +2234,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7-5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th, flat 5 (aka 1/2 diminished). "
             }
         ]
@@ -2251,11 +2251,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7(omit5)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor 7th with unvoiced 5th."
             }
         ]
@@ -2268,11 +2268,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented triad."
             }
         ]
@@ -2286,11 +2286,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a dominant 7th."
             }
         ]
@@ -2305,11 +2305,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+7#9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a dominant 7th and sharp 9th."
             }
         ]
@@ -2324,11 +2324,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "+7b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a dominant 7th and flat 9th."
             }
         ]
@@ -2342,11 +2342,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7(omit3)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with unvoiced 3rd."
             }
         ]
@@ -2359,11 +2359,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "(#5)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Augmented triad."
             }
         ]
@@ -2378,11 +2378,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7#5b9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented chord (raised 5th) with a dominant 7th and flat 9th."
             }
         ]
@@ -2397,11 +2397,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7-9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with flat 9th."
             }
         ]
@@ -2416,11 +2416,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7+9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Confusing, not recommended."
             }
         ]
@@ -2434,11 +2434,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "maj7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th."
             }
         ]
@@ -2452,11 +2452,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7-5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th with a flat 5th."
             }
         ]
@@ -2470,11 +2470,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7+5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Recommended notation is +M7."
             }
         ]
@@ -2490,11 +2490,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "M7(add13)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th (including 5th) plus 13th and flat 9th (11th not voiced)."
             }
         ]
@@ -2509,11 +2509,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7alt"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Uses a 7th flat 5, flat 9. Probably not correct, but works (mostly)."
             }
         ]
@@ -2527,11 +2527,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7sus4"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with suspended 4th, dominant 7th with 3rd raised half tone."
             }
         ]
@@ -2547,11 +2547,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "13sus4"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7sus, plus 9th and 13th"
             }
         ]
@@ -2565,11 +2565,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7+"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "An augmented (sharp 5) 7th. Recommended notation is \"+7\""
             }
         ]
@@ -2583,11 +2583,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7#5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Recommended notation is \"+7\""
             }
         ]
@@ -2601,11 +2601,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7+5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Recommented notation is \"+7\""
             }
         ]
@@ -2619,11 +2619,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7-5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th, flat 5."
             }
         ]
@@ -2636,11 +2636,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "sus"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Suspended 4th, major triad with the 3rd raised half tone."
             }
         ]
@@ -2655,11 +2655,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "maj9"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th plus 9th."
             }
         ]
@@ -2674,11 +2674,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "maj13"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Major 7th (including 5th) plus 13th (9th and  11th not voiced)."
             }
         ]
@@ -2692,11 +2692,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m(maj7)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
             }
         ]
@@ -2710,11 +2710,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m+7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
             }
         ]
@@ -2728,11 +2728,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "min(maj7)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
             }
         ]
@@ -2746,11 +2746,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "min#7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
             }
         ]
@@ -2764,11 +2764,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m#7"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor Triad plus Major 7th. You will also see this printed as ``m(maj7)'', ``m+7'', ``min(maj7)'' and ``min$\\sharp$7'' (which \\mma\\ accepts); as well as the \\mma\\ \\emph{invalid} forms: ``-($\\Delta$7)'', and ``min$\\natural$7''."
             }
         ]
@@ -2782,11 +2782,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "msus"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor suspended 4th, minor triad plus 4th."
             }
         ]
@@ -2801,11 +2801,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "m7sus"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Minor suspended 4th, minor triad plus 4th and dominant 7th."
             }
         ]
@@ -2819,11 +2819,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "dim"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "A dim7, not a triad!"
             }
         ]
@@ -2837,11 +2837,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "°"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "A dim7 using a degree symbol"
             }
         ]
@@ -2854,11 +2854,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "°3"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "A dim3 (triad) using a degree symbol"
             }
         ]
@@ -2873,11 +2873,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "°(addM7)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "dim7(addM7) using degree symbol"
             }
         ]
@@ -2891,11 +2891,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "ø"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Half-diminished using slashed degree symbol"
             }
         ]
@@ -2910,11 +2910,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9sus"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7sus plus 9th."
             }
         ]
@@ -2929,11 +2929,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9-5"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th plus 9th with flat 5th."
             }
         ]
@@ -2946,11 +2946,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "dim3"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Diminished triad (non-standard notation)."
             }
         ]
@@ -2964,11 +2964,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "omit3(add9)"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "Triad: root, 5th and 9th."
             }
         ]
@@ -2983,11 +2983,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "9sus4"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7sus plus 9th."
             }
         ]
@@ -3002,11 +3002,11 @@
         ],
         "annotations": [
             {
-                "name": "label",
+                "label": "label",
                 "value": "7b9sus"
             },
             {
-                "name": "description",
+                "label": "description",
                 "value": "7th with suspended 4th and flat 9th."
             }
         ]

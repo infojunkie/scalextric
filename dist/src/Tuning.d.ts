@@ -29,10 +29,10 @@ export declare class Tuning {
      * CONSTRUCTOR
      *
      * @param intervals: tuning intervals
-     * The intervals will be guaranteed to be sorted.
+     * The intervals will be _guaranteed_ to be sorted.
      * The first interval will be _guaranteed_ to be the unison.
      * The last interval will be _assumed_ to be the repeater (e.g. 2/1 the octave).
-     * @param annotations: notes about the tuning
+     * @param annotations: annotations about the tuning
      */
     constructor(intervals: Interval[], annotations?: Annotation[]);
     /**

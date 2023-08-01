@@ -1,33 +1,30 @@
 import { Tuning, Tone } from './Tuning';
 import { Multimap } from './utils/Bimap';
 /**
- * NOMENCLATURE SYSTEM
+ * SOLMIZATION SYSTEM
  *
  * To name notes, we use a common representation based on Scientific Pitch Notation (SPN):
  * - Standard note letters C, D, E, F, G, A, B
  * - An extensible set of accidentals
- * - The octave specification
  *
  * We define a tuning notation map that defines how notes and accidentals map to tuning tones/pitches.
  */
-export declare class TuningNotation {
+export declare class Solmization {
     tuning: Tuning;
-    map: Multimap<string, number>;
+    notes: {
+        [note: string]: number;
+    };
+    accidentals: {
+        [accidental: string]: number;
+    };
     regex: RegExp;
+    nameMap: Multimap<string, number>;
+    parseMap: Multimap<string, number>;
     /**
      * CONSTRUCTOR
      *
-     * @param tuning: the tuning being notated
-     * @param map: the notation map that maps every note letter + accidental combination to the tuning tone
-     *        - different note names that map to the same index (e.g. C# = Db => 1) should have separate entries
-     *        - don't include octave numbers
-     */
-    constructor(tuning: Tuning, map: Multimap<string, number>);
-    /**
-     * BUILD A MAP BY COMBINING NOTES AND ACCIDENTALS
-     *
-     * @param tuning: as per constructor
-     * @param notes: map of note letters to tone indexes:
+     * @param tuning: the tuning being named
+     * @param notes: map of note letters to pitch classes:
      * ```
      * {
      *   'C': 0,
@@ -38,20 +35,24 @@ export declare class TuningNotation {
      *   'A': 9,
      *   'B': 11,
      * }
-     * @param accidentals: map of note accidentals to tone increments:
+     * @param accidentals: map of accidentals to tone steps:
      * ```
      * {
+     *   '♯': +1,
      *   '#': +1,
+     *   '♭': -1,
      *   'b': -1,
-     *   'n':  0,
+     *   '♮':  0,
+     *   '𝄪': +2,
+     *   '𝄫': -2,
      * }
      * ```
      */
-    static fromNotesAccidentalsCombination(tuning: Tuning, notes: {
+    constructor(tuning: Tuning, notes: {
         [note: string]: number;
     }, accidentals: {
         [accidental: string]: number;
-    }): TuningNotation;
+    });
     /**
      * NAME A TONE
      *
@@ -63,7 +64,7 @@ export declare class TuningNotation {
      * PARSE A NOTE
      *
      * @param note: target note in scientific pitch notation
-     * @returns tone generator
+     * @returns corresponding tone in the tuning
      */
     parse(note: string): Tone;
 }

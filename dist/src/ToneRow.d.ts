@@ -1,10 +1,11 @@
 import { Tuning, Tone } from './Tuning';
 import { Annotation } from './utils/Annotation';
+import { Solmization } from './Solmization';
 /**
  * TONE ROW
  *
  * We define a tone row as an non-repetitive ordered sequence of tones. It is the basic collection of tones
- * that make up many other musical objects such as scales, chords, etc.
+ * that make up many other musical objects such as triads, scales, chords, etc.
  *
  * This definition extends the usual definition of "tone row" used in serial composition
  * https://en.wikipedia.org/wiki/Tone_row
@@ -58,4 +59,12 @@ export declare class ToneRow {
      * Create a tone row from given pitches.
      */
     static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, annotations?: Annotation[]): ToneRow;
+}
+export declare class ToneRowSolmized extends ToneRow {
+    tuning: Tuning;
+    solmization: Solmization;
+    tones: Tone[];
+    annotations: Annotation[];
+    constructor(tuning: Tuning, solmization: Solmization, tones: Tone[], annotations?: Annotation[]);
+    static fromToneRow(row: ToneRow, solmization: Solmization): ToneRowSolmized;
 }

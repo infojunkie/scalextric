@@ -11,6 +11,7 @@ export declare class MusicXML {
             beats: number;
             beatType: number;
         };
+        tempo: number;
     };
     static accidentals: {
         '#': string;

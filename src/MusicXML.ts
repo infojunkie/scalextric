@@ -17,6 +17,7 @@ export class MusicXML {
       'beats': 4,
       'beatType': 4
     },
+    'tempo': 60,
   }
 
   static accidentals = {
@@ -191,13 +192,13 @@ export class MusicXML {
    * @returns array of measures.
    */
   private convertObjects(): object[] {
-    return this.objects.reduce((measures, object, indesx) => {
+    return this.objects.reduce((measures, object, index) => {
       // Start new measure.
       let measure = this.convertMeasure(measures.length + 1);
       measures.push(measure);
 
       // New system if needed.
-      if (indesx > 0) {
+      if (index > 0) {
         measure['_content'].push({
           _name: 'print',
           _attrs: { 'new-system': 'yes' }
@@ -205,7 +206,7 @@ export class MusicXML {
       }
 
       // First measure attributes.
-      if (indesx === 0) {
+      if (index === 0) {
         measure['_content'].push({
           'attributes': [{
             'divisions': this.options['divisions']
@@ -228,12 +229,28 @@ export class MusicXML {
               'line': 2
             }]
           }]
+        }, {
+          _name: 'direction',
+          _attrs: { 'placement': 'above' },
+          _content: [{
+            'direction-type': [{
+              _name: 'metronome',
+              _attrs: { 'parentheses': 'no' },
+              _content: [{
+                'beat-unit': MusicXML.durations[this.options['time']['beatType']]
+              }, {
+                'per-minute': this.options['tempo']
+              }]
+            }]
+          }, {
+            _name: 'sound',
+            _attrs: { 'tempo': this.options['tempo'] }
+          }]
         });
       }
 
       // Add object label if any.
       const labels = Annotation.findByLabel('label', object.annotations);
-      console.log(labels);
       if (labels) {
         measure['_content'].push({
           _name: 'direction',
@@ -259,19 +276,19 @@ export class MusicXML {
         }
       });
 
-      // // Add remaining rests to the last measure.
-      // if (beat > 0) while (beat++ < this.options['time']['beats']) {
-      //   measure['_content'].push({
-      //     _name: 'note',
-      //     _content: [{
-      //       _name: 'rest',
-      //     }, {
-      //       'duration': this.options['divisions'],
-      //     }, {
-      //       'type': MusicXML.noteTypes[this.options['time']['beatType']],
-      //     }]
-      //   })
-      // }
+      // Add remaining rests to the last measure.
+      if (beat > 0) while (beat++ < this.options['time']['beats']) {
+        measure['_content'].push({
+          _name: 'note',
+          _content: [{
+            _name: 'rest',
+          }, {
+            'duration': this.options['divisions'],
+          }, {
+            'type': MusicXML.durations[this.options['time']['beatType']],
+          }]
+        })
+      }
 
       // Close the bar with a section barline.
       measure['_content'].push(this.convertBar('right', 'light-light'));

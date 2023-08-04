@@ -9,7 +9,8 @@ import {
   escapeRegExp,
   flipFraction,
   mod,
-  primes
+  primes,
+  roundTo
 } from '../src/utils/helpers';
 
 describe('Helpers', () => {
@@ -77,4 +78,11 @@ describe('Helpers', () => {
       arrayRange(0, 2), [], (a,b) => a-b
     )).to.be.true;
   });
+
+  it('rounds to nearest decimal', () => {
+    expect(roundTo(5.12345, 0.25)).to.be.equal(5.00);
+    expect(roundTo(3.23, 0.25)).to.be.equal(3.25);
+    expect(roundTo(3.13, 0.25)).to.be.equal(3.25);
+    expect(roundTo(3.1247, 0.25)).to.be.equal(3.00);
+  })
 });

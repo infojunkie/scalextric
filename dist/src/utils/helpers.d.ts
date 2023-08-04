@@ -54,3 +54,8 @@ export declare function mod(n: number, m: number): number;
  * https://stackoverflow.com/a/10050831/209184
  */
 export declare function arrayRange(size: number, startAt?: number): ReadonlyArray<number>;
+/**
+ * Round to nearest decimal.
+ * https://stackoverflow.com/a/27861660/209184
+ */
+export declare function roundTo(n: number, r: number): number;

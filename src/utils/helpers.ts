@@ -106,3 +106,12 @@ export function mod(n: number, m: number): number {
 export function arrayRange(size: number, startAt = 0): ReadonlyArray<number> {
   return [...Array(size).keys()].map(i => i + startAt);
 }
+
+/**
+ * Round to nearest decimal.
+ * https://stackoverflow.com/a/27861660/209184
+ */
+export function roundTo(n: number, r: number): number {
+  const inv = 1 / r;
+  return Math.round(n * inv) / inv;
+}

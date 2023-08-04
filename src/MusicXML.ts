@@ -3,6 +3,7 @@ import { ToneRowSolmized } from './ToneRow';
 import { Tuning, Tone } from './Tuning';
 import { Solmization } from './Solmization';
 import { Annotation } from './utils/Annotation';
+import { roundTo } from './utils/helpers';
 import pkg from '../package.json';
 
 const MUSICXML_VERSION = '4.0';
@@ -324,6 +325,7 @@ export class MusicXML {
     // Generate a pitch alteration as compared to the reference tuning.
     const reference = this.reference.parse(`${step}${octave}`);
     const cents = tone.tune.difference(reference.tune).cents;
+    const alter = roundTo(cents / 100, 0.05);
 
     return {
       _name: 'note',
@@ -332,7 +334,7 @@ export class MusicXML {
         _content: [{
           'step': step
         }, {
-          'alter': Math.round(cents * 100) / 10000
+          'alter': alter
         }, {
           'octave': octave
         }]

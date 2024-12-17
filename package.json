@@ -15,7 +15,7 @@
     "build:d.ts": "tsc --emitDeclarationOnly --outDir build/types",
     "test": "npm run test:lint && npm run test:ts && npm run test:js",
     "test:lint": "eslint src",
-    "test:ts": "tsx --test test/*.spec.ts --test-name-pattern=\"${TEST:-.*}\" ",
+    "test:ts": "node --import=tsx --test test/*.spec.ts",
     "test:js": "node --test test/*.spec.js",
     "build:chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
     "build:scala": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && for f in data/scl/*; do iconv -f iso-8859-1 -t utf-8 \"$f\" -o \"$f\"; done"

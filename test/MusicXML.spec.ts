@@ -1,5 +1,4 @@
-import { expect } from 'chai';
-import './setup';
+import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import { MusicXML } from '../src/MusicXML';
 import { ToneRow, ToneRowSolmized } from '../src/ToneRow';

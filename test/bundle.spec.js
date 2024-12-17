@@ -1,10 +1,10 @@
-const expect = require('chai').expect;
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
+import { Tuning } from '../build/scalextric.js';
 
-const Scalextric = require('../dist/scalextric');
-
-describe('Scalextric Bundle', () => {
-    it('accesses Tuning module', () => {
-        const edo12 = Scalextric.Tuning.fromEdo(12);
-        expect(edo12.transposable).to.be.true;
-    });
+describe('Scalextric bundle', () => {
+  it('accesses Tuning module', () => {
+    const edo12 = Tuning.fromEdo(12);
+    assert.ok(edo12.transposable);
+  });
 });

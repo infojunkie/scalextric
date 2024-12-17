@@ -127,5 +127,7 @@ test/output/*
 !test/output/.gitkeep
 demo/cli/*.musicxml
 !dist
-data/scl
-data/scales.zip
+*.scl
+*.lst
+*.ascl
+*.zip

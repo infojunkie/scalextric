@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import './setup';
+import assert from './assert';
+import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import { tuningFromScala } from '../src/utils/scala';
 import { Annotation } from '../src/utils/Annotation';
@@ -9,9 +9,9 @@ describe('Scala', () => {
 
   it('parses Scala scales', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/data/pyth_12.scl`, 'utf8'));
-    expect(tuning.annotations.length).to.be.equal(2);
-    expect(tuning.steps).to.be.equal(12);
-    expect(tuning.intervals.map(i => i.ratio.valueOf())).to.be.clsTo([
+    assert.strictEqual(tuning.annotations.length, 2);
+    assert.strictEqual(tuning.steps, 12);
+    assert.closeTo(tuning.intervals.map(i => i.ratio.valueOf()), [
       1,
       2187/2048,
       9/8,
@@ -30,8 +30,8 @@ describe('Scala', () => {
 
   it('parses Scala scales with cents', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/data/10-29.scl`, 'utf8'));
-    expect(tuning.steps).to.be.equal(10);
-    expect(tuning.intervals.map(i => i.cents)).to.be.clsTo([
+    assert.strictEqual(tuning.steps, 10);
+    assert.closeTo(tuning.intervals.map(i => i.cents), [
       0,
       124.13793,
       248.27586,
@@ -48,7 +48,7 @@ describe('Scala', () => {
 
   it('parses Scala comments', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/data/ederer.scl`, 'utf8'));
-    expect(tuning.annotations).to.be.deep.equal([
+    assert.deepStrictEqual(tuning.annotations, [
       new Annotation('label', 'Just intonation for Turkish-Arabic scales by Eric Ederer'),
       new Annotation('description', 'Eric Ederer - Makam & Beyond: A Progressive Approach to Near Eastern Music Theory (2015)'),
       new Annotation('source', 'Scala Scale archive, version 91, May 2022')
@@ -56,7 +56,7 @@ describe('Scala', () => {
   });
 
   it('rejects bad Scala scales', () => {
-    expect(() => { tuningFromScala(fs.readFileSync(`test/data/bad1.scl`, 'utf8')); }).to.throw();
-    expect(() => { tuningFromScala(fs.readFileSync(`test/data/bad2.scl`, 'utf8')); }).to.throw();
+    assert.throws(() => { tuningFromScala(fs.readFileSync(`test/data/bad1.scl`, 'utf8')); });
+    assert.throws(() => { tuningFromScala(fs.readFileSync(`test/data/bad2.scl`, 'utf8')); });
   });
 });

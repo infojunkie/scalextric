@@ -1,4 +1,5 @@
-import { toXML } from 'jstoxml';
+import jstoxml, { XmlElement } from 'jstoxml';
+const { toXML } = jstoxml;
 import { ToneRowSolmized } from './ToneRow';
 import { Tuning, Tone } from './Tuning';
 import { Solmization } from './Solmization';
@@ -145,7 +146,7 @@ export class MusicXML {
     });
   }
 
-  private convertDocument(): object {
+  private convertDocument(): XmlElement {
     return {
       _name: 'score-partwise',
       _attrs: { 'version': MUSICXML_VERSION },

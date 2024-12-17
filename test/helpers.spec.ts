@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import './setup';
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
 import Fraction from 'fraction.js';
 import {
   arrayEqual,
@@ -15,23 +15,23 @@ import {
 
 describe('Helpers', () => {
   it('escapes regex strings', () => {
-    expect(escapeRegExp('This is a *bold* (move).')).to.equal('This is a \\*bold\\* \\(move\\)\\.');
+    assert.strictEqual('This is a \\*bold\\* \\(move\\)\\.', escapeRegExp('This is a *bold* (move).'));
   });
 
   it('computes the primes up to 20', () => {
-    expect(primes(20)).to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19]);
+    assert.deepStrictEqual([2, 3, 5, 7, 11, 13, 17, 19], primes(20));
   });
 
   it('flips fractions', () => {
-    expect(flipFraction(new Fraction(1/2)).equals(1/2)).to.be.true;
-    expect(flipFraction(new Fraction(1/2), true).equals(2)).to.be.true;
-    expect(flipFraction(new Fraction(2)).equals(1/2)).to.be.true;
-    expect(flipFraction(new Fraction(2), true).equals(2)).to.be.true;
+    assert.ok(flipFraction(new Fraction(1/2)).equals(1/2));
+    assert.ok(flipFraction(new Fraction(1/2), true).equals(2));
+    assert.ok(flipFraction(new Fraction(2)).equals(1/2));
+    assert.ok(flipFraction(new Fraction(2), true).equals(2));
 
-    expect(flipFraction(new Fraction(-1/2)).equals(-1/2)).to.be.true;
-    expect(flipFraction(new Fraction(-1/2), true).equals(-2)).to.be.true;
-    expect(flipFraction(new Fraction(-2)).equals(-1/2)).to.be.true;
-    expect(flipFraction(new Fraction(-2), true).equals(-2)).to.be.true;
+    assert.ok(flipFraction(new Fraction(-1/2)).equals(-1/2));
+    assert.ok(flipFraction(new Fraction(-1/2), true).equals(-2));
+    assert.ok(flipFraction(new Fraction(-2)).equals(-1/2));
+    assert.ok(flipFraction(new Fraction(-2), true).equals(-2));
   });
 
   it('binary searches', () => {
@@ -39,50 +39,50 @@ describe('Helpers', () => {
     const ar = [1, 2, 2, 2, 5, 9, 11, 12, 12, 12, 12, 15, 20, 20, 20, 25, 40, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 80];
     for (let i = 0; i <= 100; i++) {
       const n = binarySearch(ar, i, (a,b) => a-b);
-      expect(
+      assert.ok(!(
         (n >= 0 && ar[n] !== i) ||
         (n < 0 && (~n < ar.length && ar[~n] <= i)) ||
         (n < 0 && (~n-1 >= 0 && ar[~n-1] >= i))
-      ).to.be.false;
+      ));
     }
   });
 
   it('compares arrays', () => {
-    expect(arrayEqual([], [], (a,b) => a-b)).to.be.true;
-    expect(arrayEqual([0], [1], (a,b) => a-b)).to.be.false;
-    expect(arrayEqual([1,2,3], [1,2,3], (a,b) => a-b)).to.be.true;
-    expect(arrayEqual([1,2,3], [1,2,3,4], (a,b) => a-b)).to.be.false;
-    expect(arrayEqual([1,2,3], [1,3,2], (a,b) => a-b)).to.be.false;
+    assert.ok(arrayEqual([], [], (a,b) => a-b));
+    assert.ok(!arrayEqual([0], [1], (a,b) => a-b));
+    assert.ok(arrayEqual([1,2,3], [1,2,3], (a,b) => a-b));
+    assert.ok(!arrayEqual([1,2,3], [1,2,3,4], (a,b) => a-b));
+    assert.ok(!arrayEqual([1,2,3], [1,3,2], (a,b) => a-b));
   })
 
   it('computes mathematical modulus', () => {
-    expect(mod(-13, 64)).to.be.equal(51);
+    assert.strictEqual(mod(-13, 64), 51);
   });
 
   it('returns unique arrays', () => {
-    expect(arrayEqual(
+    assert.ok(arrayEqual(
       arrayUnique([1,1,2,2,3,3,3]),
       [1,2,3],
       (a,b) => a-b
-    )).to.be.true;
+    ));
   });
 
   it('returns array ranges', () => {
-    expect(arrayEqual(
+    assert.ok(arrayEqual(
       arrayRange(5), [0,1,2,3,4], (a,b) => a-b
-    )).to.be.true;
-    expect(arrayEqual(
+    ));
+    assert.ok(arrayEqual(
       arrayRange(5, 2), [2,3,4,5,6], (a,b) => a-b
-    )).to.be.true;
-    expect(arrayEqual(
+    ));
+    assert.ok(arrayEqual(
       arrayRange(0, 2), [], (a,b) => a-b
-    )).to.be.true;
+    ));
   });
 
   it('rounds to nearest decimal', () => {
-    expect(roundTo(5.12345, 0.25)).to.be.equal(5.00);
-    expect(roundTo(3.23, 0.25)).to.be.equal(3.25);
-    expect(roundTo(3.13, 0.25)).to.be.equal(3.25);
-    expect(roundTo(3.1247, 0.25)).to.be.equal(3.00);
+    assert.strictEqual(roundTo(5.12345, 0.25), 5.00);
+    assert.strictEqual(roundTo(3.23, 0.25), 3.25);
+    assert.strictEqual(roundTo(3.13, 0.25), 3.25);
+    assert.strictEqual(roundTo(3.1247, 0.25), 3.00);
   })
 });

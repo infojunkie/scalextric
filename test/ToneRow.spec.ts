@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import './setup';
+import assert from 'node:assert';
+import { describe, it, beforeEach } from 'node:test';
 import * as fs from 'fs';
 import { ToneRow } from '../src/ToneRow';
 import { Tuning, Tone } from '../src/Tuning';
@@ -11,45 +11,36 @@ describe('ToneRow', () => {
   const row = ToneRow.fromPitches(edo24, [0, 8, 14, 22]);
 
   it('transposes', () => {
-    expect(
-      row.transpose(Tone.fromPitch(edo24, 4)).pitches
-    ).to.eql([4, 12, 18, 26]);
+    assert.deepStrictEqual(
+      row.transpose(Tone.fromPitch(edo24, 4)).pitches, [4, 12, 18, 26]);
   });
 
   it('inverts', () => {
-    expect(
-      row.invert(Tone.fromPitch(edo24, 12)).pitches
-    ).to.eql([12, 4, -2, -10]);
+    assert.deepStrictEqual(
+      row.invert(Tone.fromPitch(edo24, 12)).pitches, [12, 4, -2, -10]);
   });
 
   it('reverses', () => {
-    expect(
-      row.reverse().pitches
-    ).to.eql([22, 14, 8, 0]);
+    assert.deepStrictEqual(
+      row.reverse().pitches, [22, 14, 8, 0]);
   });
 
   it('rotates', () => {
-    expect(
-      row.rotate(2).pitches
-    ).to.eql([14, 22, 0, 8]);
-    expect(
-      row.rotate(7).pitches
-    ).to.eql([22, 0, 8, 14]);
-    expect(
-      row.rotate(-3).pitches
-    ).to.eql([8, 14, 22, 0]);
-    expect(
-      row.rotate(0).pitches
-    ).to.eql([0, 8, 14, 22]);
+    assert.deepStrictEqual(
+      row.rotate(2).pitches, [14, 22, 0, 8]);
+    assert.deepStrictEqual(
+      row.rotate(7).pitches, [22, 0, 8, 14]);
+    assert.deepStrictEqual(
+      row.rotate(-3).pitches, [8, 14, 22, 0]);
+    assert.deepStrictEqual(
+      row.rotate(0).pitches, [0, 8, 14, 22]);
   });
 
   it('monotonizes', () => {
-    expect(
-      row.rotate(2).monotonize().pitches
-    ).to.eql([14, 22, 24, 32]);
-    expect(
-      row.rotate(2).monotonize(true).pitches
-    ).to.eql([14, -2, -24, -40]);
+    assert.deepStrictEqual(
+      row.rotate(2).monotonize().pitches, [14, 22, 24, 32]);
+    assert.deepStrictEqual(
+      row.rotate(2).monotonize(true).pitches, [14, -2, -24, -40]);
   });
 });
 
@@ -60,10 +51,10 @@ describe('Chords experiment', () => {
   it('makes tone rows from chords', () => {
     const chord1 = chords.find(chord => chord.annotations.find(a => a.label === 'label' && a.value === '7#5b9'))
     const test1 = ToneRow.fromPitches(edo12, chord1.tones, chord1.annotations);
-    expect(test1.pitches).to.eql([0, 4, 8, 10, 13]);
+    assert.deepStrictEqual(test1.pitches, [0, 4, 8, 10, 13]);
     const chord2 = chords.find(chord => arrayEqual(chord.tones, [0, 4, 8, 10, 13], (a,b) => a-b))
     const test2 = ToneRow.fromPitches(edo12, chord2.tones, chord2.annotations);
-    expect(test2.annotations.find(a => a.label === 'label')?.value).to.equal('aug7b9');
+    assert.strictEqual(test2.annotations.find(a => a.label === 'label')?.value, 'aug7b9');
   })
 });
 

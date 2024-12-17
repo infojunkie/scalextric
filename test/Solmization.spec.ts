@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import './setup';
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { Tuning, Tone } from '../src/Tuning';
 import { Solmization } from '../src/Solmization';
 
@@ -21,12 +21,11 @@ describe('Solmization', () => {
     '♮':  0
    });
   it('generates correct maps from notes/accidentals combinations', () => {
-    expect(Array.from(solmization.nameMap.keys())
+    assert.deepStrictEqual(Array.from(solmization.nameMap.keys())
     .reduce((obj, k) => {
       obj[k] = solmization.nameMap.get(k);
       return obj;
-    }, {}))
-    .to.deep.equal({
+    }, {}), {
       'C': 0,
       'C♯': 1,
       'C♭': 11,
@@ -51,10 +50,10 @@ describe('Solmization', () => {
     });
   });
   it('names notes', () => {
-    expect(solmization.name(Tone.fromPitch(edo12, 1)).sort()).to.deep.equal(['D♭0', 'C♯0'].sort());
+    assert.deepStrictEqual(solmization.name(Tone.fromPitch(edo12, 1)).sort(), ['D♭0', 'C♯0'].sort());
   });
   it('parses notes', () => {
-    expect(solmization.parse('C#0').pitch).to.equal(1);
-    expect(() => { solmization.parse('Hello') }).to.throw();
+    assert.strictEqual(solmization.parse('C#0').pitch, 1);
+    assert.throws(() => { solmization.parse('Hello') });
   });
 });

@@ -1,7 +1,7 @@
 {
   "name": "scalextric",
-  "version": "0.5.0",
-  "description": "Like Unicode, but for music. Ish.",
+  "version": "0.6.0",
+  "description": "Like Unicode, but for music. One day.",
   "type": "module",
   "types": "./build/types/index.d.ts",
   "exports": {
@@ -13,12 +13,12 @@
     "build:esm": "esbuild src/index.ts --bundle --format=esm --minify --sourcemap --outfile=build/scalextric.js",
     "build:cjs": "esbuild src/index.ts --bundle --platform=node --packages=external --minify --sourcemap --outfile=build/scalextric.cjs",
     "build:d.ts": "tsc --emitDeclarationOnly --outDir build/types",
+    "build:chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
+    "build:scala": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && for f in data/scl/*; do iconv -f iso-8859-1 -t utf-8 \"$f\" -o \"$f\"; done",
     "test": "npm run test:lint && npm run test:ts && npm run test:js",
     "test:lint": "eslint src",
     "test:ts": "node --import=tsx --test test/*.spec.ts",
-    "test:js": "node --test test/*.spec.js",
-    "build:chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
-    "build:scala": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && for f in data/scl/*; do iconv -f iso-8859-1 -t utf-8 \"$f\" -o \"$f\"; done"
+    "test:js": "node --test test/*.spec.js"
   },
   "author": "Karim Ratib <karim.ratib@gmail.com> (https://github.com/infojunkie)",
   "license": "GPL-3.0-only",

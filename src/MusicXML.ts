@@ -3,7 +3,6 @@ const { toXML } = jstoxml;
 import { ToneRowSolmized } from './ToneRow';
 import { Tuning, Tone } from './Tuning';
 import { Solmization } from './Solmization';
-import { Annotation } from './utils/Annotation';
 import { roundTo } from './utils/helpers';
 import pkg from '../package.json';
 
@@ -252,14 +251,13 @@ export class MusicXML {
       }
 
       // Add object label if any.
-      const labels = Annotation.findByLabel('label', object.annotations);
-      if (labels) {
+      if (object.metadata) {
         measure['_content'].push({
           _name: 'direction',
           _attrs: { 'placement': 'above' },
           _content: [{
             'direction-type': [{
-              'words': labels[0]
+              'words': object.metadata.label
             }]
           }],
         });

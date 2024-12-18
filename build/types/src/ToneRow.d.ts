@@ -1,5 +1,4 @@
-import { Tuning, Tone } from './Tuning';
-import { Annotation } from './utils/Annotation';
+import { Tuning, Tone, Metadata } from './Tuning';
 import { Solmization } from './Solmization';
 /**
  * TONE ROW
@@ -16,7 +15,7 @@ import { Solmization } from './Solmization';
 export declare class ToneRow {
     tuning: Tuning;
     tones: Tone[];
-    annotations: Annotation[];
+    metadata?: Metadata;
     /**
      * CONSTRUCTOR
      *
@@ -24,7 +23,7 @@ export declare class ToneRow {
      * @param tones: the tones making up the row
      * @param annotations: notes about the row
      */
-    constructor(tuning: Tuning, tones: Tone[], annotations?: Annotation[]);
+    constructor(tuning: Tuning, tones: Tone[], metadata?: Metadata);
     /**
      * Transpose a row to a target tone.
      */
@@ -54,17 +53,17 @@ export declare class ToneRow {
     /**
      * Create a tone row from given pitches.
      */
-    static fromPitches(tuning: Tuning, pitches: number[], annotations?: Annotation[]): ToneRow;
+    static fromPitches(tuning: Tuning, pitches: number[], metadata?: Metadata): ToneRow;
     /**
      * Create a tone row from given pitches.
      */
-    static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, annotations?: Annotation[]): ToneRow;
+    static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, metadata?: Metadata): ToneRow;
 }
 export declare class ToneRowSolmized extends ToneRow {
     tuning: Tuning;
     solmization: Solmization;
     tones: Tone[];
-    annotations: Annotation[];
-    constructor(tuning: Tuning, solmization: Solmization, tones: Tone[], annotations?: Annotation[]);
+    metadata?: Metadata;
+    constructor(tuning: Tuning, solmization: Solmization, tones: Tone[], metadata?: Metadata);
     static fromToneRow(row: ToneRow, solmization: Solmization): ToneRowSolmized;
 }

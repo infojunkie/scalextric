@@ -1,5 +1,5 @@
 import assert from 'node:assert';
-import { describe, it, beforeEach } from 'node:test';
+import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import { ToneRow } from '../src/ToneRow';
 import { Tuning, Tone } from '../src/Tuning';
@@ -49,12 +49,12 @@ describe('Chords experiment', () => {
   const edo12 = Tuning.fromEdo(12);
 
   it('makes tone rows from chords', () => {
-    const chord1 = chords.find(chord => chord.annotations.find(a => a.label === 'label' && a.value === '7#5b9'))
-    const test1 = ToneRow.fromPitches(edo12, chord1.tones, chord1.annotations);
+    const chord1 = chords.find(chord => chord.metadata?.label === '7#5b9')
+    const test1 = ToneRow.fromPitches(edo12, chord1.tones, chord1.metadata);
     assert.deepStrictEqual(test1.pitches, [0, 4, 8, 10, 13]);
     const chord2 = chords.find(chord => arrayEqual(chord.tones, [0, 4, 8, 10, 13], (a,b) => a-b))
-    const test2 = ToneRow.fromPitches(edo12, chord2.tones, chord2.annotations);
-    assert.strictEqual(test2.annotations.find(a => a.label === 'label')?.value, 'aug7b9');
+    const test2 = ToneRow.fromPitches(edo12, chord2.tones, chord2.metadata);
+    assert.strictEqual(test2.metadata?.label, 'aug7b9');
   })
 });
 

@@ -1,5 +1,9 @@
-import { Annotation } from './utils/Annotation';
 import { Interval } from './Interval';
+export type Metadata = {
+    label: string;
+    description?: string;
+    source?: string;
+};
 /**
  * TUNING SYSTEM
  *
@@ -24,7 +28,7 @@ import { Interval } from './Interval';
  */
 export declare class Tuning {
     intervals: Interval[];
-    annotations: Annotation[];
+    metadata?: Metadata;
     /**
      * CONSTRUCTOR
      *
@@ -32,9 +36,8 @@ export declare class Tuning {
      * The intervals will be _guaranteed_ to be sorted.
      * The first interval will be _guaranteed_ to be the unison.
      * The last interval will be _assumed_ to be the repeater (e.g. 2/1 the octave).
-     * @param annotations: annotations about the tuning
      */
-    constructor(intervals: Interval[], annotations?: Annotation[]);
+    constructor(intervals: Interval[], metadata?: Metadata);
     /**
      * Create a tuning from ratios or cents.
      *
@@ -42,7 +45,7 @@ export declare class Tuning {
      * @param annotations: as per constructor
      * @returns tuning object
      */
-    static fromIntervals(intervals: (number | string)[], annotations?: Annotation[]): Tuning;
+    static fromIntervals(intervals: (number | string)[], metadata?: Metadata): Tuning;
     /**
      * IS A TUNING TRANSPOSABLE?
      *

@@ -2,14 +2,13 @@ import assert from './assert';
 import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import { tuningFromScala } from '../src/utils/scala';
-import { Annotation } from '../src/utils/Annotation';
 
 describe('Scala', () => {
   const tolerance = 0.00005;
 
   it('parses Scala scales', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/data/pyth_12.scl`, 'utf8'));
-    assert.strictEqual(tuning.annotations.length, 2);
+    assert.ok(!!tuning.metadata?.label);
     assert.strictEqual(tuning.steps, 12);
     assert.closeTo(tuning.intervals.map(i => i.ratio.valueOf()), [
       1,
@@ -48,11 +47,11 @@ describe('Scala', () => {
 
   it('parses Scala comments', () => {
     const tuning = tuningFromScala(fs.readFileSync(`test/data/ederer.scl`, 'utf8'));
-    assert.deepStrictEqual(tuning.annotations, [
-      new Annotation('label', 'Just intonation for Turkish-Arabic scales by Eric Ederer'),
-      new Annotation('description', 'Eric Ederer - Makam & Beyond: A Progressive Approach to Near Eastern Music Theory (2015)'),
-      new Annotation('source', 'Scala Scale archive, version 91, May 2022')
-    ]);
+    assert.deepStrictEqual(tuning.metadata, {
+      label: 'Just intonation for Turkish-Arabic scales by Eric Ederer',
+      description: 'Eric Ederer - Makam & Beyond: A Progressive Approach to Near Eastern Music Theory (2015)',
+      source: 'Scale archive, Scala version 92, May 2024'
+    });
   });
 
   it('rejects bad Scala scales', () => {

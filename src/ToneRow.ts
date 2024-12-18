@@ -1,5 +1,4 @@
-import { Tuning, Tone } from './Tuning';
-import { Annotation } from './utils/Annotation';
+import { Tuning, Tone, Metadata } from './Tuning';
 import { Solmization } from './Solmization';
 
 /**
@@ -22,7 +21,7 @@ export class ToneRow {
    * @param tones: the tones making up the row
    * @param annotations: notes about the row
    */
-  constructor(public tuning: Tuning, public tones: Tone[], public annotations: Annotation[] = []) {
+  constructor(public tuning: Tuning, public tones: Tone[], public metadata?: Metadata) {
     // Verify that tones are valid by detecting repeating pitch classes.
     if (tones.some((tone, index) => !!tones.slice(index + 1).find(t => t.pitchClass === tone.pitchClass))) {
       throw Error(`Found repeating pitch class in tone row.`);
@@ -91,28 +90,28 @@ export class ToneRow {
   /**
    * Create a tone row from given pitches.
    */
-  static fromPitches(tuning: Tuning, pitches: number[], annotations: Annotation[] = []): ToneRow {
+  static fromPitches(tuning: Tuning, pitches: number[], metadata?: Metadata): ToneRow {
     return new ToneRow(tuning, pitches.map(pitch =>
       Tone.fromPitch(tuning, pitch)
-    ), annotations);
+    ), metadata);
   }
 
   /**
    * Create a tone row from given pitches.
    */
-  static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, annotations: Annotation[] = []): ToneRow {
+  static fromPitchClasses(tuning: Tuning, pitchClasses: number[], octave: number, metadata?: Metadata): ToneRow {
     return new ToneRow(tuning, pitchClasses.map(pitchClass =>
       new Tone(tuning, pitchClass, octave)
-    ), annotations);
+    ), metadata);
   }
 }
 
 export class ToneRowSolmized extends ToneRow {
-  constructor(public tuning: Tuning, public solmization: Solmization, public tones: Tone[], public annotations: Annotation[] = []) {
-    super(tuning, tones, annotations);
+  constructor(public tuning: Tuning, public solmization: Solmization, public tones: Tone[], public metadata?: Metadata) {
+    super(tuning, tones, metadata);
   }
 
   static fromToneRow(row: ToneRow, solmization: Solmization): ToneRowSolmized {
-    return new ToneRowSolmized(row.tuning, solmization, row.tones, row.annotations);
+    return new ToneRowSolmized(row.tuning, solmization, row.tones, row.metadata);
   }
 }

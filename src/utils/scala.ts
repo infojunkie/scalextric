@@ -1,8 +1,7 @@
-import { Annotation } from '../utils/Annotation';
 import { Tuning } from '../Tuning';
 import { Interval } from '../Interval';
 
-const SCALA_VERSION = 'Scala Scale archive, version 91, May 2022';
+const SCALA_VERSION = 'Scale archive, Scala version 92, May 2024';
 
 /**
  * Convert a Scala scale definition to a Tuning.
@@ -47,11 +46,11 @@ export function tuningFromScala(scala: string, source: string = SCALA_VERSION): 
 
   return new Tuning(
     [Interval.fromRatio('1/1'), ...intervals],
-    [
-      new Annotation('label', label),
-      new Annotation('description', comments.join('\r\n')),
-      new Annotation('source', source)
-    ].filter(a => a.value)
+    label ? {
+      label,
+      description: comments.join('\r\n'),
+      source
+    } : undefined
   );
 }
 

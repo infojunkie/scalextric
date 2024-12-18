@@ -1,7 +1,12 @@
 import Fraction from 'fraction.js';
 import { binarySearch, flipFraction, mod } from './utils/helpers';
-import { Annotation } from './utils/Annotation';
 import { Interval } from './Interval';
+
+export type Metadata = {
+  label: string,
+  description?: string,
+  source?: string,
+}
 
 /**
  * TUNING SYSTEM
@@ -33,9 +38,8 @@ export class Tuning {
    * The intervals will be _guaranteed_ to be sorted.
    * The first interval will be _guaranteed_ to be the unison.
    * The last interval will be _assumed_ to be the repeater (e.g. 2/1 the octave).
-   * @param annotations: annotations about the tuning
    */
-  constructor(public intervals: Interval[], public annotations: Annotation[] = []) {
+  constructor(public intervals: Interval[], public metadata?: Metadata) {
     this.intervals.sort(Interval.compare);
     if (this.intervals[0].ratio.valueOf() != 1) {
       this.intervals = [new Interval(new Fraction(1)), ...this.intervals];
@@ -49,7 +53,7 @@ export class Tuning {
    * @param annotations: as per constructor
    * @returns tuning object
    */
-  static fromIntervals(intervals: (number|string)[], annotations: Annotation[] = []): Tuning {
+  static fromIntervals(intervals: (number|string)[], metadata?: Metadata): Tuning {
     return new Tuning(intervals.map(interval => {
       if (typeof interval == 'string') {
         return new Interval(new Fraction(interval));
@@ -57,7 +61,7 @@ export class Tuning {
       else {
         return Interval.fromCents(interval);
       }
-    }), annotations);
+    }), metadata);
   }
 
   /**

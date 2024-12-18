@@ -6,7 +6,6 @@ import { Tuning } from '../src/Tuning';
 import { Solmization } from '../src/Solmization';
 import { tuningFromScala } from '../src/utils/scala';
 import { validateXMLWithXSD } from 'validate-with-xmllint';
-import { Annotation } from '../src/utils/Annotation';
 
 describe('MusicXML', () => {
   it('exports valid files', async () => {
@@ -14,7 +13,7 @@ describe('MusicXML', () => {
     const kommah = Tuning.fromEdo(53);
     const ederer = tuningFromScala(fs.readFileSync(`test/data/ederer.scl`, 'utf8'));
     const rastQuarter = ToneRowSolmized.fromToneRow(
-      ToneRow.fromPitchClasses(quarter, [0, 4, 7, 10, 14], 4, [new Annotation('label', '24-TET (Arabic standard tuning)')]),
+      ToneRow.fromPitchClasses(quarter, [0, 4, 7, 10, 14], 4, { label: '24-TET (Arabic standard tuning)' }),
       new Solmization(quarter, {
         'C': 0,
         'D': 4,
@@ -29,7 +28,7 @@ describe('MusicXML', () => {
       })
     );
     const rastKommah = ToneRowSolmized.fromToneRow(
-      ToneRow.fromPitchClasses(kommah, [0, 9, 17, 22, 31], 4, [new Annotation('label', '53-TET (Holdrian comma tuning)')]),
+      ToneRow.fromPitchClasses(kommah, [0, 9, 17, 22, 31], 4, { label: '53-TET (Holdrian comma tuning)' }),
       new Solmization(kommah, {
         'C': 0,
         'D': 9,
@@ -44,7 +43,7 @@ describe('MusicXML', () => {
       })
     );
     const rastEderer = ToneRowSolmized.fromToneRow(
-      ToneRow.fromPitchClasses(ederer, [0, 6, 11, 14, 20], 4, [new Annotation('label', 'Ederer tuning')]),
+      ToneRow.fromPitchClasses(ederer, [0, 6, 11, 14, 20], 4, { label: 'Ederer tuning' }),
       new Solmization(ederer, {
         'C': 0,
         'D': 6,

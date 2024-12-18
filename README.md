@@ -1,7 +1,7 @@
 scalextric
 ----------
 
-Like Unicode, but for music. Ish.
+Like Unicode, but for music. One day.
 
 ![GitHub Build Status](https://github.com/infojunkie/scalextric/workflows/Test/badge.svg)
 

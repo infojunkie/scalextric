@@ -2,10 +2,10 @@ import Fraction from 'fraction.js';
 
 /**
  * Escape a string to be used in regular expression.
- * https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
  *
- * @param str: string to escape
+ * @param str String to escape
  * @returns escaped, RegExp-ready string
+ * @see https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
  */
 export function escapeRegExp(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
@@ -13,11 +13,11 @@ export function escapeRegExp(str: string): string {
 
 /**
  * Get primes up to a given integer.
- * https://stackoverflow.com/a/12287599/209184
  * Uses the Sieve of Eratosthenes https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  *
- * @param max: number to reach
+ * @param max Number to reach
  * @returns all primes up to max
+ * @see https://stackoverflow.com/a/12287599/209184
  */
 export function primes(max: number): number[] {
   const sieve: boolean[] = [], primes: number[] = [];
@@ -44,15 +44,15 @@ export function flipFraction(f: Fraction, greaterThanOne = false): Fraction {
 
 /**
  * Binary search in an array.
- * https://stackoverflow.com/a/29018745/209184
  *
- * @param ar: elements array that is sorted
- * @param el: target element
- * @param comp: comparison function (a,b) => n with
+ * @param ar Elements array that is sorted
+ * @param el Target element
+ * @param comp Comparison function (a,b) => n with
  *        n > 0 if a > b
  *        n < 0 if a < b
  *        n = 0 if a = b
- * @returns index m >= 0 if match is found, m < 0 if not found with insertion point = -m-1.
+ * @returns Index m >= 0 if match is found, m < 0 if not found with insertion point = -m-1.
+ * @see https://stackoverflow.com/a/29018745/209184
  */
 export function binarySearch<T>(ar: ReadonlyArray<T>, el: T, comp: (a: T, b: T) => number): number {
   let m = 0;
@@ -73,7 +73,8 @@ export function binarySearch<T>(ar: ReadonlyArray<T>, el: T, comp: (a: T, b: T) 
 
 /**
  * Check array equality.
- * https://stackoverflow.com/q/7837456/209184
+ *
+ * @see https://stackoverflow.com/q/7837456/209184
  */
 export function arrayEqual<T>(ar1: ReadonlyArray<T>, ar2: ReadonlyArray<T>, comp: (a: T, b: T) => number): boolean {
   return (
@@ -84,16 +85,18 @@ export function arrayEqual<T>(ar1: ReadonlyArray<T>, ar2: ReadonlyArray<T>, comp
 
 /**
  * Return array with unique values.
- * https://stackoverflow.com/a/17903018/209184
+ *
+ * @see https://stackoverflow.com/a/17903018/209184
  */
 export function arrayUnique<T>(ar: ReadonlyArray<T>): ReadonlyArray<T> {
   return [...new Set(ar)];
 }
 
 /**
- * Always-positive Modulo function. The built-in % operator computes the Remainder.
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
- * https://stackoverflow.com/a/17323608/209184
+ * Always-positive modulo function. The built-in % operator actually computes the remainder.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
+ * @see https://stackoverflow.com/a/17323608/209184
  */
 export function mod(n: number, m: number): number {
   return ((n % m) + m) % m;
@@ -101,7 +104,8 @@ export function mod(n: number, m: number): number {
 
 /**
  * Array range.
- * https://stackoverflow.com/a/10050831/209184
+ *
+ * @see https://stackoverflow.com/a/10050831/209184
  */
 export function arrayRange(size: number, startAt = 0): ReadonlyArray<number> {
   return [...Array(size).keys()].map(i => i + startAt);
@@ -109,9 +113,30 @@ export function arrayRange(size: number, startAt = 0): ReadonlyArray<number> {
 
 /**
  * Round to nearest decimal.
- * https://stackoverflow.com/a/27861660/209184
+ *
+ * @see https://stackoverflow.com/a/27861660/209184
  */
 export function roundTo(n: number, r: number): number {
   const inv = 1 / r;
   return Math.round(n * inv) / inv;
+}
+
+/**
+ * Parse a string of whitespace-separated keywords, possibly including escaped quotes.
+ *
+ * @param list String of whitespace-separated keywords
+ * @returns Array of keywords
+ * @see https://stackoverflow.com/a/46946420
+ */
+export function parseList(list: string): string[] {
+  return list.match(/\\?.|^$/g).reduce((p, c) => {
+    if (c === '"') {
+      p.quote = !p.quote;
+    } else if (!p.quote && c === ' ') {
+      p.a.push('');
+    } else {
+      p.a[p.a.length-1] += c.replace(/\\(.)/, "$1");
+    }
+    return  p;
+  }, {a: [''], quote: false}).a;
 }

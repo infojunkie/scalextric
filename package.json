@@ -1,6 +1,6 @@
 {
   "name": "scalextric",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Like Unicode, but for music. One day.",
   "type": "module",
   "types": "./build/types/index.d.ts",

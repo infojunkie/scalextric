@@ -23,8 +23,8 @@ export declare class Solmization {
     /**
      * CONSTRUCTOR
      *
-     * @param tuning: the tuning being named
-     * @param notes: map of note letters to pitch classes:
+     * @param tuning Tuning being named
+     * @param notes Map of note letters to pitch classes:
      * ```
      * {
      *   'C': 0,
@@ -35,7 +35,7 @@ export declare class Solmization {
      *   'A': 9,
      *   'B': 11,
      * }
-     * @param accidentals: map of accidentals to tone steps:
+     * @param accidentals Map of accidentals to tone steps:
      * ```
      * {
      *   '♯': +1,
@@ -56,15 +56,15 @@ export declare class Solmization {
     /**
      * NAME A TONE
      *
-     * @param tone: tone to be named
-     * @returns array of strings representing the enharmonic namings of the tone
+     * @param tone Tone to be named
+     * @returns Array of strings representing the enharmonic namings of the tone
      */
     name(tone: Tone): string[];
     /**
      * PARSE A NOTE
      *
-     * @param note: target note in scientific pitch notation
-     * @returns corresponding tone in the tuning
+     * @param note Target note in scientific pitch notation
+     * @returns Corresponding tone in the tuning
      */
     parse(note: string): Tone;
 }

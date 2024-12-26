@@ -1,8 +1,28 @@
 import { Interval } from './Interval';
+/**
+ * Tuning metadata.
+ */
 export type Metadata = {
+    /**
+     * Label (name).
+     */
     label: string;
+    /**
+     * Description.
+     */
     description?: string;
+    /**
+     * Source in the literature.
+     */
     source?: string;
+    /**
+     * Reference pitch in frequency space.
+     */
+    reference?: {
+        pitchClass: number;
+        octave: number;
+        frequency: number;
+    };
 };
 /**
  * TUNING SYSTEM
@@ -32,18 +52,19 @@ export declare class Tuning {
     /**
      * CONSTRUCTOR
      *
-     * @param intervals: tuning intervals
+     * @param intervals Tuning intervals
      * The intervals will be _guaranteed_ to be sorted.
      * The first interval will be _guaranteed_ to be the unison.
      * The last interval will be _assumed_ to be the repeater (e.g. 2/1 the octave).
+     * @param metadata Tuning metadata
      */
     constructor(intervals: Interval[], metadata?: Metadata);
     /**
      * Create a tuning from ratios or cents.
      *
-     * @param intervals: an array of ratios expressed as strings, or cents expressed as numbers
-     * @param annotations: as per constructor
-     * @returns tuning object
+     * @param intervals An array of ratios expressed as strings, or cents expressed as numbers
+     * @param metadata As per constructor
+     * @returns Tuning instance
      */
     static fromIntervals(intervals: (number | string)[], metadata?: Metadata): Tuning;
     /**
@@ -57,28 +78,28 @@ export declare class Tuning {
     /**
      * STEPS OF A TUNING
      *
-     * @returns count of tones in the tuning
+     * @returns Count of tones in the tuning
      */
     get steps(): number;
     /**
      * OCTAVE OF A TUNING
      *
-     * @returns the last interval in the tuning, which is considered to be the octave
+     * @returns The last interval in the tuning, which is considered to be the octave
      */
     get octave(): Interval;
     /**
      * TUNE A TONE
      *
-     * @param tone: tone to be tuned
-     * @returns frequency ratio of the tone with respect to root tone
+     * @param tone Tone to be tuned
+     * @returns Frequency ratio of the tone with respect to root tone
      */
     tune(tone: Tone): Interval;
     /**
      * NEAREST TONE
      * Find the nearest tone given an interval and return difference
      *
-     * @param interval: target interval
-     * @returns nearest tone, interval and difference from the target
+     * @param interval Target interval
+     * @returns Nearest tone, interval and difference from the target
      */
     nearest(interval: Interval): {
         tone: Tone;

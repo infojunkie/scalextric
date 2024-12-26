@@ -125,9 +125,7 @@ __pycache__
 # scalextric
 test/output/*
 !test/output/.gitkeep
-demo/cli/*.musicxml
-!dist
-*.scl
+data/**/*.scl
+data/**/*.ascl
 *.lst
-*.ascl
 *.zip

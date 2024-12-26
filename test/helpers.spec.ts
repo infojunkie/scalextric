@@ -10,10 +10,11 @@ import {
   flipFraction,
   mod,
   primes,
-  roundTo
+  roundTo,
+  parseList
 } from '../src/utils/helpers';
 
-describe('Helpers', () => {
+describe('Helper function', () => {
   it('escapes regex strings', () => {
     assert.strictEqual('This is a \\*bold\\* \\(move\\)\\.', escapeRegExp('This is a *bold* (move).'));
   });
@@ -84,5 +85,9 @@ describe('Helpers', () => {
     assert.strictEqual(roundTo(3.23, 0.25), 3.25);
     assert.strictEqual(roundTo(3.13, 0.25), 3.25);
     assert.strictEqual(roundTo(3.1247, 0.25), 3.00);
-  })
+  });
+
+  it('parses lists of strings with or without quotes', () => {
+    assert.deepStrictEqual(parseList('pop rock "hard rock" "\\"dream\\" pop"'), ['pop', 'rock', 'hard rock', '"dream" pop']);
+  });
 });

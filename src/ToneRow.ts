@@ -17,9 +17,9 @@ export class ToneRow {
   /**
    * CONSTRUCTOR
    *
-   * @param tuning: the reference tuning
-   * @param tones: the tones making up the row
-   * @param annotations: notes about the row
+   * @param tuning The reference tuning
+   * @param tones The tones making up the row
+   * @param metadata Row metadata (label, description, source)
    */
   constructor(public tuning: Tuning, public tones: Tone[], public metadata?: Metadata) {
     // Verify that tones are valid by detecting repeating pitch classes.

@@ -19,8 +19,8 @@ export class Solmization {
   /**
    * CONSTRUCTOR
    *
-   * @param tuning: the tuning being named
-   * @param notes: map of note letters to pitch classes:
+   * @param tuning Tuning being named
+   * @param notes Map of note letters to pitch classes:
    * ```
    * {
    *   'C': 0,
@@ -31,7 +31,7 @@ export class Solmization {
    *   'A': 9,
    *   'B': 11,
    * }
-   * @param accidentals: map of accidentals to tone steps:
+   * @param accidentals Map of accidentals to tone steps:
    * ```
    * {
    *   '♯': +1,
@@ -83,8 +83,8 @@ export class Solmization {
   /**
    * NAME A TONE
    *
-   * @param tone: tone to be named
-   * @returns array of strings representing the enharmonic namings of the tone
+   * @param tone Tone to be named
+   * @returns Array of strings representing the enharmonic namings of the tone
    */
   name(tone: Tone): string[] {
     const names = [...this.nameMap.getKey(tone.pitchClass)];
@@ -94,8 +94,8 @@ export class Solmization {
   /**
    * PARSE A NOTE
    *
-   * @param note: target note in scientific pitch notation
-   * @returns corresponding tone in the tuning
+   * @param note Target note in scientific pitch notation
+   * @returns Corresponding tone in the tuning
    */
   parse(note: string): Tone {
     const match = this.regex.exec(note);

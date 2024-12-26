@@ -1,7 +1,7 @@
 import assert from './assert';
 import { describe, it } from 'node:test';
 import * as fs from 'fs';
-import { tuningFromScala } from '../src/utils/scala';
+import { tuningFromScala, solmizationFromAbleton } from '../src/utils/scala';
 
 describe('Scala', () => {
   const tolerance = 0.00005;
@@ -57,5 +57,16 @@ describe('Scala', () => {
   it('rejects bad Scala scales', () => {
     assert.throws(() => { tuningFromScala(fs.readFileSync(`test/data/bad1.scl`, 'utf8')); });
     assert.throws(() => { tuningFromScala(fs.readFileSync(`test/data/bad2.scl`, 'utf8')); });
+  });
+
+  it('parses Ableton tunings', () => {
+    const solmization = solmizationFromAbleton(fs.readFileSync(`test/data/rast.ascl`, 'utf8'));
+    assert.deepStrictEqual(solmization.notes, {
+      'C': 0, 'D♭': 1, 'D': 2, 'E♭': 3, 'E1/2♭': 4, 'F': 5, 'F♯': 6, 'G': 7, 'A♭': 8, 'A': 9, 'B♭': 10, 'B1/2♭':11
+    });
+    assert.closeTo(solmization.tuning.intervals[0].cents, 0);
+    assert.closeTo(solmization.tuning.intervals[1].cents, 128);
+    assert.ok(solmization.tuning.metadata?.source?.indexOf('Inside Arabic Music') === 0);
+    assert.closeTo(solmization.tuning.metadata.reference?.frequency, 261.6256);
   });
 });

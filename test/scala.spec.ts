@@ -67,6 +67,6 @@ describe('Scala', () => {
     assert.closeTo(solmization.tuning.intervals[0].cents, 0);
     assert.closeTo(solmization.tuning.intervals[1].cents, 128);
     assert.ok(solmization.tuning.metadata?.source?.indexOf('Inside Arabic Music') === 0);
-    assert.closeTo(solmization.tuning.metadata.reference?.frequency, 261.6256);
+    assert.closeTo(solmization.tuning.metadata?.reference?.frequency, 261.6256);
   });
 });

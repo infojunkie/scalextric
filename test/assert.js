@@ -10,9 +10,9 @@ assert.closeTo = function(actual, expected, tolerance, message) {
     }
     else {
       throw new AssertionError({
-        message: message ?? `The input value ${a} did not fall within tolerance of the expected value ${e}.`,
-        a,
-        e
+        message: message ?? `The actual value does not fall within tolerance of the expected value.`,
+        actual: a,
+        expected: e
       });
     }
   }

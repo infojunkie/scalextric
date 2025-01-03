@@ -27,6 +27,7 @@ describe('Tuning', () => {
 
   it('tunes', () => {
     assert.closeTo(rast.tune(new Tone(rast, 1, 1)).ratio.valueOf(), 441/220*55/49, tolerance);
+    assert.throws(() => assert.closeTo(rast.tune(new Tone(rast, 1, 1)).ratio.valueOf(), 441/220, tolerance));
   });
 
   it('detects transposable tunings', () => {

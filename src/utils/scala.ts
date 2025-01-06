@@ -15,32 +15,38 @@ const ABLETON_VERSION = 'Ableton 12.1';
  * @returns Tuning instance
  */
 export function tuningFromScala(scala: string, source: string = SCALA_VERSION): Tuning {
-  let countLines = 0;
+  let scalaLines = 0;
   let commentLines = 0;
   let numberIntervals = 0;
-  let label = '';
+  let name = '';
+  let label: string;
   const intervals: Interval[] = [];
+  const intervalComments: string[] = [];
   const comments: string[] = [];
-  (scala + '\r\n').match(/^.*[\n\r]{1,2}|$/gm)?.forEach(line => {
+  (scala + '\r\n').match(/^.*[\n\r]{1,2}|$/gm)?.map(line => line.trim()).filter(line => line.length > 0).forEach(line => {
     if (line.indexOf('!') !== 0) {
-      if (countLines === 0) {
-        // First non-commented line is description
-        label = line.trim();
-      } else if (countLines === 1) {
-        // Second non-commented line is the number of intervals
+      if (scalaLines === 0) {
+        // First non-commented line is label (short description).
+        label = line;
+      } else if (scalaLines === 1) {
+        // Second non-commented line is the number of intervals.
         numberIntervals = parseInt(line);
       } else {
-        // All other non-commented lines are interval values
-        const interval = line.trim();
-        if (interval.length > 0) {
-          intervals.push(intervalFromScala(interval));
-        }
+        // All other non-commented lines are interval values.
+        const { interval, comment } = intervalFromScala(line);
+        intervals.push(interval);
+        intervalComments.push(comment);
       }
-      countLines++;
+      scalaLines++;
     } else {
       const comment = line.substring(1).trim();
-      if (comment.length > 0 && commentLines > 0) {
-        comments.push(comment);
+      if (comment.length > 0) {
+        if (commentLines > 0) {
+          comments.push(comment);
+        }
+        else {
+          name = comment.replace(/\.a?scl$/, '');
+        }
       }
       commentLines++;
     }
@@ -52,11 +58,15 @@ export function tuningFromScala(scala: string, source: string = SCALA_VERSION): 
 
   return new Tuning(
     [Interval.fromRatio('1/1'), ...intervals],
-    label ? {
+    {
+      name,
       label,
       description: comments.join('\r\n'),
-      source
-    } : undefined
+      source,
+      ...(intervalComments.some(i => i !== undefined) && {
+          intervals: [undefined, ...intervalComments]
+      })
+    }
   );
 }
 
@@ -104,13 +114,12 @@ export function solmizationFromAbleton(ableton: string, source: string = ABLETON
 
 /**
  * Parse a Scala interval value and return it as as Interval
- * @param interval Interval in any of the valid interval Scala formats (ratio / cent / integer)
- * @returns Interval instance
+ * @param input Interval line in any of the valid interval Scala formats (ratio / cent / integer), optionally followed by "! Comment".
+ * @returns Parsed structure {interval: Interval, comment: string | undefined}
  */
-function intervalFromScala(interval: string): Interval {
+function intervalFromScala(input: string): {interval: Interval, comment: string | undefined} {
+  const [interval, comment] = input.split('!');
   let result: Interval;
-
-  interval = interval.split(' ')[0];
 
   if (interval.indexOf('/') > 0) {
     // Ratio notation
@@ -127,5 +136,5 @@ function intervalFromScala(interval: string): Interval {
     throw new Error(`[tuningFromScala] Error in Scala format: got negative ratio ${interval} as interval`);
   }
 
-  return result;
+  return { interval: result, comment: comment ? comment.trim() : comment };
 }

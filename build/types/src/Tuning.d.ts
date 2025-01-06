@@ -4,11 +4,15 @@ import { Interval } from './Interval';
  */
 export type Metadata = {
     /**
-     * Label (name).
+     * Tuning name.
      */
-    label: string;
+    name: string;
     /**
-     * Description.
+     * Label (short description).
+     */
+    label?: string;
+    /**
+     * Description (long description).
      */
     description?: string;
     /**
@@ -23,6 +27,10 @@ export type Metadata = {
         octave: number;
         frequency: number;
     };
+    /**
+     * Intervals description.
+     */
+    intervals?: (string | undefined)[];
 };
 /**
  * TUNING SYSTEM

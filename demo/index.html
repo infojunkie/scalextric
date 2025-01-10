@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Scalextric Demo</title>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <style>
+      body {
+        background-color: wheat;
+        overflow-x: none;
+      }
+      .hide {
+        display: none;
+      }
+      #github {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+    </style>
+    <script type="module" src="demo.mjs"></script>
+  </head>
+  <body>
+    <div id="github">
+      <a class="github-button" href="https://github.com/infojunkie/scalextric" data-size="large" aria-label="Star infojunkie/scalextric on GitHub">Star on GitHub</a>
+    </div>
+    <code id="version"></code>
+    <h1>Scalextric Demo</h1>
+    <div id="tunings">
+      <template id="tuning">
+        <span class="title"></span>
+        <span class="scale"></span>
+      </template>
+    </div>
+  </body>
+</html>

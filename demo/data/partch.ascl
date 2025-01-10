@@ -1,0 +1,60 @@
+! Undecimal Partch G-392Hz.ascl
+!
+43-tone undecimal Rational Intonation scale by Harry Partch, consisting of 43 divisions per octave derived symmetrically from both harmonic and subharmonic series (otonalities and utonalities) up to a prime limit of 11. Partch’s original tuning was based on G (392 Hz), while this scala file uses the standard reference tone C. Therefore, each of Partch’s ratios have been multiplied by 3/2 and normalised, so that his original pitch-heights are retained. A is tuned to 441 Hz.
+!
+! default tuning: degree 25 = 392 Hz .... Partch's original tuning, A = 441 Hz.
+!
+! 43-undecimal (11-limit/Harry Partch) centered on G 392 Hz
+!
+! 43-tone undecimal Rational Intonation scale by Harry Partch, consisting of 43 divisions per octave derived symmetrically from both harmonic and subharmonic series (otonalities and utonalities) up to a prime limit of 11. The scale follows Partch's original tuning, based on G4 (392 Hz), so Pythagorean A4 is 441 Hz. Note that the scala file uses ratios from the standard reference tone C, so each of Partch’s ratios, measured from G, must be multiplied by 3/2 and normalised to produce his original pitch-heights.
+!
+43
+!
+81/80 ! ^C
+33/32 ! tC
+21/20 ! <^D♭
+15/14 ! >vC♯
+12/11 ! dD
+10/9 ! vD
+9/8 ! D
+8/7 ! >D
+7/6 ! <E♭
+33/28 ! t>D
+6/5 ! ^E♭
+27/22 ! dE
+5/4 ! vE
+81/64 ! E
+9/7 ! >E
+21/16 ! <F
+4/3 ! F
+27/20 ! ^F
+15/11 ! dvF♯
+11/8 ! tF
+45/32 ! vF♯
+10/7 ! >vF♯
+16/11 ! dG
+40/27 ! vG
+3/2 ! G
+243/160 ! ^G
+99/64 ! tG
+63/40 ! <^A♭
+8/5 ! ^A♭
+18/11 ! dA
+33/20 ! t^A♭
+5/3 ! vA
+27/16 ! A
+12/7 ! >A
+7/4 ! <B♭
+16/9 ! B♭
+9/5 ! ^B♭
+11/6 ! tB♭
+15/8 ! vB
+21/11 ! d<C
+27/14 ! >B
+63/32 ! <C
+2/1 ! C
+!
+! @ABL NOTE_NAMES "C" "^C" "tC" "<^D♭" ">vC♯" "dD" "vD" "D" ">D" "<E♭" "t>D" "^E♭" "dE" "vE" "E" ">E" "<F" "F" "^F" "dvF♯" "tF" "vF♯" ">vF♯" "dG" "vG" "G" "^G" "tG" "<^A♭" "^A♭" "dA" "t^A♭" "vA" "A" ">A" "<B♭" "B♭" "^B♭" "tB♭" "vB" "d<C" ">B" "<C"
+! @ABL REFERENCE_PITCH 3 25 392.0
+! @ABL NOTE_RANGE_BY_INDEX 2 1 4 42
+! @ABL LINK https://www.ableton.com/learn-more/tuning-systems/43-undecimal-partch-g-392hz

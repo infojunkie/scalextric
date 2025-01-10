@@ -191,7 +191,9 @@ export class Tuning {
   static fromEdo(divisions: number): Tuning {
     return new Tuning(Array.from(Array(divisions + 1)).map((_, i) => {
       return Interval.fromCents(1200 / divisions * i);
-    }));
+    }), {
+      name: `${divisions}edo (equal divisions of the octave)`
+    });
   }
 }
 

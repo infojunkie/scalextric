@@ -118,7 +118,7 @@ export function solmizationFromAbleton(ableton: string, source: string = ABLETON
  * @returns Parsed structure {interval: Interval, comment: string | undefined}
  */
 function intervalFromScala(input: string): {interval: Interval, comment: string | undefined} {
-  const [interval, comment] = input.split('!');
+  const [interval, comment] = input.split('!').map(i => i.trim());
   let result: Interval;
 
   if (interval.indexOf('/') > 0) {
@@ -126,7 +126,7 @@ function intervalFromScala(input: string): {interval: Interval, comment: string 
     result = Interval.fromRatio(interval);
   } else if (interval.indexOf('.') > 0) {
     // Cent notation
-    result = Interval.fromCents(parseFloat(interval));
+    result = Interval.fromCents(parseFloat(interval), interval);
   } else {
     // Integer notation
     result = Interval.fromRatio(interval);
@@ -136,5 +136,5 @@ function intervalFromScala(input: string): {interval: Interval, comment: string 
     throw new Error(`[tuningFromScala] Error in Scala format: got negative ratio ${interval} as interval`);
   }
 
-  return { interval: result, comment: comment ? comment.trim() : comment };
+  return { interval: result, comment };
 }

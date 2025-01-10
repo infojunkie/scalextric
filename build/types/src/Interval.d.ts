@@ -16,13 +16,14 @@ import Fraction from 'fraction.js';
  */
 export declare class Interval {
     ratio: Fraction;
-    constructor(ratio: Fraction);
+    original?: string;
+    constructor(ratio: Fraction, original?: string);
     get cents(): number;
     get savarts(): number;
     difference(reference: Interval): Interval;
     static fromRatio(ratio: string): Interval;
-    static fromCents(cents: number): Interval;
-    static fromSavarts(savarts: number): Interval;
+    static fromCents(cents: number, original?: string): Interval;
+    static fromSavarts(savarts: number, original?: string): Interval;
     static compare(a: Interval, b: Interval): number;
     static JND: Interval;
 }

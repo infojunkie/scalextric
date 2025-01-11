@@ -5,19 +5,38 @@ import {
 } from './build/scalextric.js'
 
 const Modes = {
-  CENTS: Symbol('cents'),
-  SAVARTS: Symbol('savarts'),
-  DECIMAL: Symbol('decimal'),
-  FRACTION: Symbol('fraction'),
-  ORIGINAL: Symbol('original'),
+  CENTS: 'cents',
+  SAVARTS: 'savarts',
+  FRACTION: 'fraction',
+  ORIGINAL: 'original',
 }
 
-const mode = Modes.ORIGINAL
+const g_state = {
+  mode: Modes.ORIGINAL
+}
 
-renderTuning(Tuning.fromEdo(12))
-renderTuning(Tuning.fromEdo(24))
-renderTuning(tuningFromScala(await (await fetch('data/rast.ascl')).text()))
-renderTuning(tuningFromScala(await (await fetch('data/partch.ascl')).text()))
+document.addEventListener('DOMContentLoaded', async () => {
+  document.querySelectorAll('input[name="scale"]').forEach(input => {
+    input.addEventListener('change', async (e) => {
+      g_state.mode = e.target.value
+      document.getElementById('tunings').innerText = ''
+      renderTunings()
+    })
+    if (input.value === g_state.mode) {
+      input.setAttribute('checked', 'checked')
+    }
+  })
+
+  // Draw
+  renderTunings()
+})
+
+async function renderTunings() {
+  renderTuning(Tuning.fromEdo(12))
+  renderTuning(Tuning.fromEdo(24))
+  renderTuning(tuningFromScala(await (await fetch('data/rast.ascl')).text()))
+  renderTuning(tuningFromScala(await (await fetch('data/partch.ascl')).text()))
+}
 
 function renderTuning(tuning) {
   const width = document.getElementById('tunings').clientWidth
@@ -33,11 +52,11 @@ function renderTuning(tuning) {
 
   svg.append("g")
     .call(d3.axisBottom(scale).tickValues(ticks).tickFormat((d, i) => {
-      switch (mode) {
+      switch (g_state.mode) {
         case Modes.CENTS:
-        case Modes.DECIMAL:
+          return Number(tuning.intervals[i].cents).toFixed(2)
         case Modes.SAVARTS:
-          return d.toLocaleString()
+          return Number(tuning.intervals[i].savarts).toFixed(2)
         case Modes.FRACTION:
           return tuning.intervals[i].ratio.toFraction()
         case Modes.ORIGINAL:

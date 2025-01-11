@@ -26,11 +26,24 @@
     </div>
     <code id="version"></code>
     <h1>Scalextric Demo</h1>
-    <div id="tunings">
-      <template id="tuning">
-        <span class="title"></span>
-        <span class="scale"></span>
-      </template>
+    <div id="controls">
+      <div>
+        Scale units
+        <input type="radio" id="scale-cents" name="scale" value="cents"/>
+        <label for="scale-cents">Cents</label>
+        <input type="radio" id="scale-savarts" name="scale" value="savarts"/>
+        <label for="scale-savarts">Savarts</label>
+        <input type="radio" id="scale-fraction" name="scale" value="fraction"/>
+        <label for="scale-fraction">Fraction</label>
+        <input type="radio" id="scale-original" name="scale" value="original"/>
+        <label for="scale-original">Original</label>
+      </div>
     </div>
-  </body>
+    <div id="tunings">
+    </div>
+    <template id="tuning">
+      <span class="title"></span>
+      <span class="scale"></span>
+    </template>
+</body>
 </html>

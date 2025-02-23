@@ -129,3 +129,4 @@ data/**/*.scl
 data/**/*.ascl
 *.lst
 *.zip
+demo/node_modules

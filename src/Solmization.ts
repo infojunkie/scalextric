@@ -87,7 +87,7 @@ export class Solmization {
    * @returns Array of strings representing the enharmonic namings of the tone
    */
   name(tone: Tone): string[] {
-    const names = [...this.nameMap.getKey(tone.pitchClass)];
+    const names = [...this.nameMap.getKey(tone.pitchClass) ?? []];
     return names.sort((a, b) => a.length - b.length).map(name => `${name}${tone.octave}`);
   }
 
@@ -102,6 +102,6 @@ export class Solmization {
     if (!match) {
       throw new Error(`[Solmization.parse] Could not match note ${note}`);
     }
-    return new Tone(this.tuning, this.parseMap.get(match[1]), parseInt(match[2], 10));
+    return new Tone(this.tuning, this.parseMap.get(match[1])!, parseInt(match[2], 10));
   }
 }

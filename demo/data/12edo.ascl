@@ -1,0 +1,32 @@
+! 12-TET(EDO).ascl
+!
+12 tone equal temperament is a form of EDO tuning (equal divisions of an octave). It is the default tuning for MIDI hardware and software like Ableton Live. This tuning allows you to work in 12-TET (aka 12-EDO) with a changeable reference pitch. It will not work with scale aware features, and note names may display differently than when not using the tuning system.
+!
+! default tuning: degree 9 (900.0 cents) 440 Hz, or degree 0 = 261.625565 Hz
+!
+! "12edo", an acronymic shorthand for "12 equal divisions of an octave", is also commonly referred to as the "equal tempered" scale, "12-tone equal temperament" ("12-tet") or "12-equal" for short. These various tuning system nomenclatures distinguish two different intentions. A "temperament" suggests an intentional detuning, usually measured from harmonic ratios, allowing notes to be combined in ways that aurally approximate various nearby intervals, depending on context. A "tuning" is simply a set of specific, exact intervals, taken per se.
+!
+! 12edo divides an octave into 12 proportionally equal and equal sounding semitone intervals. A musical interval is defined by the ratio between two frequencies; compounding intervals means multiplying their ratios. For example, an octave occurs between any two frequencies in the proportion 1:2. Two octaves is the proportion 1:4 and three octaves 1:8. The notes we call "A" occur at frequencies 55, 110, 220, 440 Hz etc.
+!
+! Since twelve equal semitones span one octave, each semitone must have an irrational ratio equal to the twelfth root of two. When comparing intervals in different tunings, it is sometimes useful to also use logarithmic units called cents, equal to 1200 * log2 (frequency ratio). An octave is assigned 1200 cents and each 12edo semitone has 100 cents. When two intervals are combined into a larger one, their cents values may be simply added together.
+!
+! As 12edo semitones combine to form larger intervals, most of these new intervals very closely match ratios of small whole numbers, also known as harmonic sounds because they occur between the lower partials in an harmonic series. Thus, 12edo very efficiently approximates many nearly-consonant harmonies. However, since no interval other than the octave is exactly "in tune", this tuning system is said to be harmonic within a given "tolerance" or margin of error, and in this sense it is part of a family of tunings known as "temperaments". The simplicity of having only 12 notes and the symmetry of transposing to any degree of the scale comes at a cost: accepting some imperfections and limitations in the representation of harmonic sounds.
+!
+12
+!
+100.0 ! C♯/D♭
+200.0 ! D
+300.0 ! D♯/E♭
+400.0 ! E
+500.0 ! F
+600.0 ! F♯/G♭
+700.0 ! G
+800.0 ! G♯/A♭
+900.0 ! A
+1000.0 ! A♯/B♭
+1100.0 ! B
+2/1 ! C
+!
+! @ABL NOTE_NAMES "C" "C♯/D♭" "D" "D♯/E♭" "E" "F" "F♯/G♭" "G" "G♯/A♭" "A" "A♯/B♭" "B"
+! @ABL REFERENCE_PITCH 3 9 440.0
+! @ABL LINK https://www.ableton.com/learn-more/tuning-systems/12-tet-edo

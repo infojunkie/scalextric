@@ -3,7 +3,7 @@ import { Interval } from '../Interval';
 import { Solmization } from '../Solmization';
 import { parseList } from './helpers';
 
-const SCALA_VERSION = 'Scale archive, Scala version 92, May 2024';
+const SCALA_VERSION = 'Scale archive, Scala version 93, January 2025';
 const ABLETON_VERSION = 'Ableton 12.1';
 
 /**

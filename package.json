@@ -1,9 +1,9 @@
 {
   "name": "scalextric",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Like Unicode, but for music. One day.",
   "type": "module",
-  "types": "./build/types/index.d.ts",
+  "types": "./build/types/src/index.d.ts",
   "exports": {
     "import": "./build/scalextric.js",
     "require": "./build/scalextric.cjs"
@@ -32,6 +32,7 @@
     "esbuild": "^0.24.0",
     "eslint": "^9.17.0",
     "local-web-server": "^5.4.0",
+    "spessasynth_lib": "^3.24.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",

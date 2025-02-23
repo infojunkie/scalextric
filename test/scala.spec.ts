@@ -51,7 +51,7 @@ describe('Scala', () => {
       name: 'ederer',
       label: 'Just intonation for Turkish-Arabic scales by Eric Ederer',
       description: 'Eric Ederer - Makam & Beyond: A Progressive Approach to Near Eastern Music Theory (2015)',
-      source: 'Scale archive, Scala version 92, May 2024'
+      source: 'Scale archive, Scala version 93, January 2025'
     });
   });
 

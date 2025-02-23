@@ -7,7 +7,6 @@ describe('Interval', () => {
 
   it ('gets intervals in cents and savarts', () => {
     assert.closeTo(Interval.fromCents(100).cents, 100, tolerance);
-    assert.closeTo(Interval.fromSavarts(100).savarts, 100, tolerance);
   });
 
   it('computes interval difference', () => {

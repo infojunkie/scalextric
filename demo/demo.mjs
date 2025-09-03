@@ -1,5 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3/+esm'
-import { Synthetizer } from './node_modules/spessasynth_lib/index.js'
+import { Synthetizer } from 'https://cdn.jsdelivr.net/npm/spessasynth_lib@3.27.8/+esm'
 import {
   Tuning,
   Interval,
@@ -21,7 +21,7 @@ const g_state = {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await g_state.context.audioWorklet.addModule('./node_modules/spessasynth_lib/synthetizer/worklet_processor.min.js')
+  await g_state.context.audioWorklet.addModule('./worklet_processor.min.js')
   g_state.synth = new Synthetizer(g_state.context.destination, await (await fetch('data/GeneralUserGS.sf3')).arrayBuffer())
   g_state.reference = solmizationFromAbleton(await (await fetch('data/12edo.ascl')).text())
 

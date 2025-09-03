@@ -5,7 +5,7 @@ import {
   Interval,
   tuningFromScala,
   solmizationFromAbleton
-} from './build/scalextric.js'
+} from './build/scalextric.mjs'
 
 const Modes = {
   CENTS: 'cents',

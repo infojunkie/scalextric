@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
-import { Tuning } from '../build/scalextric.js';
+import { Tuning } from '../build/scalextric.mjs';
 
 describe('Scalextric bundle', () => {
   it('accesses Tuning module', () => {

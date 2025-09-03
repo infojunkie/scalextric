@@ -1,7 +1,7 @@
 import assert from './assert';
 import { describe, it } from 'node:test';
 import * as fs from 'fs';
-import { tuningFromScala } from '../src/utils/scala';
+import { tuningFromScala } from '../src/io/scala';
 import { Tuning, Tone } from '../src/Tuning';
 import { Interval } from '../src/Interval';
 

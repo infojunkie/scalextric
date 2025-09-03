@@ -1,7 +1,7 @@
 import assert from './assert';
 import { describe, it } from 'node:test';
 import * as fs from 'fs';
-import { tuningFromScala, solmizationFromAbleton } from '../src/utils/scala';
+import { tuningFromScala, solmizationFromAbleton } from '../src/io/scala';
 
 describe('Scala', () => {
   const tolerance = 0.00005;

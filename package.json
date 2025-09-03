@@ -1,7 +1,7 @@
 {
   "name": "scalextric",
-  "version": "0.8.1",
-  "description": "Like Unicode, but for music. One day.",
+  "version": "0.9.0",
+  "description": "Like Huygens-Fokker Scala, but electric.",
   "type": "module",
   "types": "./build/types/src/index.d.ts",
   "exports": {
@@ -14,7 +14,7 @@
     "build:cjs": "esbuild src/index.ts --bundle --platform=node --packages=external --minify --sourcemap --outfile=build/scalextric.cjs",
     "build:d.ts": "tsc --emitDeclarationOnly --outDir build/types",
     "build:watch": "esbuild src/index.ts --watch --bundle --format=esm --minify --sourcemap --outfile=build/scalextric.js",
-    "build:chords": "python src/utils/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
+    "build:chords": "python src/helpers/chordtable/generate.py > data/chords.json && echo 'Generate data/chords.json file'",
     "build:scala": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && for f in data/scl/*; do iconv -f iso-8859-1 -t utf-8 \"$f\" -o \"$f\"; done",
     "test": "npm run test:lint && npm run test:ts && npm run test:js",
     "test:lint": "eslint src",
@@ -29,7 +29,7 @@
     "@eslint/js": "^9.17.0",
     "@types/jstoxml": "^2.0.4",
     "@types/node": "^22.10.2",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.9",
     "eslint": "^9.17.0",
     "local-web-server": "^5.4.0",
     "spessasynth_lib": "^3.24.2",

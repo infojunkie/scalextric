@@ -1,5 +1,5 @@
 import { Tuning, Tone } from './Tuning';
-import { Multimap } from './utils/Bimap';
+import { Multimap } from './helpers/Bimap';
 /**
  * SOLMIZATION SYSTEM
  *

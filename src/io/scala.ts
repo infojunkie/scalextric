@@ -1,7 +1,7 @@
 import { Tuning } from '../Tuning';
 import { Interval } from '../Interval';
 import { Solmization } from '../Solmization';
-import { parseList } from './helpers';
+import { parseList } from '../helpers';
 
 const SCALA_VERSION = 'Scale archive, Scala version 93, January 2025';
 const ABLETON_VERSION = 'Ableton 12.1';
@@ -133,7 +133,7 @@ function intervalFromScala(input: string): {interval: Interval, comment: string 
   }
 
   if (result.ratio.compare(0) < 0) {
-    throw new Error(`[tuningFromScala] Error in Scala format: got negative ratio ${interval} as interval`);
+    throw new Error(`[tuningFromScala] Error in Scala format: Found negative ratio ${interval} as interval`);
   }
 
   return { interval: result, comment };

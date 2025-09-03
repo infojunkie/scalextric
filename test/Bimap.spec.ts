@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { describe, it, beforeEach } from 'node:test';
-import { Bimap, Multimap } from '../src/utils/Bimap';
+import { Bimap, Multimap } from '../src/helpers/Bimap';
 
 describe('Bimap: empty map', () => {
   const map = new Bimap();

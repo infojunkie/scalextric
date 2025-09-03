@@ -3,4 +3,5 @@ export * from './Solmization';
 export * from './Interval';
 export * from './ToneRow';
 export * from './MusicXML';
-export * from './utils';
+export * from './io';
+export * from './helpers';

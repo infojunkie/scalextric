@@ -3,8 +3,8 @@ import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import { ToneRow } from '../src/ToneRow';
 import { Tuning, Tone } from '../src/Tuning';
-import { tuningFromScala } from '../src/utils/scala';
-import { arrayEqual, arrayRange } from '../src/utils/helpers';
+import { tuningFromScala } from '../src/io/scala';
+import { arrayEqual, arrayRange } from '../src/helpers/helpers';
 
 describe('ToneRow', () => {
   const edo24 = Tuning.fromEdo(24);

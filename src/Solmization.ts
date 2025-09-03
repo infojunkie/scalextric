@@ -1,6 +1,6 @@
 import { Tuning, Tone } from './Tuning';
-import { escapeRegExp, mod } from './utils/helpers';
-import { Multimap } from './utils/Bimap';
+import { escapeRegExp, mod } from './helpers/helpers';
+import { Multimap } from './helpers/Bimap';
 
 /**
  * SOLMIZATION SYSTEM

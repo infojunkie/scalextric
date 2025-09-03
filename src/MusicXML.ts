@@ -3,7 +3,7 @@ const { toXML } = jstoxml;
 import { ToneRowSolmized } from './ToneRow';
 import { Tuning, Tone } from './Tuning';
 import { Solmization } from './Solmization';
-import { roundTo } from './utils/helpers';
+import { roundTo } from './helpers/helpers';
 import pkg from '../package.json';
 
 const MUSICXML_VERSION = '4.0';

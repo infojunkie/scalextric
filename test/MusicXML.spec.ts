@@ -4,7 +4,7 @@ import { MusicXML } from '../src/MusicXML';
 import { ToneRow, ToneRowSolmized } from '../src/ToneRow';
 import { Tuning } from '../src/Tuning';
 import { Solmization } from '../src/Solmization';
-import { tuningFromScala } from '../src/utils/scala';
+import { tuningFromScala } from '../src/io/scala';
 import { validateXMLWithXSD } from 'validate-with-xmllint';
 
 describe('MusicXML', () => {

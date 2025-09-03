@@ -12,7 +12,7 @@ import {
   primes,
   roundTo,
   parseList
-} from '../src/utils/helpers';
+} from '../src/helpers/helpers';
 
 describe('Helper function', () => {
   it('escapes regex strings', () => {

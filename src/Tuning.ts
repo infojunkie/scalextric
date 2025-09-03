@@ -1,5 +1,5 @@
 import Fraction from 'fraction.js';
-import { binarySearch, flipFraction, mod } from './utils/helpers';
+import { binarySearch, flipFraction, mod } from './helpers/helpers';
 import { Interval } from './Interval';
 
 /**

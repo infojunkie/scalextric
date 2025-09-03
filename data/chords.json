@@ -1623,6 +1623,19 @@
         "tones": [
             0,
             4,
+            8,
+            10,
+            13
+        ],
+        "metadata": {
+            "label": "7b9#5",
+            "description": "An augmented chord (raised 5th) with a dominant 7th and flat 9th."
+        }
+    },
+    {
+        "tones": [
+            0,
+            4,
             7,
             10,
             13

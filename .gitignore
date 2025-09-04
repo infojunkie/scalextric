@@ -127,6 +127,8 @@ test/output/*
 !test/output/.gitkeep
 data/**/*.scl
 data/**/*.ascl
+data/**/*.csv
+data/**/*.zip
+data/**/*.ods
 *.lst
-*.zip
 demo/node_modules

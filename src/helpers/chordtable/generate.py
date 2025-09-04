@@ -1,4 +1,10 @@
-# Generate a JSON chord table from the MMA - Musical Midi Accompaniment source.
+#!/usr/bin/env python3
+"""
+generate.py
+
+A command-line tool to generate a JSON chord table from the MMA - Musical Midi Accompaniment chordtable.py source.
+"""
+
 import chordtable
 import json
 

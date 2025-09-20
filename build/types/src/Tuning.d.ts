@@ -103,13 +103,25 @@ export declare class Tuning {
      */
     tune(tone: Tone): Interval;
     /**
-     * NEAREST TONE
-     * Find the nearest tone given an interval and return difference
+     * NEAREST INTERVAL
+     * Given an interval, find the nearest tuning tone and return difference
      *
      * @param interval Target interval
      * @returns Nearest tone, interval and difference from the target
      */
-    nearest(interval: Interval): {
+    nearestInterval(interval: Interval): {
+        tone: Tone;
+        interval: Interval;
+        difference: Interval;
+    };
+    /**
+     * NEAREST TONE
+     * Given a tone in a different tuning, find the nearest tuning tone and return difference
+     *
+     * @param tone Target tone
+     * @returns Nearest tone, interval and difference from the target
+     */
+    nearestTone(tone: Tone): {
         tone: Tone;
         interval: Interval;
         difference: Interval;

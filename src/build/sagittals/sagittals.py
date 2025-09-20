@@ -1,123 +1,18 @@
 #!/usr/bin/env python3
 """
-sagittal.py
+sagittals.py
 
 A command-line tool to process the Sagittal SMuFL Map CSV into a JSON structure that can be used by scalextric.
 
 Usage:
 - Download the original ODS file at https://sagittal.org/Sagittal-SMuFL-Map.ods
 - Convert to CSV: `soffice --headless --convert-to csv:"Text - txt - csv (StarCalc)":44,34,76 /path/to/Sagittal-SMuFL-Map.ods`
-- Call this script: `python sagittal.py /path/to/Sagittal-SMuFL-Map.csv > /path/to/Sagittal-SMuFL-Map.json`
+- Call this script: `python sagittals.py /path/to/Sagittal-SMuFL-Map.csv > /path/to/Sagittal-SMuFL-Map.json`
 
-JSON Schema:
+The JSON schema corresponds 1:1 to the columns of the original ODS file, with the following exceptions:
+- Entry `notation_membership/prime_factor` (column AE), which in the spreadsheet holds values such as 3 and 3⁻¹, is converted to a signed integer
+  where the negative sign indicates that the factor is raised to the power -1 (i.e. 1/F). For example, 3⁻¹ would be stored as -3.
 
-[{
-  'category': 'xx',
-  'unicode': {
-    'character': 'xx',
-    'code_point': 'U+xx'
-  },
-  'sagitype': {
-    'long': {
-      'revo_pure': 'xx',
-      'evo_mixed': {
-        'comma': 'xx',
-        'sharp_flat': 'xx'
-      },
-    },
-    'short': {
-      'evo_mixed': {
-        'comma': 'xx',
-        'sharp_flat': 'xx'
-      },
-    },
-  },
-  'pitch': {
-    'description': {
-      'sharp_flat': 'xx',
-      'commatic_alteration': 'xx',
-      'direction': 'xx'
-    },
-    'cents': 0.0,
-    'ratio': {
-      'numerator': 0,
-      'denominator': 0
-    },
-    'prime_count_vector': {
-      '2': 0,
-      '3': 0,
-      '5': 0,
-      '7': 0,
-      '11': 0,
-      '13': 0,
-      '17': 0,
-      '19': 0,
-      '23': 0,
-      '29': 0,
-      '31': 0,
-      '37': 0
-    },
-  },
-  'ji_pitches': {
-    '3^-2': '0/0',
-    '3^-1': '0/0',
-    '3^0': '0/0',
-    '3^1': '0/0',
-    '3^2': '0/0'
-  },
-  'notation_membership': {
-    'prime_factor': 0,
-    '12_relative_fractions': 'xx',
-    '12_relative_cents': 0.0,
-    'edo_degrees': {
-      '17': 0,
-      '19': 0,
-      '22': 0,
-      '27': 0,
-      '29': 0,
-      '31': 0,
-      '34': 0,
-      '39': 0,
-      '41': 0,
-      '43': 0,
-      '46': 0,
-      '50': 0,
-      '53': 0,
-      '60': 0,
-      '72': 0,
-      '96': 0
-    }
-  },
-  'sagispeak': {
-    'simple': {
-      'spelling': 'xx',
-      'ipa_1': 'xx',
-      'ipa_2': 'xx',
-      'ipa_3': 'xx',
-      'ipa_4': 'xx'
-    },
-    'alternative': {
-      'spelling': 'xx',
-      'ipa_1': 'xx',
-      'ipa_2': 'xx',
-      'ipa_3': 'xx',
-      'ipa_4': 'xx'
-    },
-    'sharp_flat': 'xx'
-  },
-  'symbol': {
-    'symbol_or_accent': 'symbol|accent',
-    'shaft_count': 0
-  },
-  'smufl': {
-    'glyph_name': 'xx',
-    'description': 'xx'
-  },
-  'glyph_description': {
-    'graphical': 'xx',
-    'heraldic': 'xx'
-  }
-}, ...]
 """
 
 import csv
@@ -143,10 +38,10 @@ def int_or_none(cell):
   else:
     return int(float(cell))
 
-with open(sys.argv[1], 'r') as file:
+with open(sys.argv[1], encoding='utf-8', mode='r') as file:
   map = csv.reader(file, delimiter=',')
   headers = []
-  entries = []
+  entries = {}
   category = ''
   for row in itertools.islice(map, 4):
     headers.append(row)
@@ -154,7 +49,8 @@ with open(sys.argv[1], 'r') as file:
     if not row[0]:
       category = row[3]
     else:
-      entries.append({
+      glyph = str(row[60])
+      entries[glyph] = {
         'range': category,
         'unicode': {
           'character': str_or_none(row[0]),
@@ -253,12 +149,12 @@ with open(sys.argv[1], 'r') as file:
           'shaft_count': int_or_none(row[59])
         },
         'smufl': {
-          'glyph_name': str_or_none(row[60]),
+          'glyph_name': glyph,
           'description': str_or_none(row[61])
         },
         'glyph_description': {
           'graphical': str_or_none(row[62]),
           'heraldic': str_or_none(row[63])
         }
-      })
-  print(json.dumps(entries))
+      }
+  print(json.dumps(entries, indent=4, ensure_ascii=False))

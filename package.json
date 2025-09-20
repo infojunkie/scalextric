@@ -1,5 +1,5 @@
 {
-  "name": "scalextric",
+  "name": "@music-i18n/scalextric",
   "version": "0.9.0",
   "description": "Like Huygens-Fokker Scala, but electric.",
   "type": "module",
@@ -13,9 +13,9 @@
     "build:esm": "esbuild src/index.ts --bundle --format=esm --minify --sourcemap --outfile=build/scalextric.mjs",
     "build:cjs": "esbuild src/index.ts --bundle --platform=node --packages=external --minify --sourcemap --outfile=build/scalextric.cjs",
     "build:d.ts": "tsc --emitDeclarationOnly --outDir build/types",
-    "build:chords": "src/helpers/chordtable/generate.py > data/chords.json",
+    "build:chords": "src/build/chordtable/generate.py > data/chords.json",
     "build:scala": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && for f in data/scl/*; do iconv -f iso-8859-1 -t utf-8 \"$f\" -o \"$f\"; done",
-    "build:sagittal": "wget -q -O data/sagittal.ods https://sagittal.org/Sagittal-SMuFL-Map.ods && soffice --headless --convert-to csv:\"Text - txt - csv (StarCalc)\":44,34,76 data/sagittal.ods --outdir data/ && src/helpers/sagittal/sagittal.py data/sagittal.csv > data/sagittal.json",
+    "build:sagittals": "wget -q -O data/sagittals.ods https://sagittal.org/Sagittal-SMuFL-Map.ods && soffice --headless --convert-to csv:\"Text - txt - csv (StarCalc)\":44,34,76 data/sagittals.ods --outdir data/ && src/build/sagittals/sagittals.py data/sagittals.csv > data/sagittals.json",
     "build:full": "npm run build && npm run build:chords && npm run build:scala && npm run build:sagittal",
     "test": "npm run test:lint && npm run test:ts && npm run test:js",
     "test:lint": "eslint src",

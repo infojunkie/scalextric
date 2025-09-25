@@ -24,7 +24,7 @@ def str_or_none(cell):
   if not cell:
     return None
   else:
-    return str(cell)
+    return str(cell).strip()
 
 def float_or_none(cell):
   if not cell:
@@ -49,7 +49,7 @@ with open(sys.argv[1], encoding='utf-8', mode='r') as file:
     if not row[0]:
       category = row[3]
     else:
-      glyph = str(row[60])
+      glyph = str(row[60]).strip()
       entries[glyph] = {
         'range': category,
         'unicode': {

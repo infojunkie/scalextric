@@ -24074,7 +24074,7 @@
             "heraldic": null
         }
     },
-    "accSagittal3TinasUp ": {
+    "accSagittal3TinasUp": {
         "range": "Magrathean Sagittal extension (Insane precision) accidental diacritics (U+E3F8–U+E41F)",
         "unicode": {
             "character": "",
@@ -24173,7 +24173,7 @@
             "shaft_count": null
         },
         "smufl": {
-            "glyph_name": "accSagittal3TinasUp ",
+            "glyph_name": "accSagittal3TinasUp",
             "description": "3 tinas up, 1 mina up, 1/(5⋅7⋅13)-schismina up, 0.42 cents up"
         },
         "glyph_description": {
@@ -24181,7 +24181,7 @@
             "heraldic": null
         }
     },
-    "accSagittal3TinasDown ": {
+    "accSagittal3TinasDown": {
         "range": "Magrathean Sagittal extension (Insane precision) accidental diacritics (U+E3F8–U+E41F)",
         "unicode": {
             "character": "",
@@ -24280,7 +24280,7 @@
             "shaft_count": null
         },
         "smufl": {
-            "glyph_name": "accSagittal3TinasDown ",
+            "glyph_name": "accSagittal3TinasDown",
             "description": "3 tinas down, 1 mina down, 1/(5⋅7⋅13)-schismina down, 0.42 cents down"
         },
         "glyph_description": {
@@ -24716,7 +24716,7 @@
             "heraldic": null
         }
     },
-    "accSagittal6TinasUp ": {
+    "accSagittal6TinasUp": {
         "range": "Magrathean Sagittal extension (Insane precision) accidental diacritics (U+E3F8–U+E41F)",
         "unicode": {
             "character": "",
@@ -24815,7 +24815,7 @@
             "shaft_count": null
         },
         "smufl": {
-            "glyph_name": "accSagittal6TinasUp ",
+            "glyph_name": "accSagittal6TinasUp",
             "description": "6 tinas up, 2 minas up, 65/77-schismina up, 0.83 cents up"
         },
         "glyph_description": {
@@ -24823,7 +24823,7 @@
             "heraldic": null
         }
     },
-    "accSagittal6TinasDown ": {
+    "accSagittal6TinasDown": {
         "range": "Magrathean Sagittal extension (Insane precision) accidental diacritics (U+E3F8–U+E41F)",
         "unicode": {
             "character": "",
@@ -24922,7 +24922,7 @@
             "shaft_count": null
         },
         "smufl": {
-            "glyph_name": "accSagittal6TinasDown ",
+            "glyph_name": "accSagittal6TinasDown",
             "description": "6 tinas down, 2 minas down, 65/77-schismina down, 0.83 cents down"
         },
         "glyph_description": {

@@ -1,6 +1,6 @@
 {
   "name": "@music-i18n/scalextric",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Like Huygens-Fokker Scala, but electric.",
   "type": "module",
   "types": "./build/types/src/index.d.ts",
@@ -16,8 +16,8 @@
     "build:chords": "src/build/chordtable/generate.py > data/chords.json",
     "build:scala": "wget -q -O data/scales.zip http://huygens-fokker.org/docs/scales.zip && unzip -o data/scales.zip -d data/ && for f in data/scl/*; do iconv -f iso-8859-1 -t utf-8 \"$f\" -o \"$f\"; done",
     "build:sagittals": "wget -q -O data/sagittals.ods https://sagittal.org/Sagittal-SMuFL-Map.ods && soffice --headless --convert-to csv:\"Text - txt - csv (StarCalc)\":44,34,76 data/sagittals.ods --outdir data/ && src/build/accidentals/sagittals.py data/sagittals.csv > data/sagittals.json",
-    "build:smufl": "jq -s -f src/build/accidentals/merge_smufl_sagittals.jq data/classes.json data/sagittals.json data/smufl.json | sponge data/smufl.json",
-    "build:full": "npm run build && npm run build:chords && npm run build:scala && npm run build:sagittal",
+    "build:smufl": "jq -s -f src/build/accidentals/merge_smufl_sagittals.jq data/ranges.json data/sagittals.json data/smufl.json | sponge data/smufl.json",
+    "build:full": "npm run build && npm run build:chords && npm run build:scala && npm run build:sagittals && npm run build:smufl",
     "test": "npm run test:lint && npm run test:ts && npm run test:js",
     "test:lint": "eslint src",
     "test:ts": "node --import=tsx --test test/*.spec.ts",
